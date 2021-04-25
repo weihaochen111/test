@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    public GameObject slider;
+
+    
     void Awake()
     {
         
@@ -13,8 +16,8 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        GetComponent<Slider>().onValueChanged.AddListener(delegate(float value){
+        slider = GameObject.Find("Canvas/Slider");
+        slider.GetComponent<Slider>().onValueChanged.AddListener(delegate(float value){
 		Debug.LogFormat("value = {0}", value);
 		});
     }

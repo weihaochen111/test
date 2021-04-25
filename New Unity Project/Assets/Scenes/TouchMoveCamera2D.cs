@@ -97,6 +97,21 @@ public class TouchMoveCamera2D : MonoBehaviour
 #if !UNITY_EDITOR && (UNITY_IOS || UNITY_ANDROID)
         UpdateTargetPositon();
 #endif
+        if (Input.GetAxis("Mouse ScrollWheel") <0)  
+        {  
+           if(Camera.main.fieldOfView<=50)  
+           Camera.main.fieldOfView +=2;  
+           if(Camera.main.orthographicSize<=9.5)  
+           Camera.main.orthographicSize +=0.5F;  
+        }  
+        //Zoom in  
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)  
+        {  
+          if(Camera.main.fieldOfView>20)  
+            Camera.main.fieldOfView-=2;  
+          if(Camera.main.orthographicSize>=5)  
+            Camera.main.orthographicSize-=0.5F;  
+        }
         if (speed == Vector3.zero)
         {
             return;
