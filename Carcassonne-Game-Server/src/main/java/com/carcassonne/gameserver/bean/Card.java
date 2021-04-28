@@ -1,5 +1,7 @@
 package com.carcassonne.gameserver.bean;
 
+import org.springframework.context.annotation.Bean;
+
 /**
  * 卡片类
  *

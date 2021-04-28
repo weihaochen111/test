@@ -1,7 +1,11 @@
 package com.carcassonne.gameserver.controller;
 
 import ch.qos.logback.classic.Logger;
+import com.carcassonne.gameserver.service.CardService;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 
 
 @RestController
+@EnableAutoConfiguration
+@CrossOrigin
 public class testLogbackController {
+
 
     private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
 
