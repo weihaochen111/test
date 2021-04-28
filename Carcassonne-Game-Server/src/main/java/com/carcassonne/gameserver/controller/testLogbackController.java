@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @RestController
 public class testLogbackController {
+
     private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping(value = "/testLogbackController",method = RequestMethod.GET)
