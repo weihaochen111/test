@@ -2,6 +2,9 @@ package com.carcassonne.gameserver.manager;
 
 import com.carcassonne.gameserver.bean.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 房间控制器
  */
@@ -17,8 +20,11 @@ public class RoomManager {
     private GameLog gameLog;
     private GameResult gameResult;
 
+    private ArrayList<Point> canPutPositionList=new ArrayList<Point>();
+
     RoomManager(Card[][] cards){
         puzzle = new Puzzle(cards);
+        puzzle.addHaveBePutCardsList(new Point(15,15));
     }
     //TODO 计分算法
     //函数说明 ： 地图保存在puzzle对象中，如需其他地图操作函数可在bean.Puzzle 中编写
@@ -27,7 +33,7 @@ public class RoomManager {
      * 无参数
      * 函数执行后在Players 对象数组更新得分情况
      */
-    private void calculateScore(){
+    public void calculateScore(){
 
     }
 
@@ -77,5 +83,31 @@ public class RoomManager {
         }
         return YN;
     }
-
+    //TODO 返回可放置卡片的坐标数组
+    public void updateCanPutPositionList(Point point){
+        int x = point.getX();
+        int y = point.getY();
+        Point around[] = {new Point(x,y-1),new Point(x,y+1),new Point(x-1,y),new Point(x+1,y)};
+        for(int i = 0;i < 4;i++){
+            if(!canPutPositionList.contains(around[i])){
+                int ax=around[i].getX();
+                int ay=around[i].getY();
+                if(ax>=MIN_X&&ax<=MAX_X&&ay>=MIN_Y&&ay<=MAX_Y){
+                    canPutPositionList.add(around[i]);
+                }
+            }
+        }
+        puzzle.addHaveBePutCardsList(point);
+    }
+    //TODO
+    public ArrayList<Point> getCanPutPositionList(Card card){
+        ArrayList<Point> theCardCanPutPositionList = new ArrayList<Point>();
+        for(Point point : canPutPositionList){
+            if(canPutCard(point.getX(),point.getY(),card)){
+                theCardCanPutPositionList.add(point);
+            }
+        }
+        return theCardCanPutPositionList;
+    }
+    //TODO 放牌操作
 }
