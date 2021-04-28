@@ -21,7 +21,7 @@ public class RoomManager {
     private GameLog gameLog;
     private GameResult gameResult;
 
-    private ArrayList<Point> canPutPositionList=new ArrayList<Point>();
+
 
     RoomManager(Card[][] cards){
         puzzle = new Puzzle(cards);
@@ -39,7 +39,7 @@ public class RoomManager {
 
     }
 
-    //TODO 放置判断
+    //能否放置的判断
     /**
      * 参数：x y 对应地图的位置,card 为待放置的手牌
      * 函数执行后给出某一位置是否能放牌
@@ -85,31 +85,43 @@ public class RoomManager {
         }
         return YN;
     }
-    //TODO 返回可放置卡片的坐标数组
+
+    //维护目前可放置卡片的坐标数组
+    //到时候每次放牌操作都要调用
     public void updateCanPutPositionList(Point point){
         int x = point.getX();
         int y = point.getY();
         Point around[] = {new Point(x,y-1),new Point(x,y+1),new Point(x-1,y),new Point(x+1,y)};
         for(int i = 0;i < 4;i++){
-            if(!canPutPositionList.contains(around[i])){
+            if(!puzzle.getCanPutPositionList().contains(around[i])){
                 int ax=around[i].getX();
                 int ay=around[i].getY();
                 if(ax>=MIN_X&&ax<=MAX_X&&ay>=MIN_Y&&ay<=MAX_Y){
-                    canPutPositionList.add(around[i]);
+                    puzzle.addCanPutPositionList(around[i]);
                 }
             }
         }
         puzzle.addHaveBePutCardsList(point);
     }
-    //TODO
+
+
+    //获取指定卡片的可放置坐标
+    //返回坐标ArraryList
     public ArrayList<Point> getCanPutPositionList(Card card){
         ArrayList<Point> theCardCanPutPositionList = new ArrayList<Point>();
-        for(Point point : canPutPositionList){
+        for(Point point : puzzle.getCanPutPositionList()){
             if(canPutCard(point.getX(),point.getY(),card)){
                 theCardCanPutPositionList.add(point);
             }
         }
         return theCardCanPutPositionList;
     }
+
+
+
     //TODO 放牌操作
+    public void putCard(int x,int y,Card card){
+
+    }
+
 }
