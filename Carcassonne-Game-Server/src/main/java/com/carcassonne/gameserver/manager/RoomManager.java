@@ -9,10 +9,12 @@ import java.util.List;
  * 房间控制器
  */
 public class RoomManager {
+
     static public int MAX_X = 31;
     static public int MAX_Y = 31;
     static public int MIN_X = 0;
     static public int MIN_Y = 0;
+
     private Player[] players;
     private Integer activePlayerNum;
     private Puzzle puzzle;
@@ -26,14 +28,15 @@ public class RoomManager {
         puzzle = new Puzzle(cards);
         puzzle.addHaveBePutCardsList(new Point(15,15));
     }
+    
     //TODO 计分算法
     //函数说明 ： 地图保存在puzzle对象中，如需其他地图操作函数可在bean.Puzzle 中编写
-
     /**
      * 无参数
      * 函数执行后在Players 对象数组更新得分情况
      */
     public void calculateScore(){
+
 
     }
 
