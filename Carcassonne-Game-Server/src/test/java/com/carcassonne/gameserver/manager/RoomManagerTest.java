@@ -1,5 +1,6 @@
 package com.carcassonne.gameserver.manager;
 
+import com.alibaba.fastjson.JSONObject;
 import com.carcassonne.gameserver.bean.Card;
 import com.carcassonne.gameserver.bean.Edge;
 import com.carcassonne.gameserver.bean.Point;
@@ -61,5 +62,12 @@ class RoomManagerTest {
         a.add(2);
         a.remove(1);
         System.out.println(a.get(a.size()-1));
+    }
+    @Test
+    void suibian(){
+        String s = "{\"name\":\"cmy\"}";
+
+        JSONObject jsonObject=JSONObject.parseObject(s);
+        System.out.println(jsonObject.get("name"));
     }
 }
