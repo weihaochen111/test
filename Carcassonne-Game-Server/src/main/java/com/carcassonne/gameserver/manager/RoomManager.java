@@ -22,6 +22,10 @@ public class RoomManager {
     private GameLog gameLog;
     private GameResult gameResult;
 
+    private ArrayList<ArrayList<Card>> city;
+    private ArrayList<ArrayList<Edge>> cityEdge;
+    private ArrayList<ArrayList<Card>> road;
+    private ArrayList<ArrayList<Edge>> roadEdge;
 
 
     RoomManager(Card[][] cards){
@@ -122,6 +126,123 @@ public class RoomManager {
 
     //TODO 放牌操作
     public void putCard(int x,int y,Card card){
+        Card[][] nmap = puzzle.getmPuzzle();
+        boolean isEmpty = true;
+        if(x+1<=MAX_X){
+            if(nmap[x+1][y]!=null){
+
+                if(card.getRig().getType().equals("City")){
+                    card.setRigRoadOrCity(nmap[x+1][y].getLef().getCityorroad());
+                    city.get(nmap[x+1][y].getLef().getCityorroad()).add(card);
+                }else if(card.getRig().getType().equals("Road")){
+                    card.setRigRoadOrCity(nmap[x+1][y].getLef().getCityorroad());
+                    road.get(nmap[x+1][y].getLef().getCityorroad()).add(card);
+                }
+                isEmpty = false;
+            }else{
+                if(card.getRig().getType().equals("City")){
+                    ArrayList<Card> ncity = new ArrayList<Card>();
+                    ncity.add(card);
+                    city.add(ncity);
+                    card.setRigRoadOrCity(city.size()-1);
+                }else if(card.getRig().getType().equals("Road")){
+                    ArrayList<Card> nroad = new ArrayList<Card>();
+                    nroad.add(card);
+                    road.add(nroad);
+                    card.setRigRoadOrCity(road.size()-1);
+                }
+            }
+        }
+        if(x-1>=MIN_X){
+            if(nmap[x-1][y]!=null){
+
+                if(card.getLef().getType().equals("City")){
+                    card.setLefRoadOrCity(nmap[x-1][y].getRig().getCityorroad());
+                    city.get(nmap[x-1][y].getRig().getCityorroad()).add(card);
+                }else if(card.getLef().getType().equals("Road")){
+                    card.setLefRoadOrCity(nmap[x-1][y].getRig().getCityorroad());
+                    road.get(nmap[x-1][y].getRig().getCityorroad()).add(card);
+                }
+                isEmpty = false;
+            }else{
+                if(card.getLef().getType().equals("City")){
+                    ArrayList<Card> ncity2 = new ArrayList<Card>();
+                    ncity2.add(card);
+                    city.add(ncity2);
+                    card.setLefRoadOrCity(city.size()-1);
+                }else if(card.getLef().getType().equals("Road")){
+                    ArrayList<Card> nroad2 = new ArrayList<Card>();
+                    nroad2.add(card);
+                    road.add(nroad2);
+                    card.setLefRoadOrCity(road.size()-1);
+                }
+            }
+        }
+        if(y+1<=MAX_Y){
+            if(nmap[x][y+1]!=null){
+
+                if(card.getBot().getType().equals("City")){
+                    card.setBotRoadOrCity(nmap[x][y+1].getTop().getCityorroad());
+                    city.get(nmap[x][y+1].getTop().getCityorroad()).add(card);
+                }else if(card.getRig().getType().equals("Road")){
+                    card.setBotRoadOrCity(nmap[x][y+1].getTop().getCityorroad());
+                    road.get(nmap[x][y+1].getTop().getCityorroad()).add(card);
+                }
+                isEmpty = false;
+            }else{
+                if(card.getBot().getType().equals("City")){
+                    ArrayList<Card> ncity3 = new ArrayList<Card>();
+                    ncity3.add(card);
+                    city.add(ncity3);
+                    card.setBotRoadOrCity(city.size()-1);
+                }else if(card.getBot().getType().equals("Road")){
+                    ArrayList<Card> nroad3 = new ArrayList<Card>();
+                    nroad3.add(card);
+                    road.add(nroad3);
+                    card.setBotRoadOrCity(road.size()-1);
+                }
+            }
+        }
+        if(y-1<=MIN_Y){
+            if(nmap[x][y-1]!=null){
+
+                if(card.getTop().getType().equals("City")){
+                    card.setTopRoadOrCity(nmap[x][y-1].getBot().getCityorroad());
+                    city.get(nmap[x][y-1].getBot().getCityorroad()).add(card);
+                    cityEdge.get(nmap[x][y-1].getBot().getCityorroad()).add(card.getTop());
+                }else if(card.getTop().getType().equals("Road")){
+                    card.setTopRoadOrCity(nmap[x][y-1].getBot().getCityorroad());
+                    road.get(nmap[x][y-1].getBot().getCityorroad()).add(card);
+                    roadEdge.get(nmap[x][y-1].getBot().getCityorroad()).add(card.getTop());
+                }
+                isEmpty = false;
+            }else{
+                if(card.getTop().getType().equals("City")){
+                    ArrayList<Card> ncity4 = new ArrayList<Card>();
+                    ArrayList<Edge> ncitye4 = new ArrayList<Edge>();
+                    ncity4.add(card);
+                    ncitye4.add(card.getTop());
+                    city.add(ncity4);
+                    cityEdge.add(ncitye4);
+                    card.setTopRoadOrCity(city.size()-1);
+                }else if(card.getTop().getType().equals("Road")){
+                    ArrayList<Card> nroad4 = new ArrayList<Card>();
+                    ArrayList<Edge> nroade4 = new ArrayList<Edge>();
+                    nroad4.add(card);
+                    nroade4.add(card.getTop());
+                    road.add(nroad4);
+                    roadEdge.add(nroade4);
+                    card.setTopRoadOrCity(road.size()-1);
+                }
+            }
+        }
+        if(card.getTop().getConnect()!=null){
+            if (card.getTop().getType().equals("City")){
+                if (card.getTop().getConnect().equals("right")){
+
+                }
+            }
+        }
 
     }
 
