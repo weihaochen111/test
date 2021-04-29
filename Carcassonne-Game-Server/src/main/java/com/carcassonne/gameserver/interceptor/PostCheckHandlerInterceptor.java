@@ -1,12 +1,18 @@
 package com.carcassonne.gameserver.interceptor;
 
 import ch.qos.logback.classic.Logger;
+import com.alibaba.fastjson.JSONObject;
+import com.carcassonne.gameserver.util.JwtTokenUtil;
+import com.carcassonne.gameserver.util.RequestUtil;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class PostCheckHandlerInterceptor implements HandlerInterceptor {
 
@@ -14,9 +20,22 @@ public class PostCheckHandlerInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         logger.info(" preHandle method");
+        try {
+            String token = request.getHeader("token");
+//            System.out.println(token);
+//            String token2 = JwtTokenUtil.createToken("123","stu");
+           System.out.println(JwtTokenUtil.checkJWT(token));
+            return true;
+
+        }catch (Exception e){
+            logger.error("interceptor undefine error ! ");
+            return false;
+        }
 
 
-        return true;
+
+
+
     }
 
 

@@ -3,11 +3,13 @@ package com.carcassonne.gameserver.util;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class JwtTokenUtil {
     // Token请求头
     public static final String TOKEN_HEADER = "Authorization";
@@ -16,7 +18,7 @@ public class JwtTokenUtil {
     // 签名主题
     public static final String SUBJECT = "piconjo";
     // 过期时间
-    public static final long EXPIRITION = 3000;// * 24 * 60 * 60 * 7;
+    public static final long EXPIRITION = 1000*60*5;// * 24 * 60 * 60 * 7;
     // 应用密钥
     public static final String APPSECRET_KEY = "piconjo_secret";
     // 角色权限声明

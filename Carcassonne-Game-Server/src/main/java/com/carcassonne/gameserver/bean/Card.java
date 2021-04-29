@@ -7,13 +7,21 @@ import org.springframework.context.annotation.Bean;
  *
  */
 public class Card {
-    private int id;  //卡片的id，对应数据库的id
+    private Integer id;  //卡片的id，对应数据库的id
+    private String pictureURL;//这张卡片图片资源的URL
+    private String top_edge_id;
+    private String bot_edge_id;
+    private String lef_edge_id;
+    private String rig_edge_id;
+
+
+
     private Edge top; // 上边
     private Edge bot;// 下边
     private Edge lef;// 上边
     private Edge rig;// 上边
     private String rotate; //旋转情况
-    private String pictureURL;//这张卡片图片资源的URL
+
 
 
     @Override
