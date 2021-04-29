@@ -4,6 +4,10 @@ package com.carcassonne.gameserver.bean;
  * 用户
  */
 public class User {
+
+    private Integer id;
+
+
     private String accountNum;
     private String password;
     private String sex;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.carcassonne.gameserver.bean.Card">
+<mapper namespace="com.carcassonne.gameserver.mapper.CardMapper">
   <resultMap id="BaseResultMap" type="com.carcassonne.gameserver.bean.Card">
     <!--
       WARNING - @mbg.generated

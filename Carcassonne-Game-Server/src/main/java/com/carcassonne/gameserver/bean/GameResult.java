@@ -9,21 +9,20 @@ import java.sql.Timestamp;
  * 游戏结算情况
  */
 public class GameResult {
+    private Integer id;
+    private String users;
+    private String startInfo;
+    private String endInfo;
+    private String startTime;
+    private String endTime;
+
+
     private JSONObject playersBefore;
     private JSONObject rank;
     private JSONObject scoreResult;
     private JSONObject playersAfter;
-    private Timestamp startTime;
-    private Timestamp endTime;
-
-    public GameResult(JSONObject playersBefore, JSONObject rank, JSONObject scoreResult, JSONObject playersAfter, Timestamp startTime, Timestamp endTime) {
-        this.playersBefore = playersBefore;
-        this.rank = rank;
-        this.scoreResult = scoreResult;
-        this.playersAfter = playersAfter;
-        this.startTime = startTime;
-        this.endTime = endTime;
-    }
+    private Timestamp startTimestamp;
+    private Timestamp endTimestamp;
 
     @Override
     public String toString() {
@@ -32,9 +31,67 @@ public class GameResult {
                 ", rank=" + rank +
                 ", scoreResult=" + scoreResult +
                 ", playersAfter=" + playersAfter +
-                ", startTime=" + startTime +
-                ", endTime=" + endTime +
+                ", startTimestamp=" + startTimestamp +
+                ", endTimestamp=" + endTimestamp +
                 '}';
+    }
+
+    public GameResult(JSONObject playersBefore, JSONObject rank, JSONObject scoreResult, JSONObject playersAfter, Timestamp startTimestamp, Timestamp endTimestamp) {
+        this.playersBefore = playersBefore;
+        this.rank = rank;
+        this.scoreResult = scoreResult;
+        this.playersAfter = playersAfter;
+        this.startTimestamp = startTimestamp;
+        this.endTimestamp = endTimestamp;
+    }
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getUsers() {
+        return users;
+    }
+
+    public void setUsers(String users) {
+        this.users = users;
+    }
+
+    public String getStartInfo() {
+        return startInfo;
+    }
+
+    public void setStartInfo(String startInfo) {
+        this.startInfo = startInfo;
+    }
+
+    public String getEndInfo() {
+        return endInfo;
+    }
+
+    public void setEndInfo(String endInfo) {
+        this.endInfo = endInfo;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
     public JSONObject getPlayersBefore() {
@@ -69,19 +126,19 @@ public class GameResult {
         this.playersAfter = playersAfter;
     }
 
-    public Timestamp getStartTime() {
-        return startTime;
+    public Timestamp getStartTimestamp() {
+        return startTimestamp;
     }
 
-    public void setStartTime(Timestamp startTime) {
-        this.startTime = startTime;
+    public void setStartTimestamp(Timestamp startTimestamp) {
+        this.startTimestamp = startTimestamp;
     }
 
-    public Timestamp getEndTime() {
-        return endTime;
+    public Timestamp getEndTimestamp() {
+        return endTimestamp;
     }
 
-    public void setEndTime(Timestamp endTime) {
-        this.endTime = endTime;
+    public void setEndTimestamp(Timestamp endTimestamp) {
+        this.endTimestamp = endTimestamp;
     }
 }

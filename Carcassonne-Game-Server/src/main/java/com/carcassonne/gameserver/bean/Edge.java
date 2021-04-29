@@ -4,8 +4,13 @@ package com.carcassonne.gameserver.bean;
  * 边类
  */
 public class Edge {
+    public final static String CITY = "city";
+    public final static String ROAD = "road";
+    public final static String GRASS = "grass";
+
     private int id;
     private String type;
+    private String position;
     private int cityorroad;
     private String connect;
     private Player order;
@@ -48,6 +53,14 @@ public class Edge {
 
     public void setCityorroad(int cityorroad) {
         this.cityorroad = cityorroad;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public Edge(int id, String type, String connect) {

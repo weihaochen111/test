@@ -31,6 +31,7 @@ public class Chat {
                     '}';
         }
 
+
         public Player getSender() {
             return sender;
         }

@@ -10,6 +10,10 @@ import java.sql.Timestamp;
  * 游戏日志
  */
 public class GameLog {
+    private Integer id;
+    private Integer gameRecordId;
+    private String users;
+
     private JSONObject players;
     private Timestamp startTime;
     private Timestamp endTime;
@@ -30,6 +34,30 @@ public class GameLog {
         this.startTime = startTime;
         this.endTime = endTime;
         this.logInfo = logInfo;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getGameRecordId() {
+        return gameRecordId;
+    }
+
+    public void setGameRecordId(Integer gameRecordId) {
+        this.gameRecordId = gameRecordId;
+    }
+
+    public String getUsers() {
+        return users;
+    }
+
+    public void setUsers(String users) {
+        this.users = users;
     }
 
     public JSONObject getPlayers() {

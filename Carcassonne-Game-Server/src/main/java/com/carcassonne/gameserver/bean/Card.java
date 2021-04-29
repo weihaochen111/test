@@ -37,6 +37,42 @@ public class Card {
                 '}';
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTop_edge_id() {
+        return top_edge_id;
+    }
+
+    public void setTop_edge_id(String top_edge_id) {
+        this.top_edge_id = top_edge_id;
+    }
+
+    public String getBot_edge_id() {
+        return bot_edge_id;
+    }
+
+    public void setBot_edge_id(String bot_edge_id) {
+        this.bot_edge_id = bot_edge_id;
+    }
+
+    public String getLef_edge_id() {
+        return lef_edge_id;
+    }
+
+    public void setLef_edge_id(String lef_edge_id) {
+        this.lef_edge_id = lef_edge_id;
+    }
+
+    public String getRig_edge_id() {
+        return rig_edge_id;
+    }
+
+    public void setRig_edge_id(String rig_edge_id) {
+        this.rig_edge_id = rig_edge_id;
+    }
+
     public int getId() {
         return id;
     }
