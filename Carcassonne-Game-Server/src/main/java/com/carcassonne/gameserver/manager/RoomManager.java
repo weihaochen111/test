@@ -3,7 +3,6 @@ package com.carcassonne.gameserver.manager;
 import com.carcassonne.gameserver.bean.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 房间控制器

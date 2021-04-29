@@ -2,7 +2,6 @@ package com.carcassonne.gameserver.bean;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 聊天类
