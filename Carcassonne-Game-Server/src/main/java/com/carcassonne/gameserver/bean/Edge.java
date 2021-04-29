@@ -6,6 +6,7 @@ package com.carcassonne.gameserver.bean;
 public class Edge {
     private int id;
     private String type;
+    private int cityorroad;
     private String connect;
     private Player order;
 
@@ -41,9 +42,18 @@ public class Edge {
         this.order = order;
     }
 
+    public int getCityorroad() {
+        return cityorroad;
+    }
+
+    public void setCityorroad(int cityorroad) {
+        this.cityorroad = cityorroad;
+    }
+
     public Edge(int id, String type, String connect) {
         this.id = id;
         this.type = type;
         this.connect = connect;
+        this.cityorroad = -1;
     }
 }

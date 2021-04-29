@@ -77,6 +77,22 @@ public class Card {
         this.rig = rig;
     }
 
+    public void setTopRoadOrCity(int i){
+        this.top.setCityorroad(i);
+    }
+
+    public void setBotRoadOrCity(int i){
+        this.bot.setCityorroad(i);
+    }
+
+    public void setLefRoadOrCity(int i){
+        this.lef.setCityorroad(i);
+    }
+
+    public void setRigRoadOrCity(int i){
+        this.rig.setCityorroad(i);
+    }
+
     public String getRotate() {
         return rotate;
     }
