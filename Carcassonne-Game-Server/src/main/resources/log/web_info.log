@@ -227,3 +227,18 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2021-04-30 09:42:41.249 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
 2021-04-30 09:42:41.263 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
 2021-04-30 09:42:41.271 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.555 seconds (JVM running for 2.026)
+2021-04-30 13:16:21.834 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 1824 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-04-30 13:16:21.836 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-04-30 13:16:22.214 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-30 13:16:22.215 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-30 13:16:22.230 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2021-04-30 13:16:22.472 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-04-30 13:16:22.476 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-30 13:16:22.476 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-30 13:16:22.477 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-04-30 13:16:22.545 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-04-30 13:16:22.545 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 676 ms
+2021-04-30 13:16:22.658 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-30 13:16:23.077 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-04-30 13:16:23.089 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-30 13:16:23.097 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.548 seconds (JVM running for 2.018)
