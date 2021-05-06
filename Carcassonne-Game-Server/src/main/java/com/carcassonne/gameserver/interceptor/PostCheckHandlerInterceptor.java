@@ -16,20 +16,13 @@ public class PostCheckHandlerInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         logger.info(" preHandle method");
         try {
-            String token = request.getHeader("token");
-//            System.out.println(token);
-//            String token2 = JwtTokenUtil.createToken("123","stu");
-           System.out.println(JwtTokenUtil.checkJWT(token));
+//            String token = request.getHeader("token");
+//            System.out.println(JwtTokenUtil.checkJWT(token));
             return true;
-
         }catch (Exception e){
             logger.error("interceptor undefine error ! ");
             return false;
         }
-
-
-
-
 
     }
 

@@ -1,7 +1,10 @@
 package com.carcassonne.gameserver.controller;
 
 import ch.qos.logback.classic.Logger;
+import com.carcassonne.gameserver.bean.User;
+import com.carcassonne.gameserver.service.UserService;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +15,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/tt", produces = "application/json; charset=utf-8")
 public class testLogbackController {
 
+    @Autowired
+    public UserService userService;
 
     private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
 
@@ -39,6 +44,9 @@ public class testLogbackController {
 //        System.out.println(JwtTokenUtil.getUserRole(token));
 //        System.out.println(JwtTokenUtil.checkJWT(token));
 //        System.out.println(JwtTokenUtil.isExpiration(token));
+
+        User user = new User("123","123","1","123","123","123");
+        userService.insertUser(user);
     }
 
 }

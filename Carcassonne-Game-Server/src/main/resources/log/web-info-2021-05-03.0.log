@@ -1,0 +1,777 @@
+2021-05-03 11:37:49.856 [main] INFO  c.c.gameserver.GameserverApplicationTests - Starting GameserverApplicationTests using Java 11.0.6 on DESKTOP-JMIJ95C with PID 23296 (started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 11:37:49.860 [main] INFO  c.c.gameserver.GameserverApplicationTests - No active profile set, falling back to default profiles: default
+2021-05-03 11:37:50.536 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 11:37:50.539 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 11:37:50.564 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2021-05-03 11:37:50.803 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$81a8b755] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 11:37:51.590 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:37:52.231 [main] INFO  c.c.gameserver.GameserverApplicationTests - Started GameserverApplicationTests in 2.732 seconds (JVM running for 3.668)
+2021-05-03 11:37:52.583 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:38:28.294 [main] INFO  c.c.gameserver.GameserverApplicationTests - Starting GameserverApplicationTests using Java 11.0.6 on DESKTOP-JMIJ95C with PID 16412 (started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 11:38:28.296 [main] INFO  c.c.gameserver.GameserverApplicationTests - No active profile set, falling back to default profiles: default
+2021-05-03 11:38:28.761 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 11:38:28.763 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 11:38:28.788 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2021-05-03 11:38:28.999 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$716455b0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 11:38:29.673 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:38:30.204 [main] INFO  c.c.gameserver.GameserverApplicationTests - Started GameserverApplicationTests in 2.248 seconds (JVM running for 3.041)
+2021-05-03 11:38:30.473 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:40:04.212 [main] INFO  c.c.gameserver.GameserverApplicationTests - Starting GameserverApplicationTests using Java 11.0.6 on DESKTOP-JMIJ95C with PID 1504 (started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 11:40:04.214 [main] INFO  c.c.gameserver.GameserverApplicationTests - No active profile set, falling back to default profiles: default
+2021-05-03 11:40:04.680 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 11:40:04.682 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 11:40:04.701 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2021-05-03 11:40:04.908 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$9fc48c5e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 11:40:05.592 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:40:06.120 [main] INFO  c.c.gameserver.GameserverApplicationTests - Started GameserverApplicationTests in 2.242 seconds (JVM running for 3.026)
+2021-05-03 11:40:06.388 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:40:50.121 [main] INFO  c.c.gameserver.GameserverApplicationTests - Starting GameserverApplicationTests using Java 11.0.6 on DESKTOP-JMIJ95C with PID 12512 (started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 11:40:50.123 [main] INFO  c.c.gameserver.GameserverApplicationTests - No active profile set, falling back to default profiles: default
+2021-05-03 11:40:50.596 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 11:40:50.598 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 11:40:50.618 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2021-05-03 11:40:50.820 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$43e6e301] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 11:40:51.489 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:40:52.030 [main] INFO  c.c.gameserver.GameserverApplicationTests - Started GameserverApplicationTests in 2.258 seconds (JVM running for 3.038)
+2021-05-03 11:40:52.273 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:41:37.532 [main] INFO  c.c.gameserver.GameserverApplicationTests - Starting GameserverApplicationTests using Java 11.0.6 on DESKTOP-JMIJ95C with PID 17240 (started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 11:41:37.534 [main] INFO  c.c.gameserver.GameserverApplicationTests - No active profile set, falling back to default profiles: default
+2021-05-03 11:41:38.013 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 11:41:38.015 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 11:41:38.035 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2021-05-03 11:41:38.243 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$d7089fdb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 11:41:38.916 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:41:39.448 [main] INFO  c.c.gameserver.GameserverApplicationTests - Started GameserverApplicationTests in 2.259 seconds (JVM running for 3.031)
+2021-05-03 11:41:39.685 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:42:04.989 [main] INFO  c.c.gameserver.GameserverApplicationTests - Starting GameserverApplicationTests using Java 11.0.6 on DESKTOP-JMIJ95C with PID 10104 (started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 11:42:04.991 [main] INFO  c.c.gameserver.GameserverApplicationTests - No active profile set, falling back to default profiles: default
+2021-05-03 11:42:05.462 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 11:42:05.464 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 11:42:05.490 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2021-05-03 11:42:05.695 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$282bd61b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 11:42:06.365 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:42:06.892 [main] INFO  c.c.gameserver.GameserverApplicationTests - Started GameserverApplicationTests in 2.232 seconds (JVM running for 3.025)
+2021-05-03 11:42:07.136 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:43:07.281 [main] INFO  c.c.gameserver.GameserverApplicationTests - Starting GameserverApplicationTests using Java 11.0.6 on DESKTOP-JMIJ95C with PID 17984 (started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 11:43:07.283 [main] INFO  c.c.gameserver.GameserverApplicationTests - No active profile set, falling back to default profiles: default
+2021-05-03 11:43:07.749 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 11:43:07.751 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 11:43:07.772 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2021-05-03 11:43:07.984 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$cc139037] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 11:43:08.651 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:43:09.173 [main] INFO  c.c.gameserver.GameserverApplicationTests - Started GameserverApplicationTests in 2.239 seconds (JVM running for 3.013)
+2021-05-03 11:43:09.428 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:44:59.301 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 4928 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 11:44:59.303 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 11:44:59.705 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 11:44:59.706 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 11:44:59.724 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2021-05-03 11:44:59.858 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$22a0c4e2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 11:45:00.039 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 11:45:00.046 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 11:45:00.046 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 11:45:00.046 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 11:45:00.157 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 11:45:00.158 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 822 ms
+2021-05-03 11:45:00.426 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:45:00.793 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 11:45:00.809 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 11:45:00.817 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.82 seconds (JVM running for 2.361)
+2021-05-03 11:45:23.471 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 11:45:23.472 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 11:45:23.472 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2021-05-03 11:45:23.482 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 11:45:23.737 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 11:45:23.737 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 11:45:23.741 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 11:45:23.776 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 11:45:23.777 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 11:45:34.454 [http-nio-8080-exec-3] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 11:45:34.463 [http-nio-8080-exec-3] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 11:45:34.518 [http-nio-8080-exec-3] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 11:45:34.527 [http-nio-8080-exec-3] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 11:45:34.529 [http-nio-8080-exec-3] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 11:45:34.529 [http-nio-8080-exec-3] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 11:46:14.163 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 24796 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 11:46:14.164 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 11:46:14.565 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 11:46:14.566 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 11:46:14.582 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 11:46:14.698 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$ff186639] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 11:46:14.845 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 11:46:14.850 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 11:46:14.851 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 11:46:14.851 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 11:46:14.949 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 11:46:14.949 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 749 ms
+2021-05-03 11:46:15.199 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:46:15.538 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 11:46:15.550 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 11:46:15.558 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.698 seconds (JVM running for 2.226)
+2021-05-03 11:46:18.680 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 11:46:18.681 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 11:46:18.682 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-05-03 11:46:18.688 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 11:46:18.700 [http-nio-8080-exec-1] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 11:46:18.750 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 11:46:18.760 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 11:46:18.791 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 11:46:18.791 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 11:48:54.467 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 2960 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 11:48:54.469 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 11:48:54.883 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 11:48:54.885 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 11:48:54.901 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 11:48:55.018 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$dceafaf6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 11:48:55.165 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 11:48:55.170 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 11:48:55.170 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 11:48:55.171 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 11:48:55.268 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 11:48:55.268 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 766 ms
+2021-05-03 11:48:55.522 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:48:55.869 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 11:48:55.883 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 11:48:55.891 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.723 seconds (JVM running for 2.223)
+2021-05-03 11:48:57.530 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 11:48:57.530 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 11:48:57.531 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-05-03 11:48:57.537 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 11:48:57.549 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 11:48:57.600 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 11:48:57.609 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 11:48:57.640 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 11:48:57.640 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 11:51:53.937 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 3280 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 11:51:53.940 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 11:51:54.363 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 11:51:54.364 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 11:51:54.381 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 11:51:54.511 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$1800eda1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 11:51:54.677 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 11:51:54.683 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 11:51:54.683 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 11:51:54.683 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 11:51:54.785 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 11:51:54.785 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 813 ms
+2021-05-03 11:51:55.089 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:51:55.460 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 11:51:55.475 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 11:51:55.484 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.866 seconds (JVM running for 2.789)
+2021-05-03 11:51:59.388 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 11:51:59.388 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 11:51:59.389 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2021-05-03 11:51:59.397 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 11:51:59.410 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 11:54:07.812 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:55:46.811 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 11752 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 11:55:46.814 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 11:55:47.235 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 11:55:47.236 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 11:55:47.254 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2021-05-03 11:55:47.381 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$ca0429c5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 11:55:47.541 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 11:55:47.546 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 11:55:47.546 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 11:55:47.546 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 11:55:47.647 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 11:55:47.647 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 802 ms
+2021-05-03 11:55:47.935 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 11:55:48.306 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 11:55:48.320 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 11:55:48.329 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.854 seconds (JVM running for 2.514)
+2021-05-03 11:55:51.136 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 11:55:51.137 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 11:55:51.137 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2021-05-03 11:55:51.145 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 11:55:51.158 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 12:02:18.891 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 10404 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 12:02:18.893 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 12:02:19.297 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 12:02:19.298 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 12:02:19.315 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 12:02:19.432 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$11cceb18] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 12:02:19.576 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 12:02:19.581 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:02:19.581 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 12:02:19.582 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 12:02:19.678 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 12:02:19.678 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 753 ms
+2021-05-03 12:02:19.936 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 12:02:20.266 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:02:20.279 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 12:02:20.286 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.689 seconds (JVM running for 2.194)
+2021-05-03 12:02:21.902 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 12:02:21.902 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 12:02:21.903 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-05-03 12:02:21.910 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 12:02:21.921 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 12:02:21.972 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 12:02:21.982 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 12:02:22.013 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 12:02:22.013 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 12:04:19.708 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 25376 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 12:04:19.711 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 12:04:20.164 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 12:04:20.165 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 12:04:20.183 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 12:04:20.314 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$e12d84bf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 12:04:20.483 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 12:04:20.489 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:04:20.489 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 12:04:20.489 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 12:04:20.595 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 12:04:20.596 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 851 ms
+2021-05-03 12:04:20.893 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 12:04:21.266 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:04:21.282 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 12:04:21.289 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.941 seconds (JVM running for 2.572)
+2021-05-03 12:04:23.112 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 12:04:23.112 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 12:04:23.113 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-05-03 12:04:23.121 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 12:04:23.134 [http-nio-8080-exec-1] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 12:06:29.048 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 22028 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 12:06:29.051 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 12:06:29.484 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 12:06:29.485 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 12:06:29.501 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 12:06:29.631 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$2ea332a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 12:06:29.796 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 12:06:29.802 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:06:29.802 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 12:06:29.802 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 12:06:29.912 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 12:06:29.912 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 829 ms
+2021-05-03 12:06:30.178 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 12:06:30.547 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:06:30.563 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 12:06:30.572 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.875 seconds (JVM running for 2.506)
+2021-05-03 12:06:32.086 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 12:06:32.087 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 12:06:32.087 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2021-05-03 12:06:32.095 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 12:06:32.108 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 12:09:54.356 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 1.8.0_221 on DESKTOP-JMIJ95C with PID 21120 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 12:09:54.358 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 12:09:54.768 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 12:09:54.769 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 12:09:54.789 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2021-05-03 12:09:54.916 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$6cb4e108] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 12:09:55.074 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 12:09:55.080 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:09:55.080 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 12:09:55.080 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 12:09:55.185 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 12:09:55.185 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 795 ms
+2021-05-03 12:09:55.482 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 12:09:55.878 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:09:55.889 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 12:09:55.896 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.932 seconds (JVM running for 2.522)
+2021-05-03 12:09:58.340 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 12:09:58.340 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 12:09:58.340 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2021-05-03 12:09:58.348 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 12:09:58.363 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 12:09:58.367 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 12:09:58.377 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 12:09:58.412 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 12:09:58.412 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 12:10:38.636 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 11872 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 12:10:38.638 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 12:10:39.059 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 12:10:39.060 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 12:10:39.076 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 12:10:39.193 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$eea5f398] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 12:10:39.336 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 12:10:39.341 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:10:39.341 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 12:10:39.341 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 12:10:39.435 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 12:10:39.435 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 765 ms
+2021-05-03 12:10:39.687 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 12:10:40.033 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:10:40.047 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 12:10:40.055 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.706 seconds (JVM running for 2.207)
+2021-05-03 12:10:43.658 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 12:10:43.659 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 12:10:43.659 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2021-05-03 12:10:43.666 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 12:10:43.677 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 12:10:43.683 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 12:10:43.692 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 12:10:43.722 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 12:10:43.723 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 12:11:50.645 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 23184 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 12:11:50.647 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 12:11:51.049 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 12:11:51.050 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 12:11:51.067 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 12:11:51.185 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$b717b6b3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 12:11:51.336 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 12:11:51.341 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:11:51.341 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 12:11:51.341 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 12:11:51.435 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 12:11:51.436 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 757 ms
+2021-05-03 12:11:51.696 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 12:11:52.051 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:11:52.064 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 12:11:52.071 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.723 seconds (JVM running for 2.245)
+2021-05-03 12:11:54.807 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 12:11:54.807 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 12:11:54.808 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-05-03 12:11:54.827 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 12:11:54.843 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 12:11:54.874 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 12:11:54.874 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 12:24:26.964 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 13684 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 12:24:26.966 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 12:24:27.379 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 12:24:27.380 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 12:24:27.396 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 12:24:27.513 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$2d0a06f6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 12:24:27.660 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 12:24:27.665 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:24:27.665 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 12:24:27.665 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 12:24:27.762 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 12:24:27.762 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 762 ms
+2021-05-03 12:24:28.023 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 12:24:28.357 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:24:28.370 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 12:24:28.378 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.708 seconds (JVM running for 2.212)
+2021-05-03 12:24:30.334 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 12:24:30.335 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 12:24:30.336 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-05-03 12:24:30.354 [http-nio-8080-exec-1] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 12:24:30.369 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 12:24:30.399 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 12:24:30.400 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 12:38:52.156 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 18704 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 12:38:52.157 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 12:38:52.557 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 12:38:52.559 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 12:38:52.574 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 12:38:52.690 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$dceafaf6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 12:38:52.836 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 12:38:52.840 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:38:52.841 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 12:38:52.841 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 12:38:52.937 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 12:38:52.937 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 748 ms
+2021-05-03 12:38:53.192 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 12:38:53.527 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:38:53.539 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 12:38:53.547 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.691 seconds (JVM running for 2.186)
+2021-05-03 12:38:55.277 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 12:38:55.277 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 12:38:55.278 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-05-03 12:38:55.296 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 12:38:55.312 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 12:38:55.342 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 12:38:55.342 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 12:52:53.120 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 21992 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 12:52:53.121 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 12:52:53.518 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 12:52:53.519 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 12:52:53.535 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 12:52:53.649 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$b717b6b3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 12:52:53.792 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 12:52:53.796 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:52:53.797 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 12:52:53.797 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 12:52:53.894 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 12:52:53.894 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 740 ms
+2021-05-03 12:52:54.141 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 12:52:54.480 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 12:52:54.493 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 12:52:54.501 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.682 seconds (JVM running for 2.178)
+2021-05-03 12:52:56.815 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 12:52:56.815 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 12:52:56.816 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-05-03 12:52:56.835 [http-nio-8080-exec-1] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 12:52:56.850 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 12:52:56.880 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 12:52:56.880 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 13:06:37.835 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 20816 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 13:06:37.836 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 13:06:38.241 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 13:06:38.243 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 13:06:38.259 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 13:06:38.377 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$848ce395] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 13:06:38.522 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 13:06:38.526 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:06:38.527 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 13:06:38.527 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:06:38.622 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 13:06:38.623 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 756 ms
+2021-05-03 13:06:38.872 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:06:39.214 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:06:39.227 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 13:06:39.235 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.688 seconds (JVM running for 2.214)
+2021-05-03 13:06:41.337 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:06:41.338 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:06:41.338 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2021-05-03 13:06:41.357 [http-nio-8080-exec-1] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 13:06:41.373 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 13:06:41.402 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 13:06:41.402 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 13:07:04.602 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 12476 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 13:07:04.603 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 13:07:04.998 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 13:07:04.999 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 13:07:05.015 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2021-05-03 13:07:05.131 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$dceafaf6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 13:07:05.280 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 13:07:05.285 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:07:05.285 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 13:07:05.285 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:07:05.382 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 13:07:05.382 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 751 ms
+2021-05-03 13:07:05.638 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:07:05.971 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:07:05.984 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 13:07:05.992 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.704 seconds (JVM running for 2.244)
+2021-05-03 13:07:07.260 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:07:07.260 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:07:07.261 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-05-03 13:07:07.280 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 13:07:22.689 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 10904 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 13:07:22.691 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 13:07:23.099 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 13:07:23.100 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 13:07:23.117 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 13:07:23.238 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$dceafaf6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 13:07:23.386 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 13:07:23.391 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:07:23.392 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 13:07:23.392 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:07:23.489 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 13:07:23.489 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 765 ms
+2021-05-03 13:07:23.743 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:07:24.068 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:07:24.081 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 13:07:24.088 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.714 seconds (JVM running for 2.233)
+2021-05-03 13:07:25.980 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:07:25.980 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:07:25.981 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-05-03 13:07:25.999 [http-nio-8080-exec-1] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 13:12:53.576 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 2948 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 13:12:53.578 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 13:12:53.969 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 13:12:53.970 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 13:12:53.986 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2021-05-03 13:12:54.100 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$dceafaf6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 13:12:54.243 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 13:12:54.248 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:12:54.248 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 13:12:54.249 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:12:54.346 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 13:12:54.346 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 736 ms
+2021-05-03 13:12:54.595 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:12:54.934 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:12:54.947 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 13:12:54.955 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.661 seconds (JVM running for 2.169)
+2021-05-03 13:12:57.327 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:12:57.328 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:12:57.328 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2021-05-03 13:12:57.347 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 13:12:57.381 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 13:12:57.411 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 13:12:57.411 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 13:20:08.373 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 13448 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 13:20:08.375 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 13:20:08.774 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 13:20:08.775 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 13:20:08.791 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 13:20:08.909 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$eea5f398] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 13:20:09.054 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 13:20:09.059 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:20:09.059 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 13:20:09.059 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:20:09.154 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 13:20:09.154 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 742 ms
+2021-05-03 13:20:09.197 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2021-05-03 13:20:09.208 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-05-03 13:20:47.400 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 14548 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 13:20:47.402 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 13:20:47.792 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 13:20:47.793 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 13:20:47.810 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 13:20:47.927 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$ff186639] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 13:20:48.069 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 13:20:48.074 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:20:48.074 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 13:20:48.074 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:20:48.170 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 13:20:48.170 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 737 ms
+2021-05-03 13:20:48.415 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:20:48.753 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:20:48.766 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 13:20:48.773 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.659 seconds (JVM running for 2.171)
+2021-05-03 13:20:51.289 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:20:51.290 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:20:51.291 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-05-03 13:20:51.310 [http-nio-8080-exec-1] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 13:20:51.345 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 13:20:51.375 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 13:20:51.375 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 13:21:00.935 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 21296 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 13:21:00.936 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 13:21:01.338 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 13:21:01.339 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 13:21:01.355 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 13:21:01.477 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$29035e4b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 13:21:01.633 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 13:21:01.638 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:21:01.638 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 13:21:01.638 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:21:01.733 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 13:21:01.733 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 766 ms
+2021-05-03 13:21:01.997 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:21:02.342 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:21:02.354 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 13:21:02.362 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.721 seconds (JVM running for 2.217)
+2021-05-03 13:21:03.762 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:21:03.762 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:21:03.763 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-05-03 13:21:03.781 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 13:21:03.815 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 13:21:03.844 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 13:21:03.844 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 13:24:25.467 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 23620 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 13:24:25.469 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 13:24:25.865 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 13:24:25.866 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 13:24:25.883 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 13:24:25.999 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$dceafaf6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 13:24:26.142 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 13:24:26.147 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:24:26.147 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 13:24:26.147 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:24:26.243 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 13:24:26.243 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 744 ms
+2021-05-03 13:24:26.494 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:24:26.815 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:24:26.827 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 13:24:26.835 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.668 seconds (JVM running for 2.193)
+2021-05-03 13:24:35.065 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:24:35.065 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:24:35.066 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-05-03 13:24:35.085 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 13:24:35.120 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 13:24:35.152 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 13:24:35.152 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 13:26:31.131 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 11568 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 13:26:31.132 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 13:26:31.528 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 13:26:31.529 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 13:26:31.544 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2021-05-03 13:26:31.665 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$aa78fed8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 13:26:31.812 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 13:26:31.816 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:26:31.817 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 13:26:31.817 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:26:31.911 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 13:26:31.912 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 752 ms
+2021-05-03 13:26:32.342 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:26:32.491 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:26:32.504 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 13:26:32.511 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.668 seconds (JVM running for 2.18)
+2021-05-03 13:26:44.813 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 1108 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 13:26:44.815 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 13:26:45.213 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 13:26:45.214 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 13:26:45.229 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2021-05-03 13:26:45.350 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$867f73f2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 13:26:45.492 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 13:26:45.497 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:26:45.497 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 13:26:45.497 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:26:45.593 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 13:26:45.593 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 753 ms
+2021-05-03 13:26:46.023 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:26:46.174 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:26:46.186 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 13:26:46.194 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.667 seconds (JVM running for 2.173)
+2021-05-03 13:26:48.821 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:26:48.822 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:26:48.823 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-05-03 13:26:48.842 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 13:26:48.986 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - test - Starting...
+2021-05-03 13:26:49.555 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - test - Start completed.
+2021-05-03 13:26:49.583 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 13:26:49.613 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 13:26:49.614 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 13:27:55.801 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 1112 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 13:27:55.803 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 13:27:56.202 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 13:27:56.203 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 13:27:56.219 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2021-05-03 13:27:56.338 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$3dc2bd40] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 13:27:56.481 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 13:27:56.486 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:27:56.486 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 13:27:56.486 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:27:56.582 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 13:27:56.582 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 751 ms
+2021-05-03 13:27:57.012 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:27:57.164 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:27:57.176 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 13:27:57.184 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.676 seconds (JVM running for 2.184)
+2021-05-03 13:27:57.880 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:27:57.881 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:27:57.881 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2021-05-03 13:27:57.900 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 13:27:57.915 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - test - Starting...
+2021-05-03 13:27:58.339 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - test - Start completed.
+2021-05-03 13:27:58.361 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 13:27:58.392 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 13:27:58.392 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 13:35:31.441 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 10580 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 13:35:31.443 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 13:35:31.837 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 13:35:31.838 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 13:35:31.853 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2021-05-03 13:35:31.972 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$a13caf61] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 13:35:32.116 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 13:35:32.120 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:35:32.121 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 13:35:32.121 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:35:32.217 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 13:35:32.217 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 747 ms
+2021-05-03 13:35:32.652 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:35:32.803 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:35:32.816 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 13:35:32.824 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.72 seconds (JVM running for 2.222)
+2021-05-03 13:35:36.374 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:35:36.375 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:35:36.375 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2021-05-03 13:35:36.394 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 13:35:36.409 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - test - Starting...
+2021-05-03 13:35:36.939 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - test - Start completed.
+2021-05-03 13:35:36.966 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 13:35:36.995 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 13:35:36.995 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 13:35:50.866 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 8932 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 13:35:50.867 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 13:35:51.272 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 13:35:51.273 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 13:35:51.289 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2021-05-03 13:35:51.410 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$964fb5a2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 13:35:51.556 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 13:35:51.561 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:35:51.561 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 13:35:51.561 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:35:51.656 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 13:35:51.656 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 762 ms
+2021-05-03 13:35:52.091 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:35:52.245 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:35:52.257 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 13:35:52.265 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.687 seconds (JVM running for 2.19)
+2021-05-03 13:35:55.586 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:35:55.587 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:35:55.587 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2021-05-03 13:35:55.606 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 13:35:55.621 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - test - Starting...
+2021-05-03 13:35:56.056 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - test - Start completed.
+2021-05-03 13:35:56.079 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 13:35:56.109 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 13:35:56.109 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 13:36:15.920 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 14824 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 13:36:15.922 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 13:36:16.330 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 13:36:16.332 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 13:36:16.348 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2021-05-03 13:36:16.468 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$e5206bfc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 13:36:16.609 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 13:36:16.614 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:36:16.614 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 13:36:16.614 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:36:16.709 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 13:36:16.710 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 758 ms
+2021-05-03 13:36:17.143 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:36:17.298 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:36:17.310 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 13:36:17.318 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.681 seconds (JVM running for 2.188)
+2021-05-03 13:36:22.990 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:36:22.990 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:36:22.991 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-05-03 13:36:23.010 [http-nio-8080-exec-1] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 13:36:23.025 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - test - Starting...
+2021-05-03 13:36:23.535 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - test - Start completed.
+2021-05-03 13:38:40.170 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 14408 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 13:38:40.172 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 13:38:40.571 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 13:38:40.572 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 13:38:40.588 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2021-05-03 13:38:40.709 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$ff2969c0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 13:38:40.852 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 13:38:40.856 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:38:40.857 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 13:38:40.857 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:38:40.954 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 13:38:40.955 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 756 ms
+2021-05-03 13:38:41.388 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:38:41.543 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:38:41.556 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 13:38:41.564 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.69 seconds (JVM running for 2.19)
+2021-05-03 13:38:43.982 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:38:43.983 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:38:43.984 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-05-03 13:38:44.003 [http-nio-8080-exec-1] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 13:38:44.018 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - test - Starting...
+2021-05-03 13:38:44.514 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - test - Start completed.
+2021-05-03 13:38:44.537 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 13:38:44.567 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 13:38:44.567 [http-nio-8080-exec-1] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 13:44:26.274 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 14756 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 13:44:26.276 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 13:44:26.689 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 13:44:26.691 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 13:44:26.706 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2021-05-03 13:44:26.845 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$7b8d8413] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 13:44:26.993 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 13:44:26.998 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:44:26.998 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 13:44:26.999 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:44:27.096 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 13:44:27.096 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 794 ms
+2021-05-03 13:44:27.551 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:44:27.714 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:44:27.727 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 13:44:27.735 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.755 seconds (JVM running for 2.262)
+2021-05-03 13:44:29.195 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:44:29.196 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:44:29.196 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2021-05-03 13:44:29.215 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 13:44:29.230 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - test - Starting...
+2021-05-03 13:44:29.730 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - test - Start completed.
+2021-05-03 13:44:29.754 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  preHandle method
+2021-05-03 13:44:29.783 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  postHandle method
+2021-05-03 13:44:29.783 [http-nio-8080-exec-2] INFO  c.c.g.interceptor.PostCheckHandlerInterceptor -  afterCompletion method
+2021-05-03 13:46:07.828 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 16740 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
+2021-05-03 13:46:07.830 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
+2021-05-03 13:46:08.232 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-05-03 13:46:08.233 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-05-03 13:46:08.249 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2021-05-03 13:46:08.370 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$438ca8e8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-03 13:46:08.516 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-03 13:46:08.520 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:46:08.520 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-05-03 13:46:08.521 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-03 13:46:08.616 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-05-03 13:46:08.616 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 760 ms
+2021-05-03 13:46:09.059 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-03 13:46:09.209 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-03 13:46:09.221 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-03 13:46:09.229 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Started GameserverApplication in 1.694 seconds (JVM running for 2.189)
+2021-05-03 13:46:10.974 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-03 13:46:10.974 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-03 13:46:10.975 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2021-05-03 13:46:10.993 [http-nio-8080-exec-2] INFO  c.c.gameserver.controller.testLogbackController - start controller
+2021-05-03 13:46:11.009 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - test - Starting...
+2021-05-03 13:46:11.482 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - test - Start completed.

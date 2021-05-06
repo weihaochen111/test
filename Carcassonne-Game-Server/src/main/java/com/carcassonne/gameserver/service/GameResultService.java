@@ -3,7 +3,11 @@ package com.carcassonne.gameserver.service;
 import com.carcassonne.gameserver.bean.GameResult;
 import com.carcassonne.gameserver.mapper.GameResultMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+@Service
+@Component
 public class GameResultService implements GameResultMapper{
     @Autowired
     private GameResultMapper gameResultMapper;
