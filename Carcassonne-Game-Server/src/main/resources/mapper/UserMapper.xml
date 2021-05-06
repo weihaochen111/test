@@ -20,4 +20,10 @@
         #{sex,jdbcType=VARCHAR},#{level,jdbcType=VARCHAR},#{nickname,jdbcType=VARCHAR},#{headPictureURL,jdbcType=VARCHAR})
     </insert>
 
+    <select id="selectByAccountNum" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from user
+        where account_num = #{accountNum,jdbcType=VARCHAR}
+    </select>
 </mapper>

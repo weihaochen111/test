@@ -17,4 +17,9 @@ public class UserService implements UserMapper {
     public int insertUser(User user) {
         return userMapper.insertUser(user);
     }
+
+    @Override
+    public User selectByAccountNum(String accountNum) {
+        return null;
+    }
 }

@@ -1,5 +1,7 @@
 package com.carcassonne.gameserver.bean;
 
+import com.alibaba.fastjson.JSONObject;
+
 /**
  * 用户
  */
@@ -93,5 +95,28 @@ public class User {
 
     public void setHeadPictureURL(String headPictureURL) {
         this.headPictureURL = headPictureURL;
+    }
+
+    public JSONObject toJSONObject(){
+
+        JSONObject user = new JSONObject();
+        if(accountNum != null) user.put("accountNum",accountNum);
+        if(accountNum != null) user.put("accountNum",accountNum);
+        if(accountNum != null) user.put("accountNum",accountNum);
+        if(accountNum != null) user.put("accountNum",accountNum);
+        if(accountNum != null) user.put("accountNum",accountNum);
+        if(accountNum != null) user.put("accountNum",accountNum);
+        if(accountNum != null) user.put("accountNum",accountNum);
+        if(accountNum != null) user.put("accountNum",accountNum);
+        //TODO 先整到这个
+
+//        private Integer id;
+//        private String accountNum;
+//        private String password;
+//        private String sex;
+//        private String level;
+//        private String nickname;
+//        private String headPictureURL;
+        return
     }
 }
