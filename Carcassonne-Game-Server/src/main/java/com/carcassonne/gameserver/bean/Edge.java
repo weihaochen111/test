@@ -15,6 +15,8 @@ public class Edge {
     private String connect;
     private Player order;
 
+    private String ownerId;
+
     public int getId() {
         return id;
     }
@@ -68,5 +70,8 @@ public class Edge {
         this.type = type;
         this.connect = connect;
         this.cityorroad = -1;
+    }
+    public void setOwnerId(String ownerId){
+        this.ownerId = ownerId;
     }
 }
