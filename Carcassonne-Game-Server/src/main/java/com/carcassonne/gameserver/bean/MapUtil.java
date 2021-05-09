@@ -108,6 +108,7 @@ public class MapUtil {
        bottomBlock.Walk(point,new Point(x_Point,y_Point-1));
        leftBlock.Walk(point,new Point(x_Point-1,y_Point));
    }
+
 }
 enum EdgeType{
     city,road,grass
@@ -116,12 +117,16 @@ class Block{
     EdgeType edgeType;
     String edgeString;
     ArrayList<Point> pointArray = new ArrayList<>();
-    HashMap<Point,Card> cardMap = new HashMap<>();
+    HashMap<Point,Card> cardMap = new HashMap<>();//all
+    HashMap<Point,ArrayList<Edge>> edgeMap = new HashMap<>();
     HashMap<String,Integer> scoreRecord = new HashMap<>();
     ArrayList<String> playerIdArray = new ArrayList<>();
     boolean isFull = true;
     int scorePerCard=0;
     int scoreAll=0;
+    public void setEdgeMap(Point point,ArrayList<Edge> edges){
+        edgeMap.put(point,edges);
+    }
     Block(EdgeType edge,HashMap<Point,Card> cardMap){
         this.edgeType = edge;
         this.cardMap = cardMap;
@@ -141,6 +146,7 @@ class Block{
         this.edgeString = edgeString;
         this.cardMap = cardMap;
     }
+
     public void caculate(){
         if(edgeType.equals(EdgeType.city)){
             scorePerCard = 2 ;
