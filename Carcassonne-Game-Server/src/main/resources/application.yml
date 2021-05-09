@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 90
 
 spring:
   datasource:
@@ -9,6 +9,10 @@ spring:
     username: cmydb
     password: Fjcu3344
     driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      idle-timeout: 60000
+      maximum-pool-size: 30
+      minimum-idle: 5
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

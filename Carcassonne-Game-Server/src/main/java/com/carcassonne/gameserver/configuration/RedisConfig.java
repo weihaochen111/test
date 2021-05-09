@@ -23,6 +23,8 @@ import java.time.Duration;
 @EnableCaching
 public class RedisConfig extends CachingConfigurerSupport {
 
+    public static String WONDER_USER_LIST = "wonder-user-";
+
     /**
      * 选择redis作为默认缓存工具
      * @param redisConnectionFactory

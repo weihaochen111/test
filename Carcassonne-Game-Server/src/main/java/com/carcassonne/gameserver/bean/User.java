@@ -15,6 +15,9 @@ public class User {
     private String nickname;
     private String headPictureURL;
 
+    private String state;
+    private String token;
+
     public User() {
 
     }
@@ -29,6 +32,8 @@ public class User {
                 ", level='" + level + '\'' +
                 ", nickname='" + nickname + '\'' +
                 ", headPictureURL='" + headPictureURL + '\'' +
+                ", state='" + state + '\'' +
+                ", token='" + token + '\'' +
                 '}';
     }
 
@@ -97,26 +102,33 @@ public class User {
         this.headPictureURL = headPictureURL;
     }
 
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     public JSONObject toJSONObject(){
 
         JSONObject user = new JSONObject();
         if(accountNum != null) user.put("accountNum",accountNum);
-        if(accountNum != null) user.put("accountNum",accountNum);
-        if(accountNum != null) user.put("accountNum",accountNum);
-        if(accountNum != null) user.put("accountNum",accountNum);
-        if(accountNum != null) user.put("accountNum",accountNum);
-        if(accountNum != null) user.put("accountNum",accountNum);
-        if(accountNum != null) user.put("accountNum",accountNum);
-        if(accountNum != null) user.put("accountNum",accountNum);
-        //TODO 先整到这个
+        if(password != null) user.put("password",password);
+        if(sex != null) user.put("sex",sex);
+        if(level != null) user.put("level",level);
+        if(nickname != null) user.put("nickname",nickname);
+        if(headPictureURL != null) user.put("headPictureURL",headPictureURL);
 
-//        private Integer id;
-//        private String accountNum;
-//        private String password;
-//        private String sex;
-//        private String level;
-//        private String nickname;
-//        private String headPictureURL;
-        return
+
+        return user;
     }
 }
