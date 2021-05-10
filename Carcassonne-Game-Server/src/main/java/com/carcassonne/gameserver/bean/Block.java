@@ -119,30 +119,15 @@ public class Block {
 
     public void Walk(Point currentPoint, Point nextPoint) {
         ArrayList<Edge> edgeArrayList = edgeMap.get(currentPoint);
-        //
+
         if(!edgeMap.keySet().contains(nextPoint)&&edgeArrayList.size()!=1){
             isFull = false;
             return;
         }
-
         //走过
         if(pointSet.contains(currentPoint)){
             return ;
         }
-
-
-
-//        Card currentCard = cardMap.get(currentPoint);
-//        //四周有谁可以连接
-//        ArrayList<Integer> arraylist = searchCardEdge(currentCard);
-//        //不是节点
-//        if (!cardMap.containsKey(nextPoint) && arraylist.size() != 1) {
-//            isFull = false;
-//            return;
-//        }
-//        if (pointSet.contains(currentPoint)) {
-//            return;
-//        }
         pointSet.add(currentPoint);
         System.out.print(currentPoint + " ");
         int x_nextPoint = nextPoint.getX();
