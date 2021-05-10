@@ -48,11 +48,24 @@ public class Point {
                 '}';
     }
 
-
     public void setPoint(int nx,int ny){
         x=nx;
         y=ny;
     }
-
+    public String judgePosition(Point comparePoint){
+        int x_comparePoint = comparePoint.getX()-x;
+        int y_comparePoint = comparePoint.getY()-y;
+        switch (x_comparePoint){
+            case -1:return "left";
+            case 1:return "right";
+            default:break;
+        }
+        switch (y_comparePoint){
+            case -1:return "bottom";
+            case 1:return "top";
+            default:break;
+        }
+        return "" ;
+    }
 
 }
