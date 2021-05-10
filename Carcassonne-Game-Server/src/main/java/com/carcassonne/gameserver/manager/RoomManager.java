@@ -2,6 +2,7 @@ package com.carcassonne.gameserver.manager;
 
 import com.alibaba.fastjson.JSONObject;
 import com.carcassonne.gameserver.bean.*;
+import org.apache.ibatis.javassist.bytecode.analysis.ControlFlow;
 
 import java.util.ArrayList;
 
@@ -22,10 +23,13 @@ public class RoomManager {
     private GameLog gameLog;
     private GameResult gameResult;
 
-    private ArrayList<ArrayList<Card>> city;
-    private ArrayList<ArrayList<Edge>> cityEdge;
-    private ArrayList<ArrayList<Card>> road;
-    private ArrayList<ArrayList<Edge>> roadEdge;
+//    private ArrayList<ArrayList<Card>> city;
+//    private ArrayList<ArrayList<Edge>> cityEdge;
+//    private ArrayList<ArrayList<Card>> road;
+//    private ArrayList<ArrayList<Edge>> roadEdge;
+
+    private ArrayList<Block> cityBlock;
+    private ArrayList<Block> roadBlock;
 
 
     RoomManager(Card[][] cards){
@@ -43,6 +47,28 @@ public class RoomManager {
 
 
     }
+
+
+    //遍历更改Block中所有边的所属
+    public void updateBlockAllEdgeOwn(Card[][] map,Block block,int own,int p){
+        ArrayList<Point> points = block.getPoints();
+        for(Point point:points){
+            if(map[point.getX()][point.getY()].getTop().getCityorroad()==p){
+                map[point.getX()][point.getY()].setTopRoadOrCity(own);
+            }
+            if(map[point.getX()][point.getY()].getRig().getCityorroad()==p){
+                map[point.getX()][point.getY()].setRigRoadOrCity(own);
+            }
+            if(map[point.getX()][point.getY()].getBot().getCityorroad()==p){
+                map[point.getX()][point.getY()].setBotRoadOrCity(own);
+            }
+            if(map[point.getX()][point.getY()].getLef().getCityorroad()==p){
+                map[point.getX()][point.getY()].setLefRoadOrCity(own);
+            }
+        }
+
+    }
+
 
     //能否放置的判断
     /**
@@ -123,8 +149,10 @@ public class RoomManager {
     }
 
 
-    //TODO 测试它，有问题qq找我 2991086069
+
+    //TODO 测试它，有问题qq找我 299108606
     public void putCard(int x,int y,Card card){
+        Point point = new Point(x,y);
         Card[][] nmap = puzzle.getmPuzzle();
         boolean isEmpty = true;
         if(x+1<=MAX_X){
@@ -132,31 +160,41 @@ public class RoomManager {
 
                 if(card.getRig().getType().equals("city")){
                     card.setRigRoadOrCity(nmap[x+1][y].getLef().getCityorroad());
-                    city.get(nmap[x+1][y].getLef().getCityorroad()).add(card);
-                    cityEdge.get(nmap[x+1][y].getLef().getCityorroad()).add(card.getRig());
+                    cityBlock.get(nmap[x+1][y].getLef().getCityorroad()).addEdgeMap(point,card.getRig());
+//                    cityEdge.get(nmap[x+1][y].getLef().getCityorroad()).add(card.getRig());
                 }else if(card.getRig().getType().equals("road")){
                     card.setRigRoadOrCity(nmap[x+1][y].getLef().getCityorroad());
-                    road.get(nmap[x+1][y].getLef().getCityorroad()).add(card);
-                    roadEdge.get(nmap[x+1][y].getLef().getCityorroad()).add(card.getRig());
+                    roadBlock.get(nmap[x+1][y].getLef().getCityorroad()).addEdgeMap(point,card.getRig());
+//                    road.get(nmap[x+1][y].getLef().getCityorroad()).add(card);
+//                    roadEdge.get(nmap[x+1][y].getLef().getCityorroad()).add(card.getRig());
                 }
                 isEmpty = false;
             }else{
                 if(card.getRig().getType().equals("city")){
-                    ArrayList<Card> ncity1 = new ArrayList<Card>();
-                    ArrayList<Edge> ncitye1 = new ArrayList<Edge>();
-                    ncity1.add(card);
-                    ncitye1.add(card.getRig());
-                    city.add(ncity1);
-                    cityEdge.add(ncitye1);
-                    card.setRigRoadOrCity(city.size()-1);
+                    Block tmp = new Block("city");
+                    tmp.addEdgeMap(point,card.getRig());
+                    cityBlock.add(tmp);
+                    card.setRigRoadOrCity(cityBlock.size()-1);
+//                    ArrayList<Card> ncity1 = new ArrayList<Card>();
+//                    ArrayList<Edge> ncitye1 = new ArrayList<Edge>();
+//                    ncity1.add(card);
+//                    ncitye1.add(card.getRig());
+//                    city.add(ncity1);
+//                    cityEdge.add(ncitye1);
+//                    card.setRigRoadOrCity(city.size()-1);
+
                 }else if(card.getRig().getType().equals("road")){
-                    ArrayList<Card> nroad1 = new ArrayList<Card>();
-                    ArrayList<Edge> nroade1 = new ArrayList<Edge>();
-                    nroad1.add(card);
-                    nroade1.add(card.getRig());
-                    road.add(nroad1);
-                    roadEdge.add(nroade1);
-                    card.setRigRoadOrCity(road.size()-1);
+                    Block tmp = new Block("road");
+                    tmp.addEdgeMap(point,card.getRig());
+                    roadBlock.add(tmp);
+                    card.setRigRoadOrCity(roadBlock.size()-1);
+//                    ArrayList<Card> nroad1 = new ArrayList<Card>();
+//                    ArrayList<Edge> nroade1 = new ArrayList<Edge>();
+//                    nroad1.add(card);
+//                    nroade1.add(card.getRig());
+//                    road.add(nroad1);
+//                    roadEdge.add(nroade1);
+//                    card.setRigRoadOrCity(road.size()-1);
                 }
             }
         }
@@ -165,31 +203,39 @@ public class RoomManager {
 
                 if(card.getLef().getType().equals("city")){
                     card.setLefRoadOrCity(nmap[x-1][y].getRig().getCityorroad());
-                    city.get(nmap[x-1][y].getRig().getCityorroad()).add(card);
-                    cityEdge.get(nmap[x-1][y].getRig().getCityorroad()).add(card.getLef());
+                    cityBlock.get(nmap[x-1][y].getRig().getCityorroad()).addEdgeMap(point,card.getLef());
+//                    city.get(nmap[x-1][y].getRig().getCityorroad()).add(card);
+//                    cityEdge.get(nmap[x-1][y].getRig().getCityorroad()).add(card.getLef());
                 }else if(card.getLef().getType().equals("road")){
                     card.setLefRoadOrCity(nmap[x-1][y].getRig().getCityorroad());
-                    road.get(nmap[x-1][y].getRig().getCityorroad()).add(card);
-                    roadEdge.get(nmap[x-1][y].getRig().getCityorroad()).add(card.getLef());
+                    roadBlock.get(nmap[x-1][y].getRig().getCityorroad()).addEdgeMap(point,card.getLef());
                 }
                 isEmpty = false;
             }else{
                 if(card.getLef().getType().equals("city")){
-                    ArrayList<Card> ncity2 = new ArrayList<Card>();
-                    ArrayList<Edge> ncitye2 = new ArrayList<Edge>();
-                    ncity2.add(card);
-                    ncitye2.add(card.getLef());
-                    city.add(ncity2);
-                    cityEdge.add(ncitye2);
-                    card.setLefRoadOrCity(city.size()-1);
+                    Block tmp = new Block("city");
+                    tmp.addEdgeMap(point,card.getLef());
+                    cityBlock.add(tmp);
+                    card.setRigRoadOrCity(cityBlock.size()-1);
+//                    ArrayList<Card> ncity2 = new ArrayList<Card>();
+//                    ArrayList<Edge> ncitye2 = new ArrayList<Edge>();
+//                    ncity2.add(card);
+//                    ncitye2.add(card.getLef());
+//                    city.add(ncity2);
+//                    cityEdge.add(ncitye2);
+//                    card.setLefRoadOrCity(city.size()-1);
                 }else if(card.getLef().getType().equals("road")){
-                    ArrayList<Card> nroad2 = new ArrayList<Card>();
-                    ArrayList<Edge> nroade2 = new ArrayList<Edge>();
-                    nroad2.add(card);
-                    nroade2.add(card.getLef());
-                    road.add(nroad2);
-                    roadEdge.add(nroade2);
-                    card.setLefRoadOrCity(road.size()-1);
+                    Block tmp = new Block("road");
+                    tmp.addEdgeMap(point,card.getLef());
+                    roadBlock.add(tmp);
+                    card.setRigRoadOrCity(roadBlock.size()-1);
+//                    ArrayList<Card> nroad2 = new ArrayList<Card>();
+//                    ArrayList<Edge> nroade2 = new ArrayList<Edge>();
+//                    nroad2.add(card);
+//                    nroade2.add(card.getLef());
+//                    road.add(nroad2);
+//                    roadEdge.add(nroade2);
+//                    card.setLefRoadOrCity(road.size()-1);
                 }
             }
         }
@@ -198,31 +244,41 @@ public class RoomManager {
 
                 if(card.getBot().getType().equals("city")){
                     card.setBotRoadOrCity(nmap[x][y+1].getTop().getCityorroad());
-                    city.get(nmap[x][y+1].getTop().getCityorroad()).add(card);
-                    cityEdge.get(nmap[x][y+1].getTop().getCityorroad()).add(card.getBot());
+                    cityBlock.get(nmap[x][y+1].getTop().getCityorroad()).addEdgeMap(point,card.getBot());
+//                    city.get(nmap[x][y+1].getTop().getCityorroad()).add(card);
+//                    cityEdge.get(nmap[x][y+1].getTop().getCityorroad()).add(card.getBot());
                 }else if(card.getRig().getType().equals("road")){
                     card.setBotRoadOrCity(nmap[x][y+1].getTop().getCityorroad());
-                    road.get(nmap[x][y+1].getTop().getCityorroad()).add(card);
-                    roadEdge.get(nmap[x][y+1].getTop().getCityorroad()).add(card.getBot());
+                    roadBlock.get(nmap[x][y+1].getTop().getCityorroad()).addEdgeMap(point,card.getBot());
+//                    road.get(nmap[x][y+1].getTop().getCityorroad()).add(card);
+//                    roadEdge.get(nmap[x][y+1].getTop().getCityorroad()).add(card.getBot());
                 }
                 isEmpty = false;
             }else{
                 if(card.getBot().getType().equals("city")){
-                    ArrayList<Card> ncity3 = new ArrayList<Card>();
-                    ArrayList<Edge> ncitye3 = new ArrayList<Edge>();
-                    ncity3.add(card);
-                    ncitye3.add(card.getBot());
-                    city.add(ncity3);
-                    cityEdge.add(ncitye3);
-                    card.setBotRoadOrCity(city.size()-1);
+                    Block tmp = new Block("city");
+                    tmp.addEdgeMap(point,card.getBot());
+                    cityBlock.add(tmp);
+                    card.setRigRoadOrCity(cityBlock.size()-1);
+//                    ArrayList<Card> ncity3 = new ArrayList<Card>();
+//                    ArrayList<Edge> ncitye3 = new ArrayList<Edge>();
+//                    ncity3.add(card);
+//                    ncitye3.add(card.getBot());
+//                    city.add(ncity3);
+//                    cityEdge.add(ncitye3);
+//                    card.setBotRoadOrCity(city.size()-1);
                 }else if(card.getBot().getType().equals("road")){
-                    ArrayList<Card> nroad3 = new ArrayList<Card>();
-                    ArrayList<Edge> nroade3 = new ArrayList<Edge>();
-                    nroad3.add(card);
-                    nroade3.add(card.getBot());
-                    road.add(nroad3);
-                    roadEdge.add(nroade3);
-                    card.setBotRoadOrCity(road.size()-1);
+                    Block tmp = new Block("road");
+                    tmp.addEdgeMap(point,card.getBot());
+                    roadBlock.add(tmp);
+                    card.setRigRoadOrCity(roadBlock.size()-1);
+//                    ArrayList<Card> nroad3 = new ArrayList<Card>();
+//                    ArrayList<Edge> nroade3 = new ArrayList<Edge>();
+//                    nroad3.add(card);
+//                    nroade3.add(card.getBot());
+//                    road.add(nroad3);
+//                    roadEdge.add(nroade3);
+//                    card.setBotRoadOrCity(road.size()-1);
                 }
             }
         }
@@ -231,31 +287,41 @@ public class RoomManager {
 
                 if(card.getTop().getType().equals("city")){
                     card.setTopRoadOrCity(nmap[x][y-1].getBot().getCityorroad());
-                    city.get(nmap[x][y-1].getBot().getCityorroad()).add(card);
-                    cityEdge.get(nmap[x][y-1].getBot().getCityorroad()).add(card.getTop());
+                    cityBlock.get(nmap[x][y-1].getBot().getCityorroad()).addEdgeMap(point,card.getTop());
+//                    city.get(nmap[x][y-1].getBot().getCityorroad()).add(card);
+//                    cityEdge.get(nmap[x][y-1].getBot().getCityorroad()).add(card.getTop());
                 }else if(card.getTop().getType().equals("road")){
                     card.setTopRoadOrCity(nmap[x][y-1].getBot().getCityorroad());
-                    road.get(nmap[x][y-1].getBot().getCityorroad()).add(card);
-                    roadEdge.get(nmap[x][y-1].getBot().getCityorroad()).add(card.getTop());
+                    roadBlock.get(nmap[x][y-1].getBot().getCityorroad()).addEdgeMap(point,card.getTop());
+//                    road.get(nmap[x][y-1].getBot().getCityorroad()).add(card);
+//                    roadEdge.get(nmap[x][y-1].getBot().getCityorroad()).add(card.getTop());
                 }
                 isEmpty = false;
             }else{
                 if(card.getTop().getType().equals("city")){
-                    ArrayList<Card> ncity4 = new ArrayList<Card>();
-                    ArrayList<Edge> ncitye4 = new ArrayList<Edge>();
-                    ncity4.add(card);
-                    ncitye4.add(card.getTop());
-                    city.add(ncity4);
-                    cityEdge.add(ncitye4);
-                    card.setTopRoadOrCity(city.size()-1);
+                    Block tmp = new Block("city");
+                    tmp.addEdgeMap(point,card.getTop());
+                    cityBlock.add(tmp);
+                    card.setRigRoadOrCity(cityBlock.size()-1);
+//                    ArrayList<Card> ncity4 = new ArrayList<Card>();
+//                    ArrayList<Edge> ncitye4 = new ArrayList<Edge>();
+//                    ncity4.add(card);
+//                    ncitye4.add(card.getTop());
+//                    city.add(ncity4);
+//                    cityEdge.add(ncitye4);
+//                    card.setTopRoadOrCity(city.size()-1);
                 }else if(card.getTop().getType().equals("road")){
-                    ArrayList<Card> nroad4 = new ArrayList<Card>();
-                    ArrayList<Edge> nroade4 = new ArrayList<Edge>();
-                    nroad4.add(card);
-                    nroade4.add(card.getTop());
-                    road.add(nroad4);
-                    roadEdge.add(nroade4);
-                    card.setTopRoadOrCity(road.size()-1);
+                    Block tmp = new Block("road");
+                    tmp.addEdgeMap(point,card.getTop());
+                    roadBlock.add(tmp);
+                    card.setRigRoadOrCity(roadBlock.size()-1);
+//                    ArrayList<Card> nroad4 = new ArrayList<Card>();
+//                    ArrayList<Edge> nroade4 = new ArrayList<Edge>();
+//                    nroad4.add(card);
+//                    nroade4.add(card.getTop());
+//                    road.add(nroad4);
+//                    roadEdge.add(nroade4);
+//                    card.setTopRoadOrCity(road.size()-1);
                 }
             }
         }
@@ -264,31 +330,44 @@ public class RoomManager {
         JSONObject cardTopJson = JSONObject.parseObject(card.getTop().getConnect());
         if (card.getTop().getType().equals("city")){
             if(cardTopJson.get("rig").equals("true")){
-                city.get(card.getTop().getCityorroad()).addAll(city.get(card.getRig().getCityorroad()));
-                cityEdge.get(card.getTop().getCityorroad()).addAll(cityEdge.get(card.getRig().getCityorroad()));
-                card.setRigRoadOrCity(card.getTop().getCityorroad());
+                //TODO 我人麻了
+                updateBlockAllEdgeOwn(nmap,cityBlock.get(card.getRig().getCityorroad()),card.getTop().getCityorroad(),card.getRig().getCityorroad());
+                cityBlock.get(card.getTop().getCityorroad()).mergeBlock(cityBlock.get(card.getRig().getCityorroad()));
+//                city.get(card.getTop().getCityorroad()).addAll(city.get(card.getRig().getCityorroad()));
+//                cityEdge.get(card.getTop().getCityorroad()).addAll(cityEdge.get(card.getRig().getCityorroad()));
+
             }else if(cardTopJson.get("bot").equals("true")){
-                city.get(card.getTop().getCityorroad()).addAll(city.get(card.getBot().getCityorroad()));
-                cityEdge.get(card.getTop().getCityorroad()).addAll(cityEdge.get(card.getBot().getCityorroad()));
-                card.setBotRoadOrCity(card.getTop().getCityorroad());
+                updateBlockAllEdgeOwn(nmap,cityBlock.get(card.getBot().getCityorroad()),card.getTop().getCityorroad(),card.getBot().getCityorroad());
+                cityBlock.get(card.getTop().getCityorroad()).mergeBlock(cityBlock.get(card.getBot().getCityorroad()));
+//                city.get(card.getTop().getCityorroad()).addAll(city.get(card.getBot().getCityorroad()));
+//                cityEdge.get(card.getTop().getCityorroad()).addAll(cityEdge.get(card.getBot().getCityorroad()));
+//                card.setBotRoadOrCity(card.getTop().getCityorroad());
             }else if(cardTopJson.get("lef").equals("true")){
-                city.get(card.getTop().getCityorroad()).addAll(city.get(card.getLef().getCityorroad()));
-                cityEdge.get(card.getTop().getCityorroad()).addAll(cityEdge.get(card.getLef().getCityorroad()));
-                card.setLefRoadOrCity(card.getTop().getCityorroad());
+                updateBlockAllEdgeOwn(nmap,cityBlock.get(card.getLef().getCityorroad()),card.getTop().getCityorroad(),card.getLef().getCityorroad());
+                cityBlock.get(card.getTop().getCityorroad()).mergeBlock(cityBlock.get(card.getLef().getCityorroad()));
+//                city.get(card.getTop().getCityorroad()).addAll(city.get(card.getLef().getCityorroad()));
+//                cityEdge.get(card.getTop().getCityorroad()).addAll(cityEdge.get(card.getLef().getCityorroad()));
+//                card.setLefRoadOrCity(card.getTop().getCityorroad());
             }
         }else if(card.getTop().getType().equals("road")){
             if(cardTopJson.get("rig").equals("true")){
-                road.get(card.getTop().getCityorroad()).addAll(road.get(card.getRig().getCityorroad()));
-                roadEdge.get(card.getTop().getCityorroad()).addAll(roadEdge.get(card.getRig().getCityorroad()));
-                card.setRigRoadOrCity(card.getTop().getCityorroad());
+                updateBlockAllEdgeOwn(nmap,roadBlock.get(card.getRig().getCityorroad()),card.getTop().getCityorroad(),card.getRig().getCityorroad());
+                roadBlock.get(card.getTop().getCityorroad()).mergeBlock(roadBlock.get(card.getRig().getCityorroad()));
+//                road.get(card.getTop().getCityorroad()).addAll(road.get(card.getRig().getCityorroad()));
+//                roadEdge.get(card.getTop().getCityorroad()).addAll(roadEdge.get(card.getRig().getCityorroad()));
+//                card.setRigRoadOrCity(card.getTop().getCityorroad());
             }else if(cardTopJson.get("bot").equals("true")){
-                road.get(card.getTop().getCityorroad()).addAll(road.get(card.getBot().getCityorroad()));
-                roadEdge.get(card.getTop().getCityorroad()).addAll(roadEdge.get(card.getBot().getCityorroad()));
-                card.setBotRoadOrCity(card.getTop().getCityorroad());
+                updateBlockAllEdgeOwn(nmap,roadBlock.get(card.getBot().getCityorroad()),card.getTop().getCityorroad(),card.getBot().getCityorroad());
+                roadBlock.get(card.getTop().getCityorroad()).mergeBlock(roadBlock.get(card.getBot().getCityorroad()));
+//                road.get(card.getTop().getCityorroad()).addAll(road.get(card.getBot().getCityorroad()));
+//                roadEdge.get(card.getTop().getCityorroad()).addAll(roadEdge.get(card.getBot().getCityorroad()));
+//                card.setBotRoadOrCity(card.getTop().getCityorroad());
             }else if(cardTopJson.get("lef").equals("true")){
-                road.get(card.getTop().getCityorroad()).addAll(road.get(card.getLef().getCityorroad()));
-                roadEdge.get(card.getTop().getCityorroad()).addAll(roadEdge.get(card.getLef().getCityorroad()));
-                card.setLefRoadOrCity(card.getTop().getCityorroad());
+                updateBlockAllEdgeOwn(nmap,roadBlock.get(card.getLef().getCityorroad()),card.getTop().getCityorroad(),card.getLef().getCityorroad());
+                roadBlock.get(card.getTop().getCityorroad()).mergeBlock(roadBlock.get(card.getLef().getCityorroad()));
+//                road.get(card.getTop().getCityorroad()).addAll(road.get(card.getLef().getCityorroad()));
+//                roadEdge.get(card.getTop().getCityorroad()).addAll(roadEdge.get(card.getLef().getCityorroad()));
+//                card.setLefRoadOrCity(card.getTop().getCityorroad());
             }
         }
 
@@ -296,23 +375,31 @@ public class RoomManager {
         JSONObject cardRightJson = JSONObject.parseObject(card.getRig().getConnect());
         if (card.getRig().getType().equals("city")){
              if(cardRightJson.get("bot").equals("true")){
-                city.get(card.getRig().getCityorroad()).addAll(city.get(card.getBot().getCityorroad()));
-                cityEdge.get(card.getRig().getCityorroad()).addAll(cityEdge.get(card.getBot().getCityorroad()));
-                card.setBotRoadOrCity(card.getRig().getCityorroad());
+                 updateBlockAllEdgeOwn(nmap,cityBlock.get(card.getBot().getCityorroad()),card.getRig().getCityorroad(),card.getBot().getCityorroad());
+                 cityBlock.get(card.getRig().getCityorroad()).mergeBlock(cityBlock.get(card.getBot().getCityorroad()));
+//                city.get(card.getRig().getCityorroad()).addAll(city.get(card.getBot().getCityorroad()));
+//                cityEdge.get(card.getRig().getCityorroad()).addAll(cityEdge.get(card.getBot().getCityorroad()));
+//                card.setBotRoadOrCity(card.getRig().getCityorroad());
             }else if(cardRightJson.get("lef").equals("true")){
-                city.get(card.getRig().getCityorroad()).addAll(city.get(card.getLef().getCityorroad()));
-                cityEdge.get(card.getRig().getCityorroad()).addAll(cityEdge.get(card.getLef().getCityorroad()));
-                card.setLefRoadOrCity(card.getRig().getCityorroad());
+                 updateBlockAllEdgeOwn(nmap,cityBlock.get(card.getLef().getCityorroad()),card.getRig().getCityorroad(),card.getLef().getCityorroad());
+                 cityBlock.get(card.getRig().getCityorroad()).mergeBlock(cityBlock.get(card.getLef().getCityorroad()));
+//                city.get(card.getRig().getCityorroad()).addAll(city.get(card.getLef().getCityorroad()));
+//                cityEdge.get(card.getRig().getCityorroad()).addAll(cityEdge.get(card.getLef().getCityorroad()));
+//                card.setLefRoadOrCity(card.getRig().getCityorroad());
             }
         }else if(card.getRig().getType().equals("Road")){
             if(cardRightJson.get("bot").equals("true")){
-                road.get(card.getRig().getCityorroad()).addAll(road.get(card.getBot().getCityorroad()));
-                roadEdge.get(card.getRig().getCityorroad()).addAll(roadEdge.get(card.getBot().getCityorroad()));
-                card.setBotRoadOrCity(card.getRig().getCityorroad());
+                updateBlockAllEdgeOwn(nmap,roadBlock.get(card.getBot().getCityorroad()),card.getRig().getCityorroad(),card.getBot().getCityorroad());
+                roadBlock.get(card.getRig().getCityorroad()).mergeBlock(roadBlock.get(card.getBot().getCityorroad()));
+//                road.get(card.getRig().getCityorroad()).addAll(road.get(card.getBot().getCityorroad()));
+//                roadEdge.get(card.getRig().getCityorroad()).addAll(roadEdge.get(card.getBot().getCityorroad()));
+//                card.setBotRoadOrCity(card.getRig().getCityorroad());
             }else if(cardRightJson.get("lef").equals("true")){
-                road.get(card.getRig().getCityorroad()).addAll(road.get(card.getLef().getCityorroad()));
-                roadEdge.get(card.getRig().getCityorroad()).addAll(roadEdge.get(card.getLef().getCityorroad()));
-                card.setLefRoadOrCity(card.getRig().getCityorroad());
+                updateBlockAllEdgeOwn(nmap,roadBlock.get(card.getLef().getCityorroad()),card.getRig().getCityorroad(),card.getLef().getCityorroad());
+                roadBlock.get(card.getRig().getCityorroad()).mergeBlock(roadBlock.get(card.getLef().getCityorroad()));
+//                road.get(card.getRig().getCityorroad()).addAll(road.get(card.getLef().getCityorroad()));
+//                roadEdge.get(card.getRig().getCityorroad()).addAll(roadEdge.get(card.getLef().getCityorroad()));
+//                card.setLefRoadOrCity(card.getRig().getCityorroad());
             }
         }
 
@@ -320,15 +407,19 @@ public class RoomManager {
         JSONObject cardBottomJson = JSONObject.parseObject(card.getBot().getConnect());
         if (card.getBot().getType().equals("city")){
             if(cardBottomJson.get("lef").equals("true")){
-                city.get(card.getBot().getCityorroad()).addAll(city.get(card.getLef().getCityorroad()));
-                cityEdge.get(card.getBot().getCityorroad()).addAll(cityEdge.get(card.getLef().getCityorroad()));
-                card.setLefRoadOrCity(card.getBot().getCityorroad());
+                updateBlockAllEdgeOwn(nmap,cityBlock.get(card.getLef().getCityorroad()),card.getBot().getCityorroad(),card.getLef().getCityorroad());
+                cityBlock.get(card.getBot().getCityorroad()).mergeBlock(cityBlock.get(card.getLef().getCityorroad()));
+//                city.get(card.getBot().getCityorroad()).addAll(city.get(card.getLef().getCityorroad()));
+//                cityEdge.get(card.getBot().getCityorroad()).addAll(cityEdge.get(card.getLef().getCityorroad()));
+//                card.setLefRoadOrCity(card.getBot().getCityorroad());
             }
         }else if(card.getBot().getType().equals("Road")){
             if(cardBottomJson.get("lef").equals("true")){
-                road.get(card.getBot().getCityorroad()).addAll(road.get(card.getLef().getCityorroad()));
-                roadEdge.get(card.getBot().getCityorroad()).addAll(roadEdge.get(card.getLef().getCityorroad()));
-                card.setLefRoadOrCity(card.getBot().getCityorroad());
+                updateBlockAllEdgeOwn(nmap,roadBlock.get(card.getLef().getCityorroad()),card.getBot().getCityorroad(),card.getLef().getCityorroad());
+                roadBlock.get(card.getBot().getCityorroad()).mergeBlock(roadBlock.get(card.getLef().getCityorroad()));
+//                road.get(card.getBot().getCityorroad()).addAll(road.get(card.getLef().getCityorroad()));
+//                roadEdge.get(card.getBot().getCityorroad()).addAll(roadEdge.get(card.getLef().getCityorroad()));
+//                card.setLefRoadOrCity(card.getBot().getCityorroad());
             }
         }
 
