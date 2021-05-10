@@ -67,10 +67,11 @@ class MapUtilTest {
         };
 
         /*
-                    1517
-                    1516 1616
-                    1515
+
                     1514
+                    1515
+                    1516 1616
+                    1517
          */
         Point point1515 = new Point(15,15);
         Point point1516 = new Point(15,16);
@@ -79,14 +80,14 @@ class MapUtilTest {
         Point point1517 = new Point(15,17);
 
         HashMap<Point,ArrayList<Edge>> edgeMap = new HashMap<>();
-        edgeMap.put(point1514,oneCityTop);
+        edgeMap.put(point1514,oneCityBottom);
         edgeMap.put(point1515,twoCity);
         edgeMap.put(point1516,threeCity);
-        edgeMap.put(point1517,oneCityBottom);
+        edgeMap.put(point1517,oneCityTop);
         edgeMap.put(point1616,oneCityLeft);
 
         Block block = new Block(edgeMap,"City");
         block.Walk(point1616,point1516);
-
+        block.caculate();
     }
 }
