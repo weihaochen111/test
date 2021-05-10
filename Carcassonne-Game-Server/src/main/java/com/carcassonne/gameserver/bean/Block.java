@@ -42,7 +42,27 @@ class Block {
     public void setEdgeMap(HashMap<Point, ArrayList<Edge>> edgeMap) {
         this.edgeMap = edgeMap;
     }
-    
+    public void addEdgeMap(Point point,Edge edge){
+            ArrayList<Edge> edgeArray =
+                    edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>();
+            edgeArray.add(edge);
+            edgeMap.put(point, edgeArray);
+    }
+    //合并情况不考虑得分
+    public void mergeBlock(Block block){
+        if(edgeString.equals(block.edgeString)){
+            pointSet.addAll(block.pointSet);
+            for(Point point : block.edgeMap.keySet()){
+                ArrayList<Edge> edgeList =
+                        block.edgeMap.containsKey(point)? block.edgeMap.get(point):new ArrayList<Edge>();
+                ArrayList<Edge> edgeList1 =
+                        edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>();
+                edgeList1.addAll(edgeList);
+                edgeMap.put(point,edgeList1);
+            }
+        }
+    }
+
     public void caculate() {
         if (edgeType.equals(EdgeType.city)) {
             scorePerCard = 2;
@@ -71,39 +91,53 @@ class Block {
     }
 
     public void Walk(Point currentPoint, Point nextPoint) {
-        Card currentCard = cardMap.get(currentPoint);
-        //四周有谁可以连接
-        ArrayList<Integer> arraylist = searchCardEdge(currentCard);
-        //不是节点
-        if (!cardMap.containsKey(nextPoint) && arraylist.size() != 0) {
+        ArrayList<Edge> edgeArrayList = edgeMap.get(currentPoint);
+        //
+        if(!cardMap.containsKey(nextPoint)&&edgeArrayList.size()!=1){
             isFull = false;
             return;
         }
-        if (pointSet.contains(currentPoint)) {
-            return;
+
+        //走过
+        if(pointSet.contains(currentPoint)){
+            return ;
         }
+
+
+
+//        Card currentCard = cardMap.get(currentPoint);
+//        //四周有谁可以连接
+//        ArrayList<Integer> arraylist = searchCardEdge(currentCard);
+//        //不是节点
+//        if (!cardMap.containsKey(nextPoint) && arraylist.size() != 1) {
+//            isFull = false;
+//            return;
+//        }
+//        if (pointSet.contains(currentPoint)) {
+//            return;
+//        }
         pointSet.add(currentPoint);
         System.out.print(currentPoint + " ");
         int x_nextPoint = nextPoint.getX();
         int y_nextPoint = nextPoint.getY();
-        for (Integer i : arraylist) {
-            switch (i) {
-                case 0:
-                    Walk(nextPoint, new Point(x_nextPoint, y_nextPoint + 1));
-                    break;
-                case 1:
-                    Walk(nextPoint, new Point(x_nextPoint + 1, y_nextPoint));
-                    break;
-                case 2:
-                    Walk(nextPoint, new Point(x_nextPoint, y_nextPoint - 1));
-                    break;
-                case 3:
-                    Walk(nextPoint, new Point(x_nextPoint - 1, y_nextPoint));
-                    break;
-                default:
-                    break;
-            }
-        }
+//        for (Integer i : arraylist) {
+//            switch (i) {
+//                case 0:
+//                    Walk(nextPoint, new Point(x_nextPoint, y_nextPoint + 1));
+//                    break;
+//                case 1:
+//                    Walk(nextPoint, new Point(x_nextPoint + 1, y_nextPoint));
+//                    break;
+//                case 2:
+//                    Walk(nextPoint, new Point(x_nextPoint, y_nextPoint - 1));
+//                    break;
+//                case 3:
+//                    Walk(nextPoint, new Point(x_nextPoint - 1, y_nextPoint));
+//                    break;
+//                default:
+//                    break;
+//            }
+//        }
     }
 
     public ArrayList<Integer> searchCardEdge(Card card) {
