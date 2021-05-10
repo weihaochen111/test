@@ -41,11 +41,11 @@ public class Block {
     public void setEdgeMap(HashMap<Point, ArrayList<Edge>> edgeMap) {
         this.edgeMap = edgeMap;
     }
-    public void addEdgeMap(Point point,Edge edge){
-            ArrayList<Edge> edgeArray =
-                    edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>();
-            edgeArray.add(edge);
-            edgeMap.put(point, edgeArray);
+    public void addEdgeMap(Point point, Edge edge,int index){
+        ArrayList<Edge> edgeArray =
+                edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>(4);
+        edgeArray.set(index,edge);
+        edgeMap.put(point, edgeArray);
     }
     public ArrayList<Point> getPoints(){
         ArrayList<Point> points = new ArrayList<Point>();

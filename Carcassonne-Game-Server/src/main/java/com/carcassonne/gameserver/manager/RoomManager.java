@@ -160,11 +160,11 @@ public class RoomManager {
 
                 if(card.getRig().getType().equals("city")){
                     card.setRigRoadOrCity(nmap[x+1][y].getLef().getCityorroad());
-                    cityBlock.get(nmap[x+1][y].getLef().getCityorroad()).addEdgeMap(point,card.getRig());
+                    cityBlock.get(nmap[x+1][y].getLef().getCityorroad()).addEdgeMap(point,card.getRig(),1);
 //                    cityEdge.get(nmap[x+1][y].getLef().getCityorroad()).add(card.getRig());
                 }else if(card.getRig().getType().equals("road")){
                     card.setRigRoadOrCity(nmap[x+1][y].getLef().getCityorroad());
-                    roadBlock.get(nmap[x+1][y].getLef().getCityorroad()).addEdgeMap(point,card.getRig());
+                    roadBlock.get(nmap[x+1][y].getLef().getCityorroad()).addEdgeMap(point,card.getRig(),1);
 //                    road.get(nmap[x+1][y].getLef().getCityorroad()).add(card);
 //                    roadEdge.get(nmap[x+1][y].getLef().getCityorroad()).add(card.getRig());
                 }
@@ -172,7 +172,7 @@ public class RoomManager {
             }else{
                 if(card.getRig().getType().equals("city")){
                     Block tmp = new Block("city");
-                    tmp.addEdgeMap(point,card.getRig());
+                    tmp.addEdgeMap(point,card.getRig(),1);
                     cityBlock.add(tmp);
                     card.setRigRoadOrCity(cityBlock.size()-1);
 //                    ArrayList<Card> ncity1 = new ArrayList<Card>();
@@ -185,7 +185,7 @@ public class RoomManager {
 
                 }else if(card.getRig().getType().equals("road")){
                     Block tmp = new Block("road");
-                    tmp.addEdgeMap(point,card.getRig());
+                    tmp.addEdgeMap(point,card.getRig(),1);
                     roadBlock.add(tmp);
                     card.setRigRoadOrCity(roadBlock.size()-1);
 //                    ArrayList<Card> nroad1 = new ArrayList<Card>();
@@ -203,18 +203,18 @@ public class RoomManager {
 
                 if(card.getLef().getType().equals("city")){
                     card.setLefRoadOrCity(nmap[x-1][y].getRig().getCityorroad());
-                    cityBlock.get(nmap[x-1][y].getRig().getCityorroad()).addEdgeMap(point,card.getLef());
+                    cityBlock.get(nmap[x-1][y].getRig().getCityorroad()).addEdgeMap(point,card.getLef(),3);
 //                    city.get(nmap[x-1][y].getRig().getCityorroad()).add(card);
 //                    cityEdge.get(nmap[x-1][y].getRig().getCityorroad()).add(card.getLef());
                 }else if(card.getLef().getType().equals("road")){
                     card.setLefRoadOrCity(nmap[x-1][y].getRig().getCityorroad());
-                    roadBlock.get(nmap[x-1][y].getRig().getCityorroad()).addEdgeMap(point,card.getLef());
+                    roadBlock.get(nmap[x-1][y].getRig().getCityorroad()).addEdgeMap(point,card.getLef(),3);
                 }
                 isEmpty = false;
             }else{
                 if(card.getLef().getType().equals("city")){
                     Block tmp = new Block("city");
-                    tmp.addEdgeMap(point,card.getLef());
+                    tmp.addEdgeMap(point,card.getLef(),3);
                     cityBlock.add(tmp);
                     card.setRigRoadOrCity(cityBlock.size()-1);
 //                    ArrayList<Card> ncity2 = new ArrayList<Card>();
@@ -226,7 +226,7 @@ public class RoomManager {
 //                    card.setLefRoadOrCity(city.size()-1);
                 }else if(card.getLef().getType().equals("road")){
                     Block tmp = new Block("road");
-                    tmp.addEdgeMap(point,card.getLef());
+                    tmp.addEdgeMap(point,card.getLef(),3);
                     roadBlock.add(tmp);
                     card.setRigRoadOrCity(roadBlock.size()-1);
 //                    ArrayList<Card> nroad2 = new ArrayList<Card>();
@@ -244,12 +244,12 @@ public class RoomManager {
 
                 if(card.getBot().getType().equals("city")){
                     card.setBotRoadOrCity(nmap[x][y+1].getTop().getCityorroad());
-                    cityBlock.get(nmap[x][y+1].getTop().getCityorroad()).addEdgeMap(point,card.getBot());
+                    cityBlock.get(nmap[x][y+1].getTop().getCityorroad()).addEdgeMap(point,card.getBot(),2);
 //                    city.get(nmap[x][y+1].getTop().getCityorroad()).add(card);
 //                    cityEdge.get(nmap[x][y+1].getTop().getCityorroad()).add(card.getBot());
                 }else if(card.getRig().getType().equals("road")){
                     card.setBotRoadOrCity(nmap[x][y+1].getTop().getCityorroad());
-                    roadBlock.get(nmap[x][y+1].getTop().getCityorroad()).addEdgeMap(point,card.getBot());
+                    roadBlock.get(nmap[x][y+1].getTop().getCityorroad()).addEdgeMap(point,card.getBot(),2);
 //                    road.get(nmap[x][y+1].getTop().getCityorroad()).add(card);
 //                    roadEdge.get(nmap[x][y+1].getTop().getCityorroad()).add(card.getBot());
                 }
@@ -257,7 +257,7 @@ public class RoomManager {
             }else{
                 if(card.getBot().getType().equals("city")){
                     Block tmp = new Block("city");
-                    tmp.addEdgeMap(point,card.getBot());
+                    tmp.addEdgeMap(point,card.getBot(),2);
                     cityBlock.add(tmp);
                     card.setRigRoadOrCity(cityBlock.size()-1);
 //                    ArrayList<Card> ncity3 = new ArrayList<Card>();
@@ -269,7 +269,7 @@ public class RoomManager {
 //                    card.setBotRoadOrCity(city.size()-1);
                 }else if(card.getBot().getType().equals("road")){
                     Block tmp = new Block("road");
-                    tmp.addEdgeMap(point,card.getBot());
+                    tmp.addEdgeMap(point,card.getBot(),2);
                     roadBlock.add(tmp);
                     card.setRigRoadOrCity(roadBlock.size()-1);
 //                    ArrayList<Card> nroad3 = new ArrayList<Card>();
@@ -287,12 +287,12 @@ public class RoomManager {
 
                 if(card.getTop().getType().equals("city")){
                     card.setTopRoadOrCity(nmap[x][y-1].getBot().getCityorroad());
-                    cityBlock.get(nmap[x][y-1].getBot().getCityorroad()).addEdgeMap(point,card.getTop());
+                    cityBlock.get(nmap[x][y-1].getBot().getCityorroad()).addEdgeMap(point,card.getTop(),0);
 //                    city.get(nmap[x][y-1].getBot().getCityorroad()).add(card);
 //                    cityEdge.get(nmap[x][y-1].getBot().getCityorroad()).add(card.getTop());
                 }else if(card.getTop().getType().equals("road")){
                     card.setTopRoadOrCity(nmap[x][y-1].getBot().getCityorroad());
-                    roadBlock.get(nmap[x][y-1].getBot().getCityorroad()).addEdgeMap(point,card.getTop());
+                    roadBlock.get(nmap[x][y-1].getBot().getCityorroad()).addEdgeMap(point,card.getTop(),0);
 //                    road.get(nmap[x][y-1].getBot().getCityorroad()).add(card);
 //                    roadEdge.get(nmap[x][y-1].getBot().getCityorroad()).add(card.getTop());
                 }
@@ -300,7 +300,7 @@ public class RoomManager {
             }else{
                 if(card.getTop().getType().equals("city")){
                     Block tmp = new Block("city");
-                    tmp.addEdgeMap(point,card.getTop());
+                    tmp.addEdgeMap(point,card.getTop(),0);
                     cityBlock.add(tmp);
                     card.setRigRoadOrCity(cityBlock.size()-1);
 //                    ArrayList<Card> ncity4 = new ArrayList<Card>();
@@ -312,7 +312,7 @@ public class RoomManager {
 //                    card.setTopRoadOrCity(city.size()-1);
                 }else if(card.getTop().getType().equals("road")){
                     Block tmp = new Block("road");
-                    tmp.addEdgeMap(point,card.getTop());
+                    tmp.addEdgeMap(point,card.getTop(),0);
                     roadBlock.add(tmp);
                     card.setRigRoadOrCity(roadBlock.size()-1);
 //                    ArrayList<Card> nroad4 = new ArrayList<Card>();
