@@ -6,23 +6,18 @@ import org.junit.jupiter.api.Test;
 public class tokenTest {
     @Test
     public void tt() throws InterruptedException {
-        String token = JwtTokenUtil.createToken("cmy","student");
-        System.out.println(token);
-        System.out.println(JwtTokenUtil.getUsername(token));
-        System.out.println(JwtTokenUtil.getUserRole(token));
-        System.out.println(JwtTokenUtil.checkJWT(token));
-        System.out.println(JwtTokenUtil.isExpiration(token));
-        Thread.sleep(1000);
-        System.out.println(JwtTokenUtil.isExpiration(token));
-        Thread.sleep(1000);
-        System.out.println(JwtTokenUtil.isExpiration(token));
-        Thread.sleep(1000);
-        System.out.println(JwtTokenUtil.isExpiration(token));
-        Thread.sleep(1000);
-        System.out.println(JwtTokenUtil.isExpiration(token));
-        Thread.sleep(1000);
-        System.out.println(JwtTokenUtil.isExpiration(token));
-        Thread.sleep(1000);
-        System.out.println(JwtTokenUtil.isExpiration(token));
+
+        System.out.println(JwtTokenUtil.createToken("cc","user"));
+//        try {
+//            String token = "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoidXNlciIsImV4cCI6MTYyMDQwMTA2MywiaWF0IjoxNjIwMzc5NDYzLCJ1c2VybmFtZSI6IjEwNzI4NzYwMjVAcXEuY29tIn0.5ESRDWIyQzM2qOUIHe9JhHbqTVscYnJ9OtIOk3MUaYE";
+//
+//            System.out.println(JwtTokenUtil.checkJWT(token));
+//            System.out.println(JwtTokenUtil.isExpiration(token));
+//        }catch (Exception e){
+//            System.out.println("error");
+//            e.printStackTrace();
+//        }
+
+
     }
 }

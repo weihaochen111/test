@@ -1,52 +1,57 @@
 package com.carcassonne.gameserver.bean;
 
+import com.alibaba.fastjson.JSONObject;
+
 /**
  * 用户
  */
 public class User {
 
     private Integer id;
-
-
     private String accountNum;
     private String password;
     private String sex;
     private String level;
-    private String name;
+    private String nickname;
     private String headPictureURL;
 
-    public User(User user) {
-        this.accountNum = user.accountNum;
-        this.password = user.password;
-        this.sex = user.sex;
-        this.level = user.level;
-        this.name = user.name;
-        this.headPictureURL = user.headPictureURL;
+    private String state;
+    private String token;
+
+    public User() {
+
     }
-
-
-
-
 
     @Override
     public String toString() {
         return "User{" +
-                "accountNum='" + accountNum + '\'' +
+                "id=" + id +
+                ", accountNum='" + accountNum + '\'' +
                 ", password='" + password + '\'' +
                 ", sex='" + sex + '\'' +
                 ", level='" + level + '\'' +
-                ", name='" + name + '\'' +
+                ", nickname='" + nickname + '\'' +
                 ", headPictureURL='" + headPictureURL + '\'' +
+                ", state='" + state + '\'' +
+                ", token='" + token + '\'' +
                 '}';
     }
 
-    public User(String accountNum, String password, String sex, String level, String name, String headPictureURL) {
+    public User(String accountNum, String password, String sex, String level, String nickname, String headPictureURL) {
         this.accountNum = accountNum;
         this.password = password;
         this.sex = sex;
         this.level = level;
-        this.name = name;
+        this.nickname = nickname;
         this.headPictureURL = headPictureURL;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getAccountNum() {
@@ -81,12 +86,12 @@ public class User {
         this.level = level;
     }
 
-    public String getName() {
-        return name;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public String getHeadPictureURL() {
@@ -95,5 +100,35 @@ public class User {
 
     public void setHeadPictureURL(String headPictureURL) {
         this.headPictureURL = headPictureURL;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public JSONObject toJSONObject(){
+
+        JSONObject user = new JSONObject();
+        if(accountNum != null) user.put("accountNum",accountNum);
+        if(password != null) user.put("password",password);
+        if(sex != null) user.put("sex",sex);
+        if(level != null) user.put("level",level);
+        if(nickname != null) user.put("nickname",nickname);
+        if(headPictureURL != null) user.put("headPictureURL",headPictureURL);
+
+
+        return user;
     }
 }

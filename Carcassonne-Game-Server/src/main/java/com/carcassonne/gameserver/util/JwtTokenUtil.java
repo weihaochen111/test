@@ -18,7 +18,7 @@ public class JwtTokenUtil {
     // 签名主题
     public static final String SUBJECT = "piconjo";
     // 过期时间
-    public static final long EXPIRITION = 3000;// * 24 * 60 * 60 * 7;
+    public static final long EXPIRITION = 1000*60*60*6;// * 24 * 60 * 60 * 7;
     // 应用密钥
     public static final String APPSECRET_KEY = "piconjo_secret";
     // 角色权限声明

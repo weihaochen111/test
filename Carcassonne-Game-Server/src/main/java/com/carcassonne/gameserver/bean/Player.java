@@ -12,7 +12,7 @@ public class Player extends User{
     private String gameState;
 
     public Player(Boolean isReady, Card hand, Integer score, Boolean isStart, String gameState,User user) {
-        super(user);
+        super(user.getAccountNum(),user.getPassword(),user.getSex(),user.getLevel(),user.getNickname(),user.getHeadPictureURL());
         this.isReady = isReady;
         this.hand = hand;
         this.score = score;
@@ -20,16 +20,7 @@ public class Player extends User{
         this.gameState = gameState;
     }
 
-    @Override
-    public String toString() {
-        return "Player{" +
-                "isReady=" + isReady +
-                ", hand=" + hand +
-                ", score=" + score +
-                ", isStart=" + isStart +
-                ", gameState='" + gameState + '\'' +
-                '}';
-    }
+
 
     public Boolean getReady() {
         return isReady;

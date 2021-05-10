@@ -4,6 +4,8 @@ package com.carcassonne.gameserver.mapper;
 import com.carcassonne.gameserver.bean.Card;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
 
 @Mapper
 @Component

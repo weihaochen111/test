@@ -3,7 +3,11 @@ package com.carcassonne.gameserver.service;
 import com.carcassonne.gameserver.bean.GameLog;
 import com.carcassonne.gameserver.mapper.LogMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+@Service
+@Component
 public class LogService implements LogMapper {
 
     @Autowired

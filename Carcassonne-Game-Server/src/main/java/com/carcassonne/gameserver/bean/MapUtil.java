@@ -116,4 +116,6 @@ public class MapUtil {
        System.out.println(leftBlock.pointSet.size());
        System.out.println(rightBlock.pointSet.size());
    }
+
 }
+

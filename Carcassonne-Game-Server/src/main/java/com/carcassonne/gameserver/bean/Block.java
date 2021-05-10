@@ -4,29 +4,31 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-class Block {
+public class Block {
     EdgeType edgeType;
     String edgeString;
     HashSet<Point> pointSet = new HashSet<>();
-    HashMap<Point, Card> cardMap = new HashMap<>();
+    HashMap<Point, Card> cardMap = new HashMap<>();//好像没用了
     HashMap<Point, ArrayList<Edge>> edgeMap = new HashMap<>();
     HashMap<String, Integer> scoreRecord = new HashMap<>();
     ArrayList<String> playerIdArray = new ArrayList<>();
     boolean isFull = true;
     int scorePerCard = 0;
     int scoreAll = 0;
-
-    Block(EdgeType edge, HashMap<Point, Card> cardMap) {
-        this.edgeType = edge;
+    public Block(String edgeString){
+        this.edgeString = edgeString;
+    }
+     Block(String edgeType, HashMap<Point, Card> cardMap) {
+        this.edgeString = edgeType;
         this.cardMap = cardMap;
         switch (edgeType) {
-            case city:
+            case "city":
                 edgeString = "city";
                 break;
-            case road:
+            case "road":
                 edgeString = "road";
                 break;
-            case grass:
+            case "grass":
                 edgeString = "grass";
                 break;
             default:
@@ -34,10 +36,6 @@ class Block {
         }
     }
 
-    Block(String edgeString, HashMap<Point, Card> cardMap) {
-        this.edgeString = edgeString;
-        this.cardMap = cardMap;
-    }
     Block(HashMap<Point,ArrayList<Edge>> edgeMap,String edgeString){
         this.edgeMap= edgeMap;
         this.edgeString = edgeString;
@@ -66,6 +64,7 @@ class Block {
                     edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>(4);
             edgeArray.set(index,edge);
             edgeMap.put(point, edgeArray);
+
     }
     public ArrayList<Point> getPoints(){
         ArrayList<Point> points = new ArrayList<Point>();
@@ -76,6 +75,7 @@ class Block {
         return points;
     }
     //合并情况不考虑得分
+
     public void mergeBlock(Block block){
         if(edgeString.equals(block.edgeString)){
             pointSet.addAll(block.pointSet);
@@ -148,6 +148,7 @@ class Block {
         int x_nextPoint = nextPoint.getX();
         int y_nextPoint = nextPoint.getY();
 
+
         for (int i = 0;i<edgeMap.get(currentPoint).size();i++) {
             switch (i) {
                 case 0:
@@ -166,6 +167,7 @@ class Block {
                     break;
             }
         }
+
     }
 
     public ArrayList<Integer> searchCardEdge(Card card) {
