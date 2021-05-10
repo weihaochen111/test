@@ -2,7 +2,7 @@ package com.carcassonne.gameserver.manager;
 
 import com.alibaba.fastjson.JSONObject;
 import com.carcassonne.gameserver.bean.*;
-import org.apache.ibatis.javassist.bytecode.analysis.ControlFlow;
+import com.carcassonne.gameserver.util.MapUtil;
 
 import java.util.ArrayList;
 

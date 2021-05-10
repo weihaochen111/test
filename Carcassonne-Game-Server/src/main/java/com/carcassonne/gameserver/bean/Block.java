@@ -7,7 +7,7 @@ import java.util.HashSet;
 public class Block {
     EdgeType edgeType;
     String edgeString;
-    HashSet<Point> pointSet = new HashSet<>();
+    public HashSet<Point> pointSet = new HashSet<>();
     HashMap<Point, Card> cardMap = new HashMap<>();//好像没用了
     HashMap<Point, ArrayList<Edge>> edgeMap = new HashMap<>();
     HashMap<String, Integer> scoreRecord = new HashMap<>();
@@ -18,7 +18,7 @@ public class Block {
     public Block(String edgeString){
         this.edgeString = edgeString;
     }
-     Block(String edgeType, HashMap<Point, Card> cardMap) {
+     public Block(String edgeType, HashMap<Point, Card> cardMap) {
         this.edgeString = edgeType;
         this.cardMap = cardMap;
         switch (edgeType) {
@@ -64,7 +64,6 @@ public class Block {
                     edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>(4);
             edgeArray.set(index,edge);
             edgeMap.put(point, edgeArray);
-
     }
     public ArrayList<Point> getPoints(){
         ArrayList<Point> points = new ArrayList<Point>();

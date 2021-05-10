@@ -1,6 +1,6 @@
 package com.carcassonne.gameserver.bean;
 
-import org.junit.jupiter.api.BeforeAll;
+import com.carcassonne.gameserver.util.MapUtil;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

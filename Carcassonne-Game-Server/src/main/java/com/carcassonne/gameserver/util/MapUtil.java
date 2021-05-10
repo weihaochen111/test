@@ -1,4 +1,8 @@
-package com.carcassonne.gameserver.bean;
+package com.carcassonne.gameserver.util;
+
+import com.carcassonne.gameserver.bean.Block;
+import com.carcassonne.gameserver.bean.Card;
+import com.carcassonne.gameserver.bean.Point;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,7 +10,7 @@ import java.util.HashSet;
 import java.util.List;
 
 public class MapUtil {
-   HashMap<Point,Card> CardMap = new HashMap<>();
+   HashMap<Point, Card> CardMap = new HashMap<>();
 
    public boolean addCard(Point point,Card card){
        if(CardMap.containsKey(point)){
