@@ -146,5 +146,11 @@ public class Card {
         this.rig.setCityorroad(i);
     }
 
-
+    public void setEdges(Edge topEdge, Edge rightEdge,
+                         Edge bottomEdge,Edge leftEdge){
+        this.top = topEdge;
+        this.lef = leftEdge;
+        this.rig = rightEdge;
+        this.bot = bottomEdge;
+    }
 }

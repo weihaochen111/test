@@ -27,8 +27,6 @@ class RoomManagerTest {
         nc.setRig(new Edge(3,"Road","left"));
         nc.setBot(new Edge(1,"City",null));
         nc.setLef(new Edge(2,"Road",null));
-
-
         assertEquals(true,roomManager.canPutCard(14,15,nc));
         assertEquals(true,roomManager.canPutCard(16,15,nc));
         assertEquals(false,roomManager.canPutCard(15,16,nc));
@@ -70,4 +68,5 @@ class RoomManagerTest {
         JSONObject jsonObject=JSONObject.parseObject(s);
         System.out.println(jsonObject.get("name"));
     }
+
 }

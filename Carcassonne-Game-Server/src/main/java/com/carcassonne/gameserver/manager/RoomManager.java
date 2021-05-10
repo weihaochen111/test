@@ -15,7 +15,7 @@ public class RoomManager {
     static public int MIN_X = 0;
     static public int MIN_Y = 0;
 
-    private Player[] players;
+    private ArrayList<Player> players;
     private Integer activePlayerNum;
     private Puzzle puzzle;
     private Card[] cardLibrary;
@@ -27,6 +27,7 @@ public class RoomManager {
     private ArrayList<ArrayList<Card>> road;
     private ArrayList<ArrayList<Edge>> roadEdge;
 
+    MapUtil mapUtil = new MapUtil();
 
     RoomManager(Card[][] cards){
         puzzle = new Puzzle(cards);
@@ -53,6 +54,7 @@ public class RoomManager {
         int n = 0;//有几个临边有放卡片
         boolean YN = true;//能否放
         Card[][] thiscard = puzzle.getmPuzzle();
+        //左边没到左边界，左边有牌->左边牌的右边界判断能放？
         if((x-1)>=MIN_X){
             if(thiscard[x-1][y] != null){
                 n++;
@@ -125,11 +127,12 @@ public class RoomManager {
 
     //TODO 测试它，有问题qq找我 2991086069
     public void putCard(int x,int y,Card card){
-        Card[][] nmap = puzzle.getmPuzzle();
+        Card[][] nmap = puzzle.getmPuzzle();//已放置二维
         boolean isEmpty = true;
         if(x+1<=MAX_X){
+            //不超过边界，右边有卡片
+            //是城市的时候，卡片的边界赋值旁边卡片的相邻边界
             if(nmap[x+1][y]!=null){
-
                 if(card.getRig().getType().equals("city")){
                     card.setRigRoadOrCity(nmap[x+1][y].getLef().getCityorroad());
                     city.get(nmap[x+1][y].getLef().getCityorroad()).add(card);
@@ -336,7 +339,6 @@ public class RoomManager {
 
         nmap[x][y] = card;
         puzzle.setmPuzzle(nmap);
-
     }
 
 }
