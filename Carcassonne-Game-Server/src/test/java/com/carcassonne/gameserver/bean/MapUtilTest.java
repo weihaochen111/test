@@ -112,10 +112,12 @@ class MapUtilTest {
         block5.Walk(point1517);
         block5.caculate();
 
+
         assertEquals(5,block1.scoreAll);
         assertEquals(10,block2.scoreAll);
         assertEquals(10,block3.scoreAll);
         assertEquals(10,block4.scoreAll);
         assertEquals(10,block5.scoreAll);
+
     }
 }
