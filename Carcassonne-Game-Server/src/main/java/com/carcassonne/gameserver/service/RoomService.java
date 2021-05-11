@@ -40,6 +40,7 @@ public class RoomService {
         MainGameManager.getInstance().addPlayer(player,roomNum);
     }
 
+    //TODO 做完房间查询
     public JSONArray searchRoom(String roomNum,String roomName){
         JSONArray array = new JSONArray();
 
