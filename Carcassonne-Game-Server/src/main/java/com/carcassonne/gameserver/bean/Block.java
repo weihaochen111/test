@@ -10,7 +10,7 @@ public class Block {
     public HashSet<Point> pointSet = new HashSet<>();
     HashMap<Point, Card> cardMap = new HashMap<>();//好像没用了
     HashMap<Point, ArrayList<Edge>> edgeMap = new HashMap<>();
-    HashMap<String, Integer> scoreRecord = new HashMap<>();
+    HashMap<String, Integer> scoreRecord = new HashMap<>();//玩家和玩家对应个数
     ArrayList<String> playerIdArray = new ArrayList<>();
     boolean isFull = true;
     int scorePerCard = 0;
@@ -90,6 +90,9 @@ public class Block {
                 if(scoreRecord.containsKey(ownerId)){
                     scoreRecord.put(ownerId,scoreRecord.get(ownerId)+block.scoreRecord.get(ownerId));
                 }
+                else {
+                    scoreRecord.put(ownerId,block.scoreRecord.get(ownerId));
+                }
             }
         }
     }
@@ -125,8 +128,7 @@ public class Block {
         }
     }
 
-    public void Walk(Point currentPoint, Point nextPoint) {
-        pointSet.add(currentPoint);
+    public void Walk(Point nextPoint) {
         if(!edgeMap.keySet().contains(nextPoint)){
             System.out.println(nextPoint+"不存在");
             return;
@@ -136,9 +138,8 @@ public class Block {
             return;
         }
 
+        pointSet.add(nextPoint);
         ArrayList<Edge> edgeArrayList = edgeMap.get(nextPoint);
-        if(edgeArrayList.size()==1)
-        System.out.println(currentPoint);
 
         int x_nextPoint = nextPoint.getX();
         int y_nextPoint = nextPoint.getY();
@@ -149,25 +150,25 @@ public class Block {
             switch (i) {
                 case 0:
                     Point point =  new Point(x_nextPoint, y_nextPoint - 1);
-                    Walk(nextPoint,point);
+                    Walk(point);
                     mapNoNullCount += edgeMap.keySet().contains(point)? 1:0;
                     edgeNoNullCount += edgeArrayList.get(i)==null?0:1;
                     break;
                 case 1:
                     Point point1= new Point(x_nextPoint + 1, y_nextPoint);
-                    Walk(nextPoint,point1 );
+                    Walk(point1);
                     mapNoNullCount += edgeMap.keySet().contains(point1)? 1:0;
                     edgeNoNullCount += edgeArrayList.get(i)==null?0:1;
                     break;
                 case 2:
                     Point point2= new Point(x_nextPoint , y_nextPoint+1);
-                    Walk(nextPoint,point2 );
+                    Walk(point2);
                     mapNoNullCount += edgeMap.keySet().contains(point2)? 1:0;
                     edgeNoNullCount += edgeArrayList.get(i)==null?0:1;
                     break;
                 case 3:
                     Point point3= new Point(x_nextPoint-1 , y_nextPoint);
-                    Walk(nextPoint,point3 );
+                    Walk(point3);
                     mapNoNullCount += edgeMap.keySet().contains(point3)? 1:0;
                     edgeNoNullCount += edgeArrayList.get(i)==null?0:1;
                     break;
@@ -180,7 +181,6 @@ public class Block {
             System.out.println("isFull变了"+mapNoNullCount);
         }
     }
-
     public ArrayList<Integer> searchCardEdge(Card card) {
         ArrayList<Integer> arrayList = new ArrayList<>();
         if (card.getTop().getType().equals(edgeString)) arrayList.add(0);
@@ -189,4 +189,5 @@ public class Block {
         if (card.getLef().getType().equals(edgeString)) arrayList.add(3);
         return arrayList;
     }
+
 }

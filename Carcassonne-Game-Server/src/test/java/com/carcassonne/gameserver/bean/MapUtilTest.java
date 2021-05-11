@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class MapUtilTest {
     Card card = new Card();
     Edge cityEdge = new Edge(1,"City",null);
@@ -87,7 +89,33 @@ class MapUtilTest {
         edgeMap.put(point1616,oneCityLeft);
 
         Block block = new Block(edgeMap,"City");
-        block.Walk(point1616,point1516);
+        block.Walk(point1616);
         block.caculate();
+
+        Block block1 = new Block(edgeMap,"Road");
+        block1.Walk(point1616);
+        block1.caculate();
+
+        Block block2 = new Block(edgeMap,"City");
+        block2.Walk(point1515);
+        block2.caculate();
+
+        Block block3 = new Block(edgeMap,"City");
+        block3.Walk(point1514);
+        block3.caculate();
+
+        Block block4 = new Block(edgeMap,"City");
+        block4.Walk(point1516);
+        block4.caculate();
+
+        Block block5 = new Block(edgeMap,"City");
+        block5.Walk(point1517);
+        block5.caculate();
+
+        assertEquals(5,block1.scoreAll);
+        assertEquals(10,block2.scoreAll);
+        assertEquals(10,block3.scoreAll);
+        assertEquals(10,block4.scoreAll);
+        assertEquals(10,block5.scoreAll);
     }
 }

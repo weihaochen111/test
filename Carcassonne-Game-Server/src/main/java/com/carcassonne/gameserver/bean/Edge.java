@@ -13,7 +13,7 @@ public class Edge {
     private String position;
     private int cityorroad;
     private String connect;
-    private Player order;
+    private String playerAccount;
 
     private String ownerId;
 
@@ -41,12 +41,8 @@ public class Edge {
         this.connect = connect;
     }
 
-    public Player getOrder() {
-        return order;
-    }
-
-    public void setOrder(Player order) {
-        this.order = order;
+    public String getPlayerAccount() {
+        return playerAccount;
     }
 
     public int getCityorroad() {
@@ -71,7 +67,7 @@ public class Edge {
         this.connect = connect;
         this.cityorroad = -1;
     }
-    public void setOwnerId(String ownerId){
-        this.ownerId = ownerId;
+    public void setPlayerAccount(String ownerId){
+        this.playerAccount = ownerId;
     }
 }

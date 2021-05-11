@@ -111,10 +111,10 @@ public class MapUtil {
        Block rightBlock = new Block(card.getRig().getType(),CardMap);
        Block bottomBlock = new Block(card.getBot().getType(),CardMap);
        Block leftBlock = new Block(card.getLef().getType(),CardMap);
-       topBlock.Walk(point,new Point(x_Point,y_Point+1));
-       rightBlock.Walk(point,new Point(x_Point+1,y_Point));
-       bottomBlock.Walk(point,new Point(x_Point,y_Point-1));
-       leftBlock.Walk(point,new Point(x_Point-1,y_Point));
+       topBlock.Walk(new Point(x_Point,y_Point+1));
+       rightBlock.Walk(new Point(x_Point+1,y_Point));
+       bottomBlock.Walk(new Point(x_Point,y_Point-1));
+       leftBlock.Walk(new Point(x_Point-1,y_Point));
        System.out.println(topBlock.pointSet.size());
        System.out.println(bottomBlock.pointSet.size());
        System.out.println(leftBlock.pointSet.size());
