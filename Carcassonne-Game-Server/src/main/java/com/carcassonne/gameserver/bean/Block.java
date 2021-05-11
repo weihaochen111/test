@@ -189,5 +189,7 @@ public class Block {
         if (card.getLef().getType().equals(edgeString)) arrayList.add(3);
         return arrayList;
     }
-
+    public Boolean scoreRecordIsempty(){
+        return scoreRecord.isEmpty();
+    }
 }

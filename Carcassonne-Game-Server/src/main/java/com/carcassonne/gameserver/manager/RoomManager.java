@@ -23,6 +23,7 @@ public class RoomManager {
     private GameLog gameLog;
     private GameResult gameResult;
 
+
 //    private ArrayList<ArrayList<Card>> city;
 //    private ArrayList<ArrayList<Edge>> cityEdge;
 //    private ArrayList<ArrayList<Card>> road;
@@ -470,4 +471,19 @@ public class RoomManager {
         puzzle.setmPuzzle(nmap);
     }
 
+
+    public ArrayList<Block> getUnappropriatedBlock(){
+        ArrayList<Block> unappropriatedBlock = new ArrayList<>();
+        for(Block aBlock:cityBlock){
+            if (aBlock.scoreRecordIsempty()){
+                unappropriatedBlock.add(aBlock);
+            }
+        }
+        for(Block aBlock:roadBlock){
+            if (aBlock.scoreRecordIsempty()){
+                unappropriatedBlock.add(aBlock);
+            }
+        }
+        return unappropriatedBlock;
+    }
 }

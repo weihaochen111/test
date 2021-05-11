@@ -58,8 +58,13 @@ class RoomManagerTest {
         a.add(1);
         a.add(3);
         a.add(2);
+        for(int i:a){
+            System.out.println(i);
+        }
         a.remove(1);
-        System.out.println(a.get(a.size()-1));
+        for(int i:a){
+            System.out.println(i);
+        }
     }
     @Test
     void suibian(){
