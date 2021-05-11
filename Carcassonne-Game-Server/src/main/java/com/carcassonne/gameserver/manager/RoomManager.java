@@ -465,8 +465,33 @@ public class RoomManager {
             }
         }
 
+
+
         //TODO 在这要判断是否有城或者路完成得分，然后进行计分
 
+
+
+
+        if (card.getTop().getType().equals("city")){
+            cityBlock.get(card.getTop().getCityorroad()).Walk(point);
+        }else if(card.getTop().getType().equals("road")){
+            roadBlock.get(card.getTop().getCityorroad()).Walk(point);
+        }
+        if (card.getRig().getType().equals("city")){
+            cityBlock.get(card.getRig().getCityorroad()).Walk(point);
+        }else if(card.getRig().getType().equals("road")){
+            roadBlock.get(card.getRig().getCityorroad()).Walk(point);
+        }
+        if (card.getBot().getType().equals("city")){
+            cityBlock.get(card.getBot().getCityorroad()).Walk(point);
+        }else if(card.getBot().getType().equals("road")){
+            roadBlock.get(card.getBot().getCityorroad()).Walk(point);
+        }
+        if (card.getLef().getType().equals("city")){
+            cityBlock.get(card.getLef().getCityorroad()).Walk(point);
+        }else if(card.getLef().getType().equals("road")){
+            roadBlock.get(card.getLef().getCityorroad()).Walk(point);
+        }
         nmap[x][y] = card;
         puzzle.setmPuzzle(nmap);
     }
