@@ -7,6 +7,9 @@ import com.carcassonne.gameserver.manager.RoomManager;
  * 房间
  */
 public class Room {
+    public static String WAIT_START_STATE = "waitStartState";
+
+
     private Integer num;
     private String name;
     private String password;
@@ -40,8 +43,8 @@ public class Room {
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 ", roomState='" + roomState + '\'' +
-                ", roomManager=" + roomManager +
-                ", chat=" + chat +
+                ", roomManager=" + roomManager.toString() +
+                ", chat=" + chat.toString() +
                 '}';
     }
 

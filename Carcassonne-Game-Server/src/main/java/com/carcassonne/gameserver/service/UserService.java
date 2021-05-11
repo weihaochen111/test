@@ -41,7 +41,7 @@ public class UserService implements UserMapper {
     }
 
 
-    public void deleteWanderUser(String accountNum){
+    public void deleteWanderUserByAccountNum(String accountNum){
         if (redisTemplate.hasKey(RedisConfig.WANDER_USER_LIST + accountNum)) redisTemplate.delete(RedisConfig.WANDER_USER_LIST + accountNum);
     }
 
@@ -62,4 +62,8 @@ public class UserService implements UserMapper {
         User user = operations.get(RedisConfig.WANDER_USER_LIST +accountNum);
         return user;
     }
+
+
+
+
 }

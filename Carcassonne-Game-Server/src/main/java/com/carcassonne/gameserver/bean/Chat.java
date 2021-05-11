@@ -21,6 +21,13 @@ public class Chat {
         MsgList = msgList;
     }
 
+    @Override
+    public String toString() {
+        return "Chat{" +
+                "MsgList=" + MsgList +
+                '}';
+    }
+
     private class Msg{
         private String playerAccountNum;
         private String content;
