@@ -3,6 +3,7 @@ package com.carcassonne.gameserver.controller;
 
 import ch.qos.logback.classic.Logger;
 import com.alibaba.fastjson.JSONObject;
+import com.carcassonne.gameserver.bean.Player;
 import com.carcassonne.gameserver.bean.User;
 import com.carcassonne.gameserver.configuration.StateCodeConfig;
 import com.carcassonne.gameserver.service.UserService;
@@ -104,6 +105,29 @@ public class WanderController {
             token = request.getHeader("token");
             String accountNum = JwtTokenUtil.getUsername(token);
             userService.deleteWanderUser(accountNum);
+            result.put("code",200);
+            result.put("message","OK, User{accountNum:" + accountNum + "} exit successfully");
+            return  result;
+        }catch (Exception e){
+            e.printStackTrace();
+            result.put("code",500);
+            result.put("message", StateCodeConfig.when_500_message("null"));
+            logger.error("/wander/userExit api end with 500 , unknown error ! "+e.toString()+"token :" + token);
+            return result;
+        }
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/userCreateRoom",method = RequestMethod.POST)
+    public JSONObject userCreateRoom(HttpServletRequest request,@RequestBody String JSONBody){
+        JSONObject result = new JSONObject();
+        String token = null;
+        try {
+            token = request.getHeader("token");
+            String accountNum = JwtTokenUtil.getUsername(token);
+            User user = userService.getWonderUserByAccountNum(accountNum); //TODO 创建并加入房间
+            Player player = new Player(false,null,null,false,"playing",user);
+            userService.
             result.put("code",200);
             result.put("message","OK, User{accountNum:" + accountNum + "} exit successfully");
             return  result;

@@ -9,6 +9,10 @@ import java.util.ArrayList;
 public class Chat {
     private ArrayList<Msg> MsgList;
 
+    public Chat(){
+        MsgList = new ArrayList<>();
+    }
+
     public ArrayList<Msg> getMsgList() {
         return MsgList;
     }
@@ -18,26 +22,25 @@ public class Chat {
     }
 
     private class Msg{
-        private Player sender;
+        private String playerAccountNum;
         private String content;
         private Timestamp timestamp;
 
         @Override
         public String toString() {
             return "Msg{" +
-                    "sender=" + sender +
+                    "playerAccountNum='" + playerAccountNum + '\'' +
                     ", content='" + content + '\'' +
                     ", timestamp=" + timestamp +
                     '}';
         }
 
-
-        public Player getSender() {
-            return sender;
+        public String getPlayerAccountNum() {
+            return playerAccountNum;
         }
 
-        public void setSender(Player sender) {
-            this.sender = sender;
+        public void setPlayerAccountNum(String playerAccountNum) {
+            this.playerAccountNum = playerAccountNum;
         }
 
         public String getContent() {

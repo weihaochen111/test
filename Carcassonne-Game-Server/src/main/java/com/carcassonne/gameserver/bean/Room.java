@@ -1,5 +1,6 @@
 package com.carcassonne.gameserver.bean;
 
+import com.alibaba.fastjson.JSONObject;
 import com.carcassonne.gameserver.manager.RoomManager;
 
 /**
@@ -14,13 +15,22 @@ public class Room {
     private Chat chat;
 
 
-    public Room(Integer num, String name, String password, String roomState, RoomManager roomManager, Chat chat) {
+    public Room(Integer num, String name, String password, String roomState) {
         this.num = num;
         this.name = name;
         this.password = password;
         this.roomState = roomState;
-        this.roomManager = roomManager;
-        this.chat = chat;
+        this.roomManager = new RoomManager();
+        this.chat = new Chat();
+    }
+
+    public JSONObject toJSONObject(){
+        JSONObject room = new JSONObject();
+        if(num != null) room.put("num",num);
+        if(password != null) room.put("password",password);
+        if(name != null) room.put("name",name);
+        if(roomState != null) room.put("roomState",roomState);
+        return room;
     }
 
     @Override

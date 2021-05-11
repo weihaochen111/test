@@ -10,13 +10,11 @@ import java.util.Hashtable;
  */
 public class MainGameManager {
     private static MainGameManager mainGameManager;
-    private HashMap<String, Room> roomHashMap;
-
-
+    private HashMap<Integer, Room> roomHashMap;
 
 
     private MainGameManager(){
-        roomHashMap = new HashMap<String, Room>();
+        roomHashMap = new HashMap<Integer, Room>();
     }
 
     public static MainGameManager getInstance() {
@@ -24,6 +22,10 @@ public class MainGameManager {
             mainGameManager = new MainGameManager();
         }
         return mainGameManager;
+    }
+
+    public void createRoom(Room room){
+        roomHashMap.put(room.getNum(),room);
     }
 
 

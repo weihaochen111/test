@@ -10,17 +10,26 @@ public class Player extends User{
     private Integer score;
     private Boolean isStart;
     private String gameState;
+    private Integer inRoomNum;
 
-    public Player(Boolean isReady, Card hand, Integer score, Boolean isStart, String gameState,User user) {
+    public Player(Boolean isReady, Card hand, Integer score, Boolean isStart, String gameState,Integer inRoomNum,User user) {
         super(user.getAccountNum(),user.getPassword(),user.getSex(),user.getLevel(),user.getNickname(),user.getHeadPictureURL());
         this.isReady = isReady;
         this.hand = hand;
         this.score = score;
         this.isStart = isStart;
         this.gameState = gameState;
+        this.inRoomNum = inRoomNum;
     }
 
 
+    public Integer getInRoomNum() {
+        return inRoomNum;
+    }
+
+    public void setInRoomNum(Integer inRoomNum) {
+        this.inRoomNum = inRoomNum;
+    }
 
     public Boolean getReady() {
         return isReady;

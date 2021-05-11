@@ -1,6 +1,7 @@
 package com.carcassonne.gameserver.service;
 
 import com.alibaba.fastjson.JSONObject;
+import com.carcassonne.gameserver.bean.Player;
 import com.carcassonne.gameserver.bean.User;
 import com.carcassonne.gameserver.configuration.RedisConfig;
 import com.carcassonne.gameserver.mapper.UserMapper;
@@ -41,18 +42,24 @@ public class UserService implements UserMapper {
 
 
     public void deleteWanderUser(String accountNum){
-        if (redisTemplate.hasKey(RedisConfig.WONDER_USER_LIST + accountNum)) redisTemplate.delete(RedisConfig.WONDER_USER_LIST + accountNum);
+        if (redisTemplate.hasKey(RedisConfig.WANDER_USER_LIST + accountNum)) redisTemplate.delete(RedisConfig.WANDER_USER_LIST + accountNum);
+    }
+
+    public void  insertWaitStartPlayer(Player player){
+        ValueOperations<String, Player> operations = redisTemplate.opsForValue();
+        if (redisTemplate.hasKey(RedisConfig.WAIT_START_USER_LIST + player.getAccountNum())) redisTemplate.delete(RedisConfig.WAIT_START_USER_LIST + player.getAccountNum());
+        operations.set(RedisConfig.WAIT_START_USER_LIST + player.getAccountNum(),player,RedisConfig.PLAY_WAITING_TIME,TimeUnit.MINUTES);
     }
 
     public void insertWonderUser(User user){
         ValueOperations<String, User> operations = redisTemplate.opsForValue();
-        if (redisTemplate.hasKey(RedisConfig.WONDER_USER_LIST + user.getAccountNum())) redisTemplate.delete(RedisConfig.WONDER_USER_LIST + user.getAccountNum());
-        operations.set(RedisConfig.WONDER_USER_LIST + user.getAccountNum(),user,6,TimeUnit.HOURS);
+        if (redisTemplate.hasKey(RedisConfig.WANDER_USER_LIST + user.getAccountNum())) redisTemplate.delete(RedisConfig.WANDER_USER_LIST + user.getAccountNum());
+        operations.set(RedisConfig.WANDER_USER_LIST + user.getAccountNum(),user,6,TimeUnit.HOURS);
     }
 
     public User getWonderUserByAccountNum(String accountNum){
         ValueOperations<String, User> operations = redisTemplate.opsForValue();
-        User user = operations.get(RedisConfig.WONDER_USER_LIST +accountNum);
+        User user = operations.get(RedisConfig.WANDER_USER_LIST +accountNum);
         return user;
     }
 }
