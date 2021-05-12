@@ -44,6 +44,10 @@ public class Block {
         this.edgeMap = edgeMap;
     }
 
+    /**
+     *
+     * @return Block的全部信息了可能
+     */
     @Override
     public String toString() {
         StringBuilder stringbuilder = new StringBuilder();
@@ -96,6 +100,10 @@ public class Block {
     }
     //合并情况不考虑得分
 
+    /**
+     * 合并block
+     * @param block
+     */
     public void mergeBlock(Block block){
         if(edgeString.equals(block.edgeString)){
             pointSet.addAll(block.pointSet);
@@ -173,7 +181,7 @@ public class Block {
         pointSet.add(nextPoint);
         ArrayList<Edge> edgeArrayList = edgeMap.get(nextPoint);
 
-        addPlayerAccount(edgeArrayList);
+
 
         int x_nextPoint = nextPoint.getX();
         int y_nextPoint = nextPoint.getY();
