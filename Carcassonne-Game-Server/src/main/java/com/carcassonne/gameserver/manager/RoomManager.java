@@ -26,10 +26,8 @@ public class RoomManager {
     private GameLog gameLog;
     private GameResult gameResult;
 
-<<<<<<< HEAD
+
     private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
-=======
->>>>>>> db5111dfda043433ab3d0a60e5a71f29ec556a99
 
 //    private ArrayList<ArrayList<Card>> city;
 //    private ArrayList<ArrayList<Edge>> cityEdge;
