@@ -46,18 +46,25 @@ public class Block {
 
     @Override
     public String toString() {
-        return "Block{" +
-                "edgeType=" + edgeType +
-                ", edgeString='" + edgeString + '\'' +
-                ", pointSet=" + pointSet +
-                ", cardMap=" + cardMap +
-                ", edgeMap=" + edgeMap +
-                ", scoreRecord=" + scoreRecord +
-                ", playerIdArray=" + playerIdArray +
-                ", isFull=" + isFull +
-                ", scorePerCard=" + scorePerCard +
-                ", scoreAll=" + scoreAll +
-                '}';
+        StringBuilder stringbuilder = new StringBuilder();
+        stringbuilder.append("pointSet:\n");
+        //坐标集合
+        for(Point point:pointSet){
+            stringbuilder.append(point+"\n");
+        }
+        //玩家集合
+        stringbuilder.append("玩家情况\n");
+        for(String str:scoreRecord.keySet()){
+            stringbuilder.append(str+" "+scoreRecord.get(str)+"\n");
+        }
+        //得分
+        stringbuilder.append("总得分\n"+"是否完整"+isFull+"\n"+scorePerCard+"*"+pointSet.size()+"="+scoreAll+"\n");
+        //得分玩家
+        stringbuilder.append("得分玩家有：\n");
+        for(String playerId : playerIdArray){
+            stringbuilder.append(playerId+"\n");
+        }
+        return stringbuilder.toString();
     }
 
     public void addEdgeMap(Point point, Edge edge,int index){
@@ -122,9 +129,9 @@ public class Block {
                 }
             }
         }
-        System.out.println(isFull);
-        System.out.println(scorePerCard+"*"+pointSet.size()+"="+scoreAll);
-        printPlayer();
+//        System.out.println(isFull);
+//        System.out.println(scorePerCard+"*"+pointSet.size()+"="+scoreAll);
+//        printPlayer();
     }
 
     public void record(String ownerId) {
@@ -142,11 +149,11 @@ public class Block {
      */
     public void Walk(Point nextPoint) {
         if(!edgeMap.keySet().contains(nextPoint)){
-            System.out.println(nextPoint+"不存在");
+//            System.out.println(nextPoint+"不存在");
             return;
         }
         if(pointSet.contains(nextPoint)){
-            System.out.println(nextPoint+"走过了");
+//            System.out.println(nextPoint+"走过了");
             return;
         }
 
@@ -192,7 +199,7 @@ public class Block {
         }
         if(mapNoNullCount!=edgeNoNullCount){
             isFull=false;
-            System.out.println("isFull变了"+mapNoNullCount);
+            System.out.println("Block不完整不能得分哦现在");
         }
     }
 
@@ -214,6 +221,9 @@ public class Block {
         if (card.getBot().getType().equals(edgeString)) arrayList.add(2);
         if (card.getLef().getType().equals(edgeString)) arrayList.add(3);
         return arrayList;
+    }
+    public Boolean scoreRecordIsempty(){
+        return scoreRecord.isEmpty();
     }
     public void printPlayer(){
         System.out.println("占领的人有:");
