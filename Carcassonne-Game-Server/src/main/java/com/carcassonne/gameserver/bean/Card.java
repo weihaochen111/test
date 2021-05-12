@@ -153,4 +153,23 @@ public class Card {
         this.rig = rightEdge;
         this.bot = bottomEdge;
     }
+    /**
+     * 旋转函数
+     */
+    public void rotate(int count){
+        Edge tmpEdge = new Edge(1,"City",null);
+        String tmpEdgeId = "";
+        for(int i=0;i<count%4;i++){
+            tmpEdge = top;
+            tmpEdgeId = topEdgeId;
+            top = lef;
+            topEdgeId = lefEdgeId;
+            lef = bot;
+            lefEdgeId = botEdgeId;
+            bot = rig;
+            botEdgeId = rigEdgeId;
+            rig = tmpEdge;
+            rigEdgeId = tmpEdgeId;
+        }
+    }
 }
