@@ -59,6 +59,7 @@ public class Block {
                 ", scoreAll=" + scoreAll +
                 '}';
     }
+
     public void addEdgeMap(Point point, Edge edge,int index){
             ArrayList<Edge> edgeArray =
                     edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>(4);
@@ -97,6 +98,11 @@ public class Block {
         }
     }
 
+    /**
+     * 要先调用Walk函数
+     * 城市：2分/块 道路：1分/块
+     * scoreAll为总得分，如果为0说明区块不完整不得分
+     */
     public void caculate() {
         if(isFull){
             if (edgeString.equals("City")) {
@@ -118,6 +124,7 @@ public class Block {
         }
         System.out.println(isFull);
         System.out.println(scorePerCard+"*"+pointSet.size()+"="+scoreAll);
+        printPlayer();
     }
 
     public void record(String ownerId) {
@@ -128,6 +135,11 @@ public class Block {
         }
     }
 
+    /**
+     * 记分功能先调用这个Walk（递归函数）,当这个区块不完整则isFull为false，然后调用caculate()函数
+     * 这个函数主要是为了获取isFull的值，通过pointSet的个数来获取得分块
+     * @param nextPoint 刚放进去的卡片的坐标
+     */
     public void Walk(Point nextPoint) {
         if(!edgeMap.keySet().contains(nextPoint)){
             System.out.println(nextPoint+"不存在");
@@ -140,6 +152,8 @@ public class Block {
 
         pointSet.add(nextPoint);
         ArrayList<Edge> edgeArrayList = edgeMap.get(nextPoint);
+
+        addPlayerAccount(edgeArrayList);
 
         int x_nextPoint = nextPoint.getX();
         int y_nextPoint = nextPoint.getY();
@@ -181,6 +195,18 @@ public class Block {
             System.out.println("isFull变了"+mapNoNullCount);
         }
     }
+
+    public void addPlayerAccount(ArrayList<Edge> edgeArrayList){
+        for(int i = 0;i<4;i++){
+            if(edgeArrayList.get(i)!=null){
+                Edge edge = edgeArrayList.get(i);
+                if(edge.getPlayerAccount()!=null){
+                    record(edge.getPlayerAccount());
+                }
+            }
+        }
+    }
+
     public ArrayList<Integer> searchCardEdge(Card card) {
         ArrayList<Integer> arrayList = new ArrayList<>();
         if (card.getTop().getType().equals(edgeString)) arrayList.add(0);
@@ -191,5 +217,15 @@ public class Block {
     }
     public Boolean scoreRecordIsempty(){
         return scoreRecord.isEmpty();
+    }
+    public void printPlayer(){
+        System.out.println("占领的人有:");
+        for(String playerAccount:scoreRecord.keySet()){
+            System.out.println(playerAccount+"  "+scoreRecord.get(playerAccount));
+        }
+        System.out.println("获得得分的有:");
+        for(int i=0;i<playerIdArray.size();i++){
+            System.out.println(playerIdArray.get(i));
+        }
     }
 }

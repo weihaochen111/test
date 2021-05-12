@@ -23,7 +23,15 @@ import java.time.Duration;
 @EnableCaching
 public class RedisConfig extends CachingConfigurerSupport {
 
-    public static String WONDER_USER_LIST = "wonder-user-";
+    public static String WANDER_USER_LIST = "wonder-user-";
+    public static String WAIT_START_USER_LIST = "waitStart-player-";
+    public static String ACTIVE_ROOM = "active-room-";
+    public static String PLATING_USER_LIST = "playing-player-";
+
+    public static Integer WANDER_USER_ALIVE_TIME = 6;
+    public static Integer ROOM_ALIVE_TIME = 3;
+    public static Integer PLAY_WAITING_TIME = 5; //minutes
+
 
     /**
      * 选择redis作为默认缓存工具

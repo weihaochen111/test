@@ -3,8 +3,11 @@ package com.carcassonne.gameserver.controller;
 
 import ch.qos.logback.classic.Logger;
 import com.alibaba.fastjson.JSONObject;
+import com.carcassonne.gameserver.bean.Player;
+import com.carcassonne.gameserver.bean.Room;
 import com.carcassonne.gameserver.bean.User;
 import com.carcassonne.gameserver.configuration.StateCodeConfig;
+import com.carcassonne.gameserver.service.RoomService;
 import com.carcassonne.gameserver.service.UserService;
 import com.carcassonne.gameserver.util.JwtTokenUtil;
 import org.slf4j.LoggerFactory;
@@ -22,6 +25,9 @@ public class WanderController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private RoomService roomService;
 
     private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
 
@@ -103,7 +109,7 @@ public class WanderController {
         try {
             token = request.getHeader("token");
             String accountNum = JwtTokenUtil.getUsername(token);
-            userService.deleteWanderUser(accountNum);
+            userService.deleteWanderUserByAccountNum(accountNum);
             result.put("code",200);
             result.put("message","OK, User{accountNum:" + accountNum + "} exit successfully");
             return  result;
@@ -115,4 +121,97 @@ public class WanderController {
             return result;
         }
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/userCreateRoom",method = RequestMethod.POST)
+    public JSONObject userCreateRoom(HttpServletRequest request,@RequestBody String JSONBody){
+        JSONObject result = new JSONObject();
+        JSONObject requestBody = new JSONObject();
+        String token = null;
+        String accountNum = null;
+        String roomName = null;
+        String roomPassword =null;
+        try {
+            token = request.getHeader("token");
+            accountNum = JwtTokenUtil.getUsername(token);
+            requestBody = JSONObject.parseObject(JSONBody);
+            roomName = requestBody.getString("roomName");
+            if (requestBody.get("roomPassword").toString().equals("null")) roomPassword = null;
+            else roomPassword =requestBody.getString("roomPassword");
+        }catch (Exception e){
+            e.printStackTrace();
+            result.put("code",400);
+            result.put("message", "Bad Request");
+            logger.error("/wander/userCreateRoom api end with 400 , Bad Request "+e.toString()+" JSONBody :" + JSONBody );
+            return result;
+        }
+
+        try {
+            User user = userService.getWonderUserByAccountNum(accountNum);
+            userService.deleteWanderUserByAccountNum(accountNum);
+            Integer roomNum = roomService.createRoom(new Room(null, roomName , roomPassword , Room.WAIT_START_STATE));
+            Player player = new Player(false,null,null,false,"playing",roomNum,user);
+            roomService.userJoinRoom(player,roomNum);
+            userService.insertWaitStartPlayer(player);
+            result.put("code",200);
+            result.put("message","OK, Create room successfully");
+            result.put("state","waitStart");
+            result.put("roomNum",roomNum.toString());
+            result.put("roomName",roomName);
+            result.put("roomPassword",roomPassword == null ? "null" : roomPassword);
+            result.put("playerRole","master");
+            logger.info(accountNum +"create room , info :" + result.toJSONString());
+            return  result;
+        }catch (Exception e){
+            e.printStackTrace();
+            result.put("code",500);
+            result.put("message", StateCodeConfig.when_500_message(JSONBody));
+            logger.error("/wander/userExit api end with 500 , unknown error ! "+e.toString()+" ==> JSONBody:" + JSONBody);
+            return result;
+        }
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/userJoinRoom",method = RequestMethod.POST)
+    public JSONObject userJoinRoom(HttpServletRequest request,@RequestBody String JSONBody){
+        JSONObject result = new JSONObject();
+        JSONObject requestBody = new JSONObject();
+        String token = null;
+        String accountNum = null;
+        Integer roomNum= null;
+        try {
+            token = request.getHeader("token");
+            accountNum = JwtTokenUtil.getUsername(token);
+            requestBody = JSONObject.parseObject(JSONBody);
+            roomNum = Integer.parseInt(requestBody.getString("roomNum"));
+            //TODO 目前先做select模式的
+        }catch (Exception e){
+            e.printStackTrace();
+            result.put("code",400);
+            result.put("message", "Bad Request");
+            logger.error("/wander/userJoinRoom api end with 400 , Bad Request "+e.toString()+" JSONBody :" + JSONBody );
+            return result;
+        }
+
+        try {
+            User user = userService.getWonderUserByAccountNum(accountNum);
+            userService.deleteWanderUserByAccountNum(accountNum);
+            Player player = new Player(false,null,null,false,"playing",roomNum,user);
+            roomService.userJoinRoom(player,roomNum);
+            userService.insertWaitStartPlayer(player);
+            result.put("code",200);
+            result.put("message","OK, "+accountNum +"Join  room successfully");
+            result.put("state","waitStart");
+            result.put("playerRole","member");
+            logger.info(accountNum +"Join  room successfully , info :" + result.toJSONString());
+            return  result;
+        }catch (Exception e){
+            e.printStackTrace();
+            result.put("code",500);
+            result.put("message", StateCodeConfig.when_500_message(JSONBody));
+            logger.error("/wander/userJoinRoom api end with 500 , unknown error ! "+e.toString()+" ==> JSONBody:" + JSONBody);
+            return result;
+        }
+    }
+
 }

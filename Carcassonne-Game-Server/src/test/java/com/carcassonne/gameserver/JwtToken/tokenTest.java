@@ -7,17 +7,20 @@ public class tokenTest {
     @Test
     public void tt() throws InterruptedException {
 
-        System.out.println(JwtTokenUtil.createToken("cc","user"));
-//        try {
-//            String token = "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoidXNlciIsImV4cCI6MTYyMDQwMTA2MywiaWF0IjoxNjIwMzc5NDYzLCJ1c2VybmFtZSI6IjEwNzI4NzYwMjVAcXEuY29tIn0.5ESRDWIyQzM2qOUIHe9JhHbqTVscYnJ9OtIOk3MUaYE";
-//
-//            System.out.println(JwtTokenUtil.checkJWT(token));
-//            System.out.println(JwtTokenUtil.isExpiration(token));
-//        }catch (Exception e){
-//            System.out.println("error");
-//            e.printStackTrace();
-//        }
+//        System.out.println(JwtTokenUtil.createToken("cc","user"));
+////        try {
+////            String token = "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoidXNlciIsImV4cCI6MTYyMDQwMTA2MywiaWF0IjoxNjIwMzc5NDYzLCJ1c2VybmFtZSI6IjEwNzI4NzYwMjVAcXEuY29tIn0.5ESRDWIyQzM2qOUIHe9JhHbqTVscYnJ9OtIOk3MUaYE";
+////
+////            System.out.println(JwtTokenUtil.checkJWT(token));
+////            System.out.println(JwtTokenUtil.isExpiration(token));
+////        }catch (Exception e){
+////            System.out.println("error");
+////            e.printStackTrace();
+////        }
 
+        String a = "123123";
+        System.out.println(a.contains("12"));
+        System.out.println(a.contains("123123"));
 
     }
 }

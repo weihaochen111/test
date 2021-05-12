@@ -1,11 +1,15 @@
 package com.carcassonne.gameserver.bean;
 
+import com.alibaba.fastjson.JSONObject;
 import com.carcassonne.gameserver.manager.RoomManager;
 
 /**
  * 房间
  */
 public class Room {
+    public static String WAIT_START_STATE = "waitStartState";
+
+
     private Integer num;
     private String name;
     private String password;
@@ -14,13 +18,22 @@ public class Room {
     private Chat chat;
 
 
-    public Room(Integer num, String name, String password, String roomState, RoomManager roomManager, Chat chat) {
+    public Room(Integer num, String name, String password, String roomState) {
         this.num = num;
         this.name = name;
         this.password = password;
         this.roomState = roomState;
-        this.roomManager = roomManager;
-        this.chat = chat;
+        this.roomManager = new RoomManager();
+        this.chat = new Chat();
+    }
+
+    public JSONObject toJSONObject(){
+        JSONObject room = new JSONObject();
+        if(num != null) room.put("num",num);
+        if(password != null) room.put("password",password);
+        if(name != null) room.put("name",name);
+        if(roomState != null) room.put("roomState",roomState);
+        return room;
     }
 
     @Override
@@ -30,8 +43,8 @@ public class Room {
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 ", roomState='" + roomState + '\'' +
-                ", roomManager=" + roomManager +
-                ", chat=" + chat +
+                ", roomManager=" + roomManager.toString() +
+                ", chat=" + chat.toString() +
                 '}';
     }
 

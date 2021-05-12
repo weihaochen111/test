@@ -5,6 +5,7 @@ import com.carcassonne.gameserver.bean.*;
 import com.carcassonne.gameserver.util.MapUtil;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * 房间控制器
@@ -34,11 +35,28 @@ public class RoomManager {
 
     MapUtil mapUtil = new MapUtil();
 
-    RoomManager(Card[][] cards){
+    public RoomManager(Card[][] cards){
         puzzle = new Puzzle(cards);
         puzzle.addHaveBePutCardsList(new Point(15,15));
     }
-    
+
+    public RoomManager(){
+        players = new ArrayList<>();
+        activePlayerNum = 0;
+       //TODO 其实还可以初始化牌库
+    }
+
+    public void  addPlayer(Player player){
+        players.add(player);
+        activePlayerNum ++;
+    }
+
+
+    public void deletePlayer(Player player){
+        //TODO 删除玩家，玩家离开房间
+        activePlayerNum--;
+    }
+
     //TODO 计分算法 爱咋写咋写
     //函数说明 ： 地图保存在puzzle对象中，如需其他地图操作函数可在bean.Puzzle 中编写
     /**
@@ -510,5 +528,59 @@ public class RoomManager {
             }
         }
         return unappropriatedBlock;
+    }
+    @Override
+    public String toString() {
+        return "RoomManager{" +
+                "players=" + players +
+                ", activePlayerNum=" + activePlayerNum +
+                ", puzzle=" + puzzle +
+                ", cardLibrary=" + Arrays.toString(cardLibrary) +
+                ", gameLog=" + gameLog +
+                ", gameResult=" + gameResult +
+                ", cityBlock=" + cityBlock +
+                ", roadBlock=" + roadBlock +
+                ", mapUtil=" + mapUtil +
+                '}';
+    }
+
+    public Integer getActivePlayerNum() {
+        return activePlayerNum;
+    }
+
+    public void setActivePlayerNum(Integer activePlayerNum) {
+        this.activePlayerNum = activePlayerNum;
+    }
+
+    public Puzzle getPuzzle() {
+        return puzzle;
+    }
+
+    public void setPuzzle(Puzzle puzzle) {
+        this.puzzle = puzzle;
+    }
+
+    public Card[] getCardLibrary() {
+        return cardLibrary;
+    }
+
+    public void setCardLibrary(Card[] cardLibrary) {
+        this.cardLibrary = cardLibrary;
+    }
+
+    public GameLog getGameLog() {
+        return gameLog;
+    }
+
+    public void setGameLog(GameLog gameLog) {
+        this.gameLog = gameLog;
+    }
+
+    public GameResult getGameResult() {
+        return gameResult;
+    }
+
+    public void setGameResult(GameResult gameResult) {
+        this.gameResult = gameResult;
     }
 }

@@ -112,6 +112,15 @@ class MapUtilTest {
         block5.Walk(point1517);
         block5.caculate();
 
+        edgeMap.put(point1515,threeCity);
+
+        Block block6 = new Block(edgeMap,"City");
+        block6.Walk(point1616);
+        block6.caculate();
+
+        Block block7 = new Block(edgeMap,"City");
+        block7.Walk(point1515);
+        block7.caculate();
 
         assertEquals(5,block1.scoreAll);
         assertEquals(10,block2.scoreAll);
