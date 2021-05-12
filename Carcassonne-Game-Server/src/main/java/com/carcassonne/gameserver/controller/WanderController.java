@@ -2,6 +2,7 @@ package com.carcassonne.gameserver.controller;
 
 
 import ch.qos.logback.classic.Logger;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.carcassonne.gameserver.bean.Player;
 import com.carcassonne.gameserver.bean.Room;
@@ -204,6 +205,45 @@ public class WanderController {
             result.put("state","waitStart");
             result.put("playerRole","member");
             logger.info(accountNum +"Join  room successfully , info :" + result.toJSONString());
+            return  result;
+        }catch (Exception e){
+            e.printStackTrace();
+            result.put("code",500);
+            result.put("message", StateCodeConfig.when_500_message(JSONBody));
+            logger.error("/wander/userJoinRoom api end with 500 , unknown error ! "+e.toString()+" ==> JSONBody:" + JSONBody);
+            return result;
+        }
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/searchRoom",method = RequestMethod.POST)
+    public JSONObject searchRoom(HttpServletRequest request,@RequestBody String JSONBody){
+        JSONObject result = new JSONObject();
+        JSONObject requestBody = new JSONObject();
+        String token = null;
+        String accountNum = null;
+        Integer roomNum =null;
+        JSONArray roomList = null;
+        try {
+            token = request.getHeader("token");
+            accountNum = JwtTokenUtil.getUsername(token);
+            requestBody = JSONObject.parseObject(JSONBody);
+           if(!requestBody.getString("roomNum").equals("null")) roomNum = Integer.parseInt(requestBody.getString("roomNum"));
+        }catch (Exception e){
+            e.printStackTrace();
+            result.put("code",400);
+            result.put("message", "Bad Request");
+            logger.error("/wander/searchRoom api end with 400 , Bad Request "+e.toString()+" JSONBody :" + JSONBody );
+            return result;
+        }
+
+        try {
+            roomList = roomService.searchRoom(requestBody.getString("roomNum"));
+            result.put("code",200);
+            result.put("message","OK, Room search successfully");
+            result.put("roomList",roomList);
+            logger.info(accountNum +" Room search successfully :" + result.toJSONString());
             return  result;
         }catch (Exception e){
             e.printStackTrace();

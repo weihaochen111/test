@@ -1,0 +1,4 @@
+2021-05-09 16:46:26.737 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'wanderController' method 
+com.carcassonne.gameserver.controller.WanderController#updateUserInfo(HttpServletRequest, String)
+to {POST [/wander/getUserInfo], produces [application/json;charset=utf-8]}: There is already 'wanderController' bean method
+com.carcassonne.gameserver.controller.WanderController#getUserInfo(HttpServletRequest) mapped.

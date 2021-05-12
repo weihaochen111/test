@@ -18,13 +18,15 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import static com.carcassonne.gameserver.configuration.RedisConfig.ROOM_ALIVE_TIME;
+
 @Service
 public class RoomService {
     @Autowired
     private RedisTemplate redisTemplate;
 
     public Integer createRoom(Room room){
-        ValueOperations<String,Room>  operations= redisTemplate.opsForValue();
+        ValueOperations<String,JSONObject>  operations= redisTemplate.opsForValue();
         Random random = new Random();
         Integer randomRoomNum = random.nextInt(899999)+100000;
         while (redisTemplate.hasKey(RedisConfig.ACTIVE_ROOM + randomRoomNum)){
@@ -32,7 +34,7 @@ public class RoomService {
         }
         room.setNum(randomRoomNum);
         MainGameManager.getInstance().createRoom(room);
-        operations.set(RedisConfig.ACTIVE_ROOM+randomRoomNum,room,RedisConfig.ROOM_ALIVE_TIME, TimeUnit.HOURS);
+        operations.set(RedisConfig.ACTIVE_ROOM + randomRoomNum , room.toJSONObject() , ROOM_ALIVE_TIME, TimeUnit.HOURS);
         return randomRoomNum;
     }
 
@@ -40,12 +42,22 @@ public class RoomService {
         MainGameManager.getInstance().addPlayer(player,roomNum);
     }
 
-    //TODO 做完房间查询
-    public JSONArray searchRoom(String roomNum,String roomName){
-        JSONArray array = new JSONArray();
 
-
+    public JSONArray searchRoom(String roomNum){
+        JSONArray array = MainGameManager.getInstance().searchRoom(roomNum);
         return array;
     }
+
+    public String readyAndStartGame(String accountNum){
+        if (redisTemplate.hasKey(RedisConfig.WAIT_START_USER_LIST + accountNum)) {
+            ValueOperations<String, JSONObject> operations = redisTemplate.opsForValue();
+            JSONObject playerJsonObject = operations.get(RedisConfig.WAIT_START_USER_LIST + accountNum);
+            redisTemplate.delete(RedisConfig.WANDER_USER_LIST + accountNum);
+            Integer roomNum = playerJsonObject.getInteger("inRoomNum");
+            return MainGameManager.getInstance().readyAndStartGame(accountNum,roomNum);
+        }
+        return "error";
+    }
+
 
 }

@@ -1,2 +1,0 @@
-2021-04-25 22:33:20.996 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.carcassonne.gameserver]' package. Please check your configuration.
-2021-04-25 22:33:48.054 [http-nio-8080-exec-5] WARN  c.c.gameserver.controller.testLogbackController - 日志输出 warn

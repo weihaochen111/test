@@ -1,8 +1,10 @@
 package com.carcassonne.gameserver.manager;
 
+import ch.qos.logback.classic.Logger;
 import com.alibaba.fastjson.JSONObject;
 import com.carcassonne.gameserver.bean.*;
 import com.carcassonne.gameserver.util.MapUtil;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,6 +25,8 @@ public class RoomManager {
     private Card[] cardLibrary;
     private GameLog gameLog;
     private GameResult gameResult;
+
+    private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
 
 //    private ArrayList<ArrayList<Card>> city;
 //    private ArrayList<ArrayList<Edge>> cityEdge;
@@ -48,6 +52,22 @@ public class RoomManager {
     public void  addPlayer(Player player){
         players.add(player);
         activePlayerNum ++;
+    }
+
+    public String readyAndStartGame(String accountNum){
+        int flag = 0;
+        for (int i=0;i<players.size();i++){
+            if(players.get(i).getAccountNum().equals(accountNum)){
+                players.get(i).setReady(true);
+            }
+            if(players.get(i).getReady()==true) flag++;
+        }
+        if (flag==players.size() && flag > 1) {
+            //TODO 开始游戏初始化
+            logger.info("gameStart" + players );
+            return "playing";
+        }
+        return "waiting";
     }
 
 
