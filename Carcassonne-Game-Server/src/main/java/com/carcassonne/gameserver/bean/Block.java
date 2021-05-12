@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class Block {
-    EdgeType edgeType;
     String edgeString;
     public HashSet<Point> pointSet = new HashSet<>();
     HashMap<Point, Card> cardMap = new HashMap<>();//好像没用了
@@ -51,10 +50,13 @@ public class Block {
     @Override
     public String toString() {
         StringBuilder stringbuilder = new StringBuilder();
-        stringbuilder.append("pointSet:\n");
-        //坐标集合
-        for(Point point:pointSet){
-            stringbuilder.append(point+"\n");
+        stringbuilder.append("EdgeMap:\n");
+
+        for(Point point: edgeMap.keySet()){
+            stringbuilder.append(point+" ");
+            for(int i=0;i<4;i++)
+                stringbuilder.append(edgeMap.get(point).get(i));
+            stringbuilder.append("\n");
         }
         //玩家集合
         stringbuilder.append("玩家情况\n");
@@ -73,7 +75,14 @@ public class Block {
 
     public void addEdgeMap(Point point, Edge edge,int index){
             ArrayList<Edge> edgeArray =
-                    edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>(4);
+                    edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>(){
+                        {
+                            add(null);
+                            add(null);
+                            add(null);
+                            add(null);
+                        }
+                    };
             edgeArray.set(index,edge);
             edgeMap.put(point, edgeArray);
     }
@@ -120,9 +129,9 @@ public class Block {
      */
     public void caculate() {
         if(isFull){
-            if (edgeString.equals("City")) {
+            if (edgeString.equals("city")) {
                 scorePerCard = 2;
-            } else if (edgeString.equals("Road")) {
+            } else if (edgeString.equals("road")) {
                 scorePerCard = 1;
             }
             scoreAll = isFull ? scorePerCard * pointSet.size() : 0;
@@ -176,6 +185,7 @@ public class Block {
         int mapNoNullCount = 0 ;
         int edgeNoNullCount = 0 ;
         for (int i = 0;i<4;i++) {
+
             switch (i) {
                 case 0:
                     Point point =  new Point(x_nextPoint, y_nextPoint - 1);
