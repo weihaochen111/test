@@ -203,6 +203,7 @@ class MapUtilTest {
         HashMap<Point,ArrayList<Edge>> edgeMap1 = new HashMap<>();
         edgeMap1.put(point1514,oneCityBottom);
         edgeMap1.put(point1515,twoCity);
+        edgeMap1.put(point1517,oneCityBottom);
         edgeMap1.put(point1516,threeCity);
         HashMap<Point,ArrayList<Edge>> edgeMap2 = new HashMap<>();
         edgeMap2.put(point1517,oneCityTop);
@@ -241,4 +242,5 @@ class MapUtilTest {
         block1.record(ownerId2);
         System.out.println(block2);
     }
+
 }

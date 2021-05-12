@@ -108,10 +108,28 @@ public class Block {
             pointSet.addAll(block.pointSet);
             for(Point point : block.edgeMap.keySet()){
                 ArrayList<Edge> edgeList =
-                        block.edgeMap.containsKey(point)? block.edgeMap.get(point):new ArrayList<Edge>();
+                        block.edgeMap.containsKey(point)? block.edgeMap.get(point):new ArrayList<Edge>(){
+                            {
+                                add(null);
+                                add(null);
+                                add(null);
+                                add(null);
+                            }
+                        };
                 ArrayList<Edge> edgeList1 =
-                        edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>();
-                edgeList1.addAll(edgeList);
+                        edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>(){
+                            {
+                                add(null);
+                                add(null);
+                                add(null);
+                                add(null);
+                            }
+                        };
+                for(int i=0;i<4;i++){
+                    if(edgeList.get(i)!=null){
+                        edgeList1.set(i,edgeList.get(i));
+                    }
+                }
                 edgeMap.put(point,edgeList1);
             }
             for(String ownerId:block.scoreRecord.keySet()){
