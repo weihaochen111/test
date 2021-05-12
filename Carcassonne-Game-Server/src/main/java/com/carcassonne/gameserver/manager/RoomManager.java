@@ -532,34 +532,42 @@ public class RoomManager {
 
         //TODO 在这要判断是否有城或者路完成得分，然后进行计分
 
-
+        //这里暂时解决方法是把isFull的赋值为true了，不过还是会报错说因为那时候edgeMap还没全部好
 
 
         if(card.getTop().getCityorroad()!=-1){
             if (card.getTop().getType().equals("city")){
+                cityBlock.get(card.getTop().getCityorroad()).isFull = true;
                 cityBlock.get(card.getTop().getCityorroad()).Walk(point);
             }else if(card.getTop().getType().equals("road")){
+                roadBlock.get(card.getTop().getCityorroad()).isFull = true;
                 roadBlock.get(card.getTop().getCityorroad()).Walk(point);
             }
         }
         if(card.getRig().getCityorroad()!=-1){
             if (card.getRig().getType().equals("city")){
+                cityBlock.get(card.getRig().getCityorroad()).isFull = true;
                 cityBlock.get(card.getRig().getCityorroad()).Walk(point);
             }else if(card.getRig().getType().equals("road")){
+                roadBlock.get(card.getRig().getCityorroad()).isFull = true;
                 roadBlock.get(card.getRig().getCityorroad()).Walk(point);
             }
         }
         if(card.getBot().getCityorroad()!=-1){
             if (card.getBot().getType().equals("city")){
+                cityBlock.get(card.getBot().getCityorroad()).isFull = true;
                 cityBlock.get(card.getBot().getCityorroad()).Walk(point);
             }else if(card.getBot().getType().equals("road")){
+                roadBlock.get(card.getBot().getCityorroad()).isFull = true;
                 roadBlock.get(card.getBot().getCityorroad()).Walk(point);
             }
         }
         if(card.getLef().getCityorroad()!=-1){
             if (card.getLef().getType().equals("city")){
+                cityBlock.get(card.getLef().getCityorroad()).isFull = true;
                 cityBlock.get(card.getLef().getCityorroad()).Walk(point);
             }else if(card.getLef().getType().equals("road")){
+                roadBlock.get(card.getLef().getCityorroad()).isFull = true;
                 roadBlock.get(card.getLef().getCityorroad()).Walk(point);
             }
         }

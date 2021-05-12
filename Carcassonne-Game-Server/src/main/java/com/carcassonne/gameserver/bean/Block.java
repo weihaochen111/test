@@ -12,7 +12,7 @@ public class Block {
     HashMap<Point, ArrayList<Edge>> edgeMap = new HashMap<>();
     HashMap<String, Integer> scoreRecord = new HashMap<>();//玩家和玩家对应个数
     ArrayList<String> playerIdArray = new ArrayList<>();
-    boolean isFull = true;
+    public boolean isFull = true;
     int scorePerCard = 0;
     int scoreAll = 0;
     public Block(String edgeString){
@@ -239,6 +239,8 @@ public class Block {
         if(mapNoNullCount!=edgeNoNullCount){
             isFull=false;
             System.out.println("Block不完整不能得分哦现在");
+            System.out.println(nextPoint+"应该有"+edgeNoNullCount+"条边可以出去，但是旁边只有"+mapNoNullCount+"个卡牌");
+            System.out.println(this);
         }
     }
 
