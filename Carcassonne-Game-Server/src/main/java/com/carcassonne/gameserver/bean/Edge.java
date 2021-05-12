@@ -70,4 +70,11 @@ public class Edge {
     public void setPlayerAccount(String ownerId){
         this.playerAccount = ownerId;
     }
+
+    @Override
+    public String toString() {
+        return "Edge{" +
+                "type='" + type + '\'' +
+                '}';
+    }
 }

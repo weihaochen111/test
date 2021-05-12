@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class Block {
-    EdgeType edgeType;
+
     String edgeString;
     public HashSet<Point> pointSet = new HashSet<>();
     HashMap<Point, Card> cardMap = new HashMap<>();//好像没用了
@@ -48,9 +48,15 @@ public class Block {
     public String toString() {
         StringBuilder stringbuilder = new StringBuilder();
         stringbuilder.append("pointSet:\n");
-        //坐标集合
-        for(Point point:pointSet){
-            stringbuilder.append(point+"\n");
+
+        //edge
+        for(Point point: edgeMap.keySet()){
+            stringbuilder.append(point+" ");
+            for(int i=0;i<4;i++){
+
+                    stringbuilder.append(edgeMap.get(point).get(i));
+            }
+            stringbuilder.append("\n");
         }
         //玩家集合
         stringbuilder.append("玩家情况\n");
@@ -69,7 +75,14 @@ public class Block {
 
     public void addEdgeMap(Point point, Edge edge,int index){
             ArrayList<Edge> edgeArray =
-                    edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>(4);
+                    edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>(){
+                        {
+                            add(null);
+                            add(null);
+                            add(null);
+                            add(null);
+                        }
+                    };
             edgeArray.set(index,edge);
             edgeMap.put(point, edgeArray);
     }
