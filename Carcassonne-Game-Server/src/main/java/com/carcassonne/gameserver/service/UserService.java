@@ -46,9 +46,12 @@ public class UserService implements UserMapper {
     }
 
     public void  insertWaitStartPlayer(Player player){
-        ValueOperations<String, Player> operations = redisTemplate.opsForValue();
+        ValueOperations<String, JSONObject> operations = redisTemplate.opsForValue();
+        JSONObject playerJsonObject = new JSONObject();
+        playerJsonObject.put("accountNum",player.getAccountNum());
+        playerJsonObject.put("inRoomNum",player.getInRoomNum());
         if (redisTemplate.hasKey(RedisConfig.WAIT_START_USER_LIST + player.getAccountNum())) redisTemplate.delete(RedisConfig.WAIT_START_USER_LIST + player.getAccountNum());
-        operations.set(RedisConfig.WAIT_START_USER_LIST + player.getAccountNum(),player,RedisConfig.PLAY_WAITING_TIME,TimeUnit.MINUTES);
+        operations.set(RedisConfig.WAIT_START_USER_LIST + player.getAccountNum(),playerJsonObject,RedisConfig.PLAY_WAITING_TIME,TimeUnit.MINUTES);
     }
 
     public void insertWonderUser(User user){
@@ -62,6 +65,14 @@ public class UserService implements UserMapper {
         User user = operations.get(RedisConfig.WANDER_USER_LIST +accountNum);
         return user;
     }
+
+    public JSONObject getWaitStartPlayerByAccountNum(String accountNum){
+        ValueOperations<String, JSONObject> operations = redisTemplate.opsForValue();
+        JSONObject res = operations.get(RedisConfig.WAIT_START_USER_LIST + accountNum);
+        return res;
+
+    }
+
 
 
 

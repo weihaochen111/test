@@ -42,10 +42,7 @@ public class Room {
                 "num=" + num +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
-                ", roomState='" + roomState + '\'' +
-                ", roomManager=" + roomManager.toString() +
-                ", chat=" + chat.toString() +
-                '}';
+                ", roomState='" + roomState ;
     }
 
     public Integer getNum() {
