@@ -532,6 +532,7 @@ public class RoomManager {
         }else if(card.getLef().getType().equals("road")){
             roadBlock.get(card.getLef().getCityorroad()).Walk(point);
         }
+        updateCanPutPositionList(point);
         nmap[x][y] = card;
         puzzle.setmPuzzle(nmap);
     }
