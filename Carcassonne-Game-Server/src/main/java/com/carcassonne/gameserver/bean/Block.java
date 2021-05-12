@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class Block {
+
     String edgeString;
     public HashSet<Point> pointSet = new HashSet<>();
     HashMap<Point, Card> cardMap = new HashMap<>();//好像没用了
@@ -50,12 +51,14 @@ public class Block {
     @Override
     public String toString() {
         StringBuilder stringbuilder = new StringBuilder();
+
         stringbuilder.append("EdgeMap:\n");
 
         for(Point point: edgeMap.keySet()){
             stringbuilder.append(point+" ");
             for(int i=0;i<4;i++)
                 stringbuilder.append(edgeMap.get(point).get(i));
+
             stringbuilder.append("\n");
         }
         //玩家集合
