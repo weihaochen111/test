@@ -180,6 +180,11 @@ public class Block {
         }
     }
 
+    public void start(Point point){
+        isFull = true;
+        Walk(point);
+    }
+
     /**
      * 记分功能先调用这个Walk（递归函数）,当这个区块不完整则isFull为false，然后调用caculate()函数
      * 这个函数主要是为了获取isFull的值，通过pointSet的个数来获取得分块

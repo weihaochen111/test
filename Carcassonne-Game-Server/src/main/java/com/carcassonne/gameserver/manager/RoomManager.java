@@ -537,48 +537,48 @@ public class RoomManager {
 
         if(card.getTop().getCityorroad()!=-1){
             if (card.getTop().getType().equals("city")){
-                cityBlock.get(card.getTop().getCityorroad()).isFull = true;
-                cityBlock.get(card.getTop().getCityorroad()).Walk(point);
+
+                cityBlock.get(card.getTop().getCityorroad()).start(point);
             }else if(card.getTop().getType().equals("road")){
-                roadBlock.get(card.getTop().getCityorroad()).isFull = true;
-                roadBlock.get(card.getTop().getCityorroad()).Walk(point);
+
+                roadBlock.get(card.getTop().getCityorroad()).start(point);
             }
         }
         if(card.getRig().getCityorroad()!=-1){
             if (card.getRig().getType().equals("city")){
-                cityBlock.get(card.getRig().getCityorroad()).isFull = true;
-                cityBlock.get(card.getRig().getCityorroad()).Walk(point);
+
+                cityBlock.get(card.getRig().getCityorroad()).start(point);
             }else if(card.getRig().getType().equals("road")){
-                roadBlock.get(card.getRig().getCityorroad()).isFull = true;
-                roadBlock.get(card.getRig().getCityorroad()).Walk(point);
+
+                roadBlock.get(card.getRig().getCityorroad()).start(point);
             }
         }
         if(card.getBot().getCityorroad()!=-1){
             if (card.getBot().getType().equals("city")){
-                cityBlock.get(card.getBot().getCityorroad()).isFull = true;
-                cityBlock.get(card.getBot().getCityorroad()).Walk(point);
+
+                cityBlock.get(card.getBot().getCityorroad()).start(point);
             }else if(card.getBot().getType().equals("road")){
-                roadBlock.get(card.getBot().getCityorroad()).isFull = true;
-                roadBlock.get(card.getBot().getCityorroad()).Walk(point);
+
+                roadBlock.get(card.getBot().getCityorroad()).start(point);
             }
         }
         if(card.getLef().getCityorroad()!=-1){
             if (card.getLef().getType().equals("city")){
-                cityBlock.get(card.getLef().getCityorroad()).isFull = true;
-                cityBlock.get(card.getLef().getCityorroad()).Walk(point);
+
+                cityBlock.get(card.getLef().getCityorroad()).start(point);
             }else if(card.getLef().getType().equals("road")){
-                roadBlock.get(card.getLef().getCityorroad()).isFull = true;
-                roadBlock.get(card.getLef().getCityorroad()).Walk(point);
+
+                roadBlock.get(card.getLef().getCityorroad()).start(point);
             }
         }
 
-        if(card.getLef().getCityorroad()!=-1){
-            System.out.println("Lef");
-            System.out.println("road"+card.getLef().getCityorroad()+roadBlock.get(card.getLef().getCityorroad()));
+        if(card.getTop().getCityorroad()!=-1){
+            System.out.println("Top");
+            System.out.println("road"+card.getTop().getCityorroad()+cityBlock.get(card.getTop().getCityorroad()));
         }
-        if(card.getRig().getCityorroad()!=-1){
-            System.out.println("Rig");
-            System.out.println(roadBlock.get(card.getRig().getCityorroad()));
+        if(card.getBot().getCityorroad()!=-1){
+            System.out.println("Bot");
+            System.out.println(cityBlock.get(card.getBot().getCityorroad()));
         }
 
         updateCanPutPositionList(point);
