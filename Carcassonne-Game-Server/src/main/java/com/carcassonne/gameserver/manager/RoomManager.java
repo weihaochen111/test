@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * 房间控制器
@@ -195,6 +196,19 @@ public class RoomManager {
         return theCardCanPutPositionList;
     }
 
+    //返回旋转4个角度的可放牌坐标
+    public HashMap<Integer,ArrayList<Point>> getAllCanPutPositionList(Card card){
+        Card tmp = card;
+        HashMap<Integer,ArrayList<Point>> allCanPutPositionList = new HashMap<>();
+        allCanPutPositionList.put(0,getCanPutPositionList(tmp));//0°
+        tmp.rotate(1);
+        allCanPutPositionList.put(1,getCanPutPositionList(tmp));//90°
+        tmp.rotate(1);
+        allCanPutPositionList.put(2,getCanPutPositionList(tmp));//180°
+        tmp.rotate(1);
+        allCanPutPositionList.put(3,getCanPutPositionList(tmp));//270°
+        return allCanPutPositionList;
+    }
 
 
     //TODO 测试它，有问题qq找我 299108606
@@ -587,20 +601,36 @@ public class RoomManager {
     }
 
 
-    public ArrayList<Block> getUnappropriatedBlock(){
-        ArrayList<Block> unappropriatedBlock = new ArrayList<>();
-        for(Block aBlock:cityBlock){
-            if (aBlock.scoreRecordIsempty()){
-                unappropriatedBlock.add(aBlock);
+    public HashMap<Integer, Block> getUnappropriatedCityBlock(){
+        HashMap<Integer, Block> unappropriatedCityBlock = new HashMap<Integer, Block>();
+//        ArrayList<Block> unappropriatedCityBlock = new ArrayList<>();
+        for(Integer i = 0;i<cityBlock.size();i++){
+            if (cityBlock.get(i).scoreRecordIsempty()){
+                unappropriatedCityBlock.put(i,cityBlock.get(i));
             }
         }
-        for(Block aBlock:roadBlock){
-            if (aBlock.scoreRecordIsempty()){
-                unappropriatedBlock.add(aBlock);
-            }
-        }
-        return unappropriatedBlock;
+        return unappropriatedCityBlock;
     }
+
+    public HashMap<Integer, Block> getUnappropriatedRoadBlock(){
+        HashMap<Integer, Block> unappropriatedRoadBlock = new HashMap<Integer, Block>();
+//        ArrayList<Block> unappropriatedBlock = new ArrayList<>();
+        for(Integer i = 0;i<roadBlock.size();i++){
+            if (roadBlock.get(i).scoreRecordIsempty()){
+                unappropriatedRoadBlock.put(i,roadBlock.get(i));
+            }
+        }
+        return unappropriatedRoadBlock;
+    }
+
+    public void appropriated(int key,String ownerId,String type){
+        if(type.equals("city")){
+            cityBlock.get(key).record(ownerId);
+        }else if (type.equals("road")){
+            roadBlock.get(key).record(ownerId);
+        }
+    }
+
     @Override
     public String toString() {
         return "RoomManager{" +
