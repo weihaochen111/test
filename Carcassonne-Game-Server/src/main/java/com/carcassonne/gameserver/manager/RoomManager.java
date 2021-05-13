@@ -572,13 +572,13 @@ public class RoomManager {
             }
         }
 
-        if(card.getLef().getCityorroad()!=-1){
-            System.out.println("Lef");
-            System.out.println("road"+card.getLef().getCityorroad()+roadBlock.get(card.getLef().getCityorroad()));
+        if(card.getTop().getCityorroad()!=-1){
+            System.out.println("Top");
+            System.out.println("road"+card.getTop().getCityorroad()+cityBlock.get(card.getTop().getCityorroad()));
         }
-        if(card.getRig().getCityorroad()!=-1){
-            System.out.println("Rig");
-            System.out.println(roadBlock.get(card.getRig().getCityorroad()));
+        if(card.getBot().getCityorroad()!=-1){
+            System.out.println("Bot");
+            System.out.println(cityBlock.get(card.getBot().getCityorroad()));
         }
 
         updateCanPutPositionList(point);
