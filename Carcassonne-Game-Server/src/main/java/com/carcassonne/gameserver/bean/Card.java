@@ -1,5 +1,6 @@
 package com.carcassonne.gameserver.bean;
 
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.context.annotation.Bean;
 
 /**
@@ -152,5 +153,61 @@ public class Card {
         this.lef = leftEdge;
         this.rig = rightEdge;
         this.bot = bottomEdge;
+    }
+    /**
+     * 旋转函数
+     */
+    public void rotate(int count){
+        Edge tmpEdge = new Edge(1,"City",null);
+        String tmpEdgeId = "";
+        for(int i=0;i<count%4;i++){
+            tmpEdge = top;
+            tmpEdgeId = topEdgeId;
+            top = lef;
+            topEdgeId = lefEdgeId;
+            lef = bot;
+            lefEdgeId = botEdgeId;
+            bot = rig;
+            botEdgeId = rigEdgeId;
+            rig = tmpEdge;
+            rigEdgeId = tmpEdgeId;
+            JSONObject cardTopJson = JSONObject.parseObject(top.getConnect());
+            String tmpConnect = cardTopJson.get("lef").toString();
+            cardTopJson.put("lef",cardTopJson.get("bot"));
+            cardTopJson.put("bot",cardTopJson.get("rig"));
+            cardTopJson.put("rig",cardTopJson.get("top"));
+            cardTopJson.put("top",tmpConnect);
+            top.setConnect(cardTopJson.toString());
+
+            JSONObject cardRigJson = JSONObject.parseObject(rig.getConnect());
+            tmpConnect = cardRigJson.get("lef").toString();
+            cardRigJson.put("lef",cardRigJson.get("bot"));
+            cardRigJson.put("bot",cardRigJson.get("rig"));
+            cardRigJson.put("rig",cardRigJson.get("top"));
+            cardRigJson.put("top",tmpConnect);
+            rig.setConnect(cardRigJson.toString());
+
+            JSONObject cardBotJson = JSONObject.parseObject(bot.getConnect());
+            tmpConnect = cardBotJson.get("lef").toString();
+            cardBotJson.put("lef",cardBotJson.get("bot"));
+            cardBotJson.put("bot",cardBotJson.get("rig"));
+            cardBotJson.put("rig",cardBotJson.get("top"));
+            cardBotJson.put("top",tmpConnect);
+            bot.setConnect(cardBotJson.toString());
+
+            JSONObject cardLefJson = JSONObject.parseObject(lef.getConnect());
+            tmpConnect = cardLefJson.get("lef").toString();
+            cardLefJson.put("lef",cardLefJson.get("bot"));
+            cardLefJson.put("bot",cardLefJson.get("rig"));
+            cardLefJson.put("rig",cardLefJson.get("top"));
+            cardLefJson.put("top",tmpConnect);
+            lef.setConnect(cardLefJson.toString());
+
+
+            System.out.println("top:"+top.getConnect());
+            System.out.println("rig:"+rig.getConnect());
+            System.out.println("bot:"+bot.getConnect());
+            System.out.println("lef:"+lef.getConnect());
+        }
     }
 }

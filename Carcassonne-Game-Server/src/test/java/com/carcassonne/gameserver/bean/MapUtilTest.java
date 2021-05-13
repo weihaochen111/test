@@ -10,9 +10,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MapUtilTest {
     Card card = new Card();
-    Edge cityEdge = new Edge(1,"City",null);
-    Edge roadEdge = new Edge(2,"Road",null);
-    Edge grassEdge = new Edge(4,"Grass",null);
+    Edge cityEdge = new Edge(1,"city",null);
+    Edge roadEdge = new Edge(2,"road",null);
+    Edge grassEdge = new Edge(4,"grass",null);
 
 
     @Test
@@ -20,10 +20,10 @@ class MapUtilTest {
         MapUtil mapUtil = new MapUtil();
         Point point = new Point(15,15);
         Card card = new Card();
-        card.setBot(new Edge(1,"City",null));
-        card.setLef(new Edge(2,"Road",null));
-        card.setRig(new Edge(3,"Road","left"));
-        card.setTop(new Edge(4,"Grass",null));
+        card.setBot(new Edge(1,"city",null));
+        card.setLef(new Edge(2,"road",null));
+        card.setRig(new Edge(3,"road","left"));
+        card.setTop(new Edge(4,"grass",null));
         mapUtil.addCard(point,card);
         ArrayList<Point> points= mapUtil.judgeCardWhereToPut(card);
         for(Point point1:points){
@@ -88,37 +88,37 @@ class MapUtilTest {
         edgeMap.put(point1517,oneCityTop);
         edgeMap.put(point1616,oneCityLeft);
 
-        Block block = new Block(edgeMap,"City");
+        Block block = new Block(edgeMap,"city");
         block.Walk(point1616);
         block.caculate();
-
-        Block block1 = new Block(edgeMap,"Road");
+        System.out.println(block);
+        Block block1 = new Block(edgeMap,"road");
         block1.Walk(point1616);
         block1.caculate();
 
-        Block block2 = new Block(edgeMap,"City");
+        Block block2 = new Block(edgeMap,"city");
         block2.Walk(point1515);
         block2.caculate();
 
-        Block block3 = new Block(edgeMap,"City");
+        Block block3 = new Block(edgeMap,"city");
         block3.Walk(point1514);
         block3.caculate();
 
-        Block block4 = new Block(edgeMap,"City");
+        Block block4 = new Block(edgeMap,"city");
         block4.Walk(point1516);
         block4.caculate();
 
-        Block block5 = new Block(edgeMap,"City");
+        Block block5 = new Block(edgeMap,"city");
         block5.Walk(point1517);
         block5.caculate();
 
         edgeMap.put(point1515,threeCity);
 
-        Block block6 = new Block(edgeMap,"City");
+        Block block6 = new Block(edgeMap,"city");
         block6.Walk(point1616);
         block6.caculate();
 
-        Block block7 = new Block(edgeMap,"City");
+        Block block7 = new Block(edgeMap,"city");
         block7.Walk(point1515);
         block7.caculate();
 
@@ -130,6 +130,24 @@ class MapUtilTest {
         assertEquals(0,block6.scoreAll);
         assertEquals(0,block7.scoreAll);
 
+
+        HashMap<Point,ArrayList<Edge>> edgeMap1 = new HashMap<>();
+
+//        edgeMap1.put(point1515,oneCityBottom);
+//        edgeMap1.put(point1516,oneCityTop);
+        Block block8 = new Block(edgeMap1,"city");
+        block8.addEdgeMap(point1515,cityEdge,2);
+        block8.addEdgeMap(point1516,cityEdge,0);
+        block8.Walk(point1516);
+        block8.caculate();
+        System.out.println(block8);
+
+        Block block9 = new Block(edgeMap1,"city");
+        block9.addEdgeMap(point1515,cityEdge,2);
+        block9.addEdgeMap(point1516,cityEdge,0);
+        block9.Walk(point1515);
+        block9.caculate();
+        System.out.println(block9);
     }
     @Test
     public void mergeBlockTest(){
@@ -185,6 +203,7 @@ class MapUtilTest {
         HashMap<Point,ArrayList<Edge>> edgeMap1 = new HashMap<>();
         edgeMap1.put(point1514,oneCityBottom);
         edgeMap1.put(point1515,twoCity);
+        edgeMap1.put(point1517,oneCityBottom);
         edgeMap1.put(point1516,threeCity);
         HashMap<Point,ArrayList<Edge>> edgeMap2 = new HashMap<>();
         edgeMap2.put(point1517,oneCityTop);
@@ -192,8 +211,8 @@ class MapUtilTest {
 
 
 
-        Block block1 = new Block(edgeMap1,"City");
-        Block block2 = new Block(edgeMap2,"City");
+        Block block1 = new Block(edgeMap1,"city");
+        Block block2 = new Block(edgeMap2,"city");
         //定义玩家情况
         String ownerId1 = "Player1";
         String ownerId2 = "Player2";
@@ -212,6 +231,8 @@ class MapUtilTest {
         System.out.println("合并了\n");
         block1.mergeBlock(block2);
         System.out.println(block1);
+        System.out.println("被合并的是了的康康");
+        System.out.println(block2);
 
         System.out.println("开始记分了\n");
         block1.Walk(point1616);
@@ -223,4 +244,5 @@ class MapUtilTest {
         block1.record(ownerId2);
         System.out.println(block2);
     }
+
 }

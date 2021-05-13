@@ -5,14 +5,14 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class Block {
-    EdgeType edgeType;
+
     String edgeString;
     public HashSet<Point> pointSet = new HashSet<>();
     HashMap<Point, Card> cardMap = new HashMap<>();//好像没用了
     HashMap<Point, ArrayList<Edge>> edgeMap = new HashMap<>();
     HashMap<String, Integer> scoreRecord = new HashMap<>();//玩家和玩家对应个数
     ArrayList<String> playerIdArray = new ArrayList<>();
-    boolean isFull = true;
+    public boolean isFull = true;
     int scorePerCard = 0;
     int scoreAll = 0;
     public Block(String edgeString){
@@ -44,13 +44,22 @@ public class Block {
         this.edgeMap = edgeMap;
     }
 
+    /**
+     *
+     * @return Block的全部信息了可能
+     */
     @Override
     public String toString() {
         StringBuilder stringbuilder = new StringBuilder();
-        stringbuilder.append("pointSet:\n");
-        //坐标集合
-        for(Point point:pointSet){
-            stringbuilder.append(point+"\n");
+
+        stringbuilder.append("EdgeMap:\n");
+
+        for(Point point: edgeMap.keySet()){
+            stringbuilder.append(point+" ");
+            for(int i=0;i<4;i++)
+                stringbuilder.append(edgeMap.get(point).get(i));
+
+            stringbuilder.append("\n");
         }
         //玩家集合
         stringbuilder.append("玩家情况\n");
@@ -69,7 +78,14 @@ public class Block {
 
     public void addEdgeMap(Point point, Edge edge,int index){
             ArrayList<Edge> edgeArray =
-                    edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>(4);
+                    edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>(){
+                        {
+                            add(null);
+                            add(null);
+                            add(null);
+                            add(null);
+                        }
+                    };
             edgeArray.set(index,edge);
             edgeMap.put(point, edgeArray);
     }
@@ -83,15 +99,37 @@ public class Block {
     }
     //合并情况不考虑得分
 
+    /**
+     * 合并block
+     * @param block
+     */
     public void mergeBlock(Block block){
         if(edgeString.equals(block.edgeString)){
             pointSet.addAll(block.pointSet);
             for(Point point : block.edgeMap.keySet()){
                 ArrayList<Edge> edgeList =
-                        block.edgeMap.containsKey(point)? block.edgeMap.get(point):new ArrayList<Edge>();
+                        block.edgeMap.containsKey(point)? block.edgeMap.get(point):new ArrayList<Edge>(){
+                            {
+                                add(null);
+                                add(null);
+                                add(null);
+                                add(null);
+                            }
+                        };
                 ArrayList<Edge> edgeList1 =
-                        edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>();
-                edgeList1.addAll(edgeList);
+                        edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>(){
+                            {
+                                add(null);
+                                add(null);
+                                add(null);
+                                add(null);
+                            }
+                        };
+                for(int i=0;i<4;i++){
+                    if(edgeList.get(i)!=null){
+                        edgeList1.set(i,edgeList.get(i));
+                    }
+                }
                 edgeMap.put(point,edgeList1);
             }
             for(String ownerId:block.scoreRecord.keySet()){
@@ -102,6 +140,10 @@ public class Block {
                     scoreRecord.put(ownerId,block.scoreRecord.get(ownerId));
                 }
             }
+            block.scoreRecord.clear();
+            block.edgeMap.clear();
+            block.pointSet.clear();
+            block.isFull = true;
         }
     }
 
@@ -109,12 +151,13 @@ public class Block {
      * 要先调用Walk函数
      * 城市：2分/块 道路：1分/块
      * scoreAll为总得分，如果为0说明区块不完整不得分
+     * PlayerIdArray为可以得分的玩家ID数组
      */
     public void caculate() {
         if(isFull){
-            if (edgeString.equals("City")) {
+            if (edgeString.equals("city")) {
                 scorePerCard = 2;
-            } else if (edgeString.equals("Road")) {
+            } else if (edgeString.equals("road")) {
                 scorePerCard = 1;
             }
             scoreAll = isFull ? scorePerCard * pointSet.size() : 0;
@@ -129,9 +172,7 @@ public class Block {
                 }
             }
         }
-//        System.out.println(isFull);
-//        System.out.println(scorePerCard+"*"+pointSet.size()+"="+scoreAll);
-//        printPlayer();
+
     }
 
     public void record(String ownerId) {
@@ -140,6 +181,11 @@ public class Block {
         } else {
             scoreRecord.put(ownerId, 1);
         }
+    }
+
+    public void start(Point point){
+        isFull = true;
+        Walk(point);
     }
 
     /**
@@ -160,7 +206,7 @@ public class Block {
         pointSet.add(nextPoint);
         ArrayList<Edge> edgeArrayList = edgeMap.get(nextPoint);
 
-        addPlayerAccount(edgeArrayList);
+
 
         int x_nextPoint = nextPoint.getX();
         int y_nextPoint = nextPoint.getY();
@@ -168,6 +214,7 @@ public class Block {
         int mapNoNullCount = 0 ;
         int edgeNoNullCount = 0 ;
         for (int i = 0;i<4;i++) {
+
             switch (i) {
                 case 0:
                     Point point =  new Point(x_nextPoint, y_nextPoint - 1);
@@ -199,7 +246,9 @@ public class Block {
         }
         if(mapNoNullCount!=edgeNoNullCount){
             isFull=false;
-            System.out.println("Block不完整不能得分哦现在");
+//            System.out.println("Block不完整不能得分哦现在");
+//            System.out.println(nextPoint+"应该有"+edgeNoNullCount+"条边可以出去，但是旁边只有"+mapNoNullCount+"个卡牌");
+//            System.out.println(this);
         }
     }
 
