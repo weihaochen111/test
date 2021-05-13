@@ -147,6 +147,7 @@ public class Block {
      * 要先调用Walk函数
      * 城市：2分/块 道路：1分/块
      * scoreAll为总得分，如果为0说明区块不完整不得分
+     * PlayerIdArray为可以得分的玩家ID数组
      */
     public void caculate() {
         if(isFull){
