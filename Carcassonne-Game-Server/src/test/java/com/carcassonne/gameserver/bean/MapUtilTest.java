@@ -231,6 +231,8 @@ class MapUtilTest {
         System.out.println("合并了\n");
         block1.mergeBlock(block2);
         System.out.println(block1);
+        System.out.println("被合并的是了的康康");
+        System.out.println(block2);
 
         System.out.println("开始记分了\n");
         block1.Walk(point1616);

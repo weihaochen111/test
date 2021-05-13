@@ -140,6 +140,10 @@ public class Block {
                     scoreRecord.put(ownerId,block.scoreRecord.get(ownerId));
                 }
             }
+            block.scoreRecord.clear();
+            block.edgeMap.clear();
+            block.pointSet.clear();
+            block.isFull = true;
         }
     }
 
@@ -168,9 +172,7 @@ public class Block {
                 }
             }
         }
-//        System.out.println(isFull);
-//        System.out.println(scorePerCard+"*"+pointSet.size()+"="+scoreAll);
-//        printPlayer();
+
     }
 
     public void record(String ownerId) {
@@ -244,9 +246,9 @@ public class Block {
         }
         if(mapNoNullCount!=edgeNoNullCount){
             isFull=false;
-            System.out.println("Block不完整不能得分哦现在");
-            System.out.println(nextPoint+"应该有"+edgeNoNullCount+"条边可以出去，但是旁边只有"+mapNoNullCount+"个卡牌");
-            System.out.println(this);
+//            System.out.println("Block不完整不能得分哦现在");
+//            System.out.println(nextPoint+"应该有"+edgeNoNullCount+"条边可以出去，但是旁边只有"+mapNoNullCount+"个卡牌");
+//            System.out.println(this);
         }
     }
 
