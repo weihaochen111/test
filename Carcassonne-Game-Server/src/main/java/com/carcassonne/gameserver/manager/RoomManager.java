@@ -1,6 +1,7 @@
 package com.carcassonne.gameserver.manager;
 
 import ch.qos.logback.classic.Logger;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.carcassonne.gameserver.bean.*;
 import com.carcassonne.gameserver.util.MapUtil;
@@ -48,6 +49,27 @@ public class RoomManager {
         players = new ArrayList<>();
         activePlayerNum = 0;
        //TODO 其实还可以初始化牌库
+    }
+
+    public String getMasterAccountNum(){
+        String accountNum = null;
+        if(players.get(0) != null) return  players.get(0).getAccountNum();
+        return "null";
+    }
+
+
+    public JSONArray getPlayersInfo(){
+        JSONArray array = new JSONArray();
+        for (int i=0;i<players.size();i++){
+            JSONObject object = new JSONObject();
+            object.put("playerName",players.get(i).getNickname());
+            object.put("playerAccountNum",players.get(i).getAccountNum());
+            object.put("playerLevel",players.get(i).getLevel());
+            object.put("playerSex",players.get(i).getSex());
+            object.put("isReady",players.get(i).getReady().toString());
+            array.add(object);
+        }
+        return array;
     }
 
     public void  addPlayer(Player player){

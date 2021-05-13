@@ -59,5 +59,9 @@ public class RoomService {
         return "error";
     }
 
+    public JSONObject getRoomInfo(Integer roomNum){
+        return MainGameManager.getInstance().getRoomInfo(roomNum);
+    }
+
 
 }

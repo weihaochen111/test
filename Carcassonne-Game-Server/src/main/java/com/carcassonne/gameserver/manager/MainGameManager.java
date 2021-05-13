@@ -1,12 +1,14 @@
 package com.carcassonne.gameserver.manager;
 
 import ch.qos.logback.classic.Logger;
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.carcassonne.gameserver.bean.Player;
 import com.carcassonne.gameserver.bean.Room;
 import org.slf4j.LoggerFactory;
 
+import javax.print.attribute.standard.JobName;
 import java.util.*;
 
 /**
@@ -42,6 +44,11 @@ public class MainGameManager {
 
     public String readyAndStartGame(String accountNum,Integer roomNum){
         String state = roomHashMap.get(roomNum).getRoomManager().readyAndStartGame(accountNum);
+        if(state.equals("playing")){
+            roomHashMap.get(roomNum).setRoomState("playing");
+        }else {
+            roomHashMap.get(roomNum).setRoomState("waiting");
+        }
         logger.info(accountNum +"in room "+roomNum+" getReady");
         return  state;
     }
@@ -69,6 +76,18 @@ public class MainGameManager {
             }
         }
         return array;
+    }
+
+    public JSONObject getRoomInfo(Integer roomNum){
+        JSONObject res = new JSONObject();
+        JSONArray playerList = new JSONArray();
+        res.put("roomState",roomHashMap.get(roomNum).getRoomState());
+        res.put("roomNum",roomNum);
+        res.put("roomName",roomHashMap.get(roomNum).getName());
+        res.put("roomMasterAccountNum",roomHashMap.get(roomNum).getRoomManager().getMasterAccountNum());
+        playerList = roomHashMap.get(roomNum).getRoomManager().getPlayersInfo();
+        res.put("playerList",playerList);
+        return res;
     }
 
 

@@ -1,6 +1,7 @@
 package com.carcassonne.gameserver.controller;
 
 import ch.qos.logback.classic.Logger;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.carcassonne.gameserver.bean.User;
 import com.carcassonne.gameserver.configuration.StateCodeConfig;
@@ -50,4 +51,25 @@ public class WaitStartController {
         }
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/getRoomInfo",method = RequestMethod.POST)
+    public JSONObject getRoomInfo(HttpServletRequest request){
+        JSONObject result = new JSONObject();
+        String token = null;
+        try {
+            token = request.getHeader("token");
+            String accountNum = JwtTokenUtil.getUsername(token);
+            Integer roomNum = userService.getWaitStartPlayerByAccountNum(accountNum).getInteger("inRoomNum");
+            result = roomService.getRoomInfo(roomNum);
+            result.put("code",200);
+            result.put("message","OK, request successfully");
+            return  result;
+        }catch (Exception e){
+            e.printStackTrace();
+            result.put("code",500);
+            result.put("message", StateCodeConfig.when_500_message("null"));
+            logger.error("/waitStart/getRoomInfo api end with 500 , unknown error ! token :" + token);
+            return result;
+        }
+    }
 }
