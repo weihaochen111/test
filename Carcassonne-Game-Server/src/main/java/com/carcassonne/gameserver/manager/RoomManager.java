@@ -52,6 +52,8 @@ public class RoomManager {
        //TODO 其实还可以初始化牌库
     }
 
+
+
     public String getMasterAccountNum(){
         String accountNum = null;
         if(players.get(0) != null) return  players.get(0).getAccountNum();

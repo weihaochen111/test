@@ -28,6 +28,11 @@
     from edge
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="selectAllEdge" resultMap="BaseResultMap">
+    select * from edge
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
       WARNING - @mbg.generated

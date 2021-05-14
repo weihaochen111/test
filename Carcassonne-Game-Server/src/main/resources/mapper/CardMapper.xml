@@ -30,6 +30,11 @@
     from card
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="selectAllCard" resultMap="BaseResultMap">
+    select * from card
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
       WARNING - @mbg.generated

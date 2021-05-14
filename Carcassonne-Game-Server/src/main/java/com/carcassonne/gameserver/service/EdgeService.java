@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Component
 public class EdgeService implements EdgeMapper {
@@ -41,5 +43,10 @@ public class EdgeService implements EdgeMapper {
     @Override
     public int updateByPrimaryKey(Edge record) {
         return 0;
+    }
+
+    @Override
+    public List<Edge> selectAllEdge() {
+        return edgeMapper.selectAllEdge();
     }
 }

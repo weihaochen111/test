@@ -23,7 +23,14 @@ public class Card {
     private Edge rig;// 上边
     private String rotate; //旋转情况
 
-
+    public Card(Integer id, String pictureUrl, String topEdgeId, String botEdgeId, String lefEdgeId, String rigEdgeId) {
+        this.id = id;
+        this.pictureUrl = pictureUrl;
+        this.topEdgeId = topEdgeId;
+        this.botEdgeId = botEdgeId;
+        this.lefEdgeId = lefEdgeId;
+        this.rigEdgeId = rigEdgeId;
+    }
 
     @Override
     public String toString() {

@@ -2,9 +2,12 @@ package com.carcassonne.gameserver.mapper;
 
 
 import com.carcassonne.gameserver.bean.Card;
+import io.lettuce.core.support.caching.ClientSideCaching;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 
 @Mapper
@@ -57,4 +60,6 @@ public interface CardMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(Card record);
+
+    List<Card> selectAllCard();
 }

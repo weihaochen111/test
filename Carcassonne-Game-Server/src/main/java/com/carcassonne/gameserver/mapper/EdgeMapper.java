@@ -5,6 +5,8 @@ import com.carcassonne.gameserver.bean.Edge;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Mapper
 @Component
 public interface EdgeMapper {
@@ -55,4 +57,6 @@ public interface EdgeMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(Edge record);
+
+    List<Edge> selectAllEdge();
 }
