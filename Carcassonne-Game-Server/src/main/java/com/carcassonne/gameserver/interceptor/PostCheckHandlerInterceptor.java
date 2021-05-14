@@ -25,7 +25,7 @@ public class PostCheckHandlerInterceptor implements HandlerInterceptor {
         try {
             token = request.getHeader("token");
             if(JwtTokenUtil.checkJWT(token) != null && !JwtTokenUtil.isExpiration(token)  ){
-                logger.info(" preHandle method, account:" + JwtTokenUtil.getUsername(token)+" ==> token check is correct" );
+//                logger.info(" preHandle method, account:" + JwtTokenUtil.getUsername(token)+" ==> token check is correct" );
                 return true;
             }else {
                 response.setCharacterEncoding("UTF-8");
@@ -34,7 +34,7 @@ public class PostCheckHandlerInterceptor implements HandlerInterceptor {
                 JSONObject res = new JSONObject();
                 res.put("code", 403);
                 res.put("message", "Token verification failed, The cause could be an expired token or an invalid token");
-                logger.info("Token verification failed , with "+ token);
+//                logger.info("Token verification failed , with "+ token);
                 out = response.getWriter();
                 out.append(res.toString());
                 return false;
