@@ -7,9 +7,7 @@ import com.carcassonne.gameserver.bean.*;
 import com.carcassonne.gameserver.util.MapUtil;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 /**
  * 房间控制器
@@ -28,7 +26,6 @@ public class RoomManager {
     private GameLog gameLog;
     private GameResult gameResult;
 
-
     private Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
 
 //    private ArrayList<ArrayList<Card>> city;
@@ -41,6 +38,13 @@ public class RoomManager {
 
     MapUtil mapUtil = new MapUtil();
 
+    //进行时信息
+    private Integer nowTurnNum = 0 ;
+    private Integer nowPlayerNum = 0;
+    private Integer nowLibNum = 0 ;
+    private JSONObject lastPlayerOpInfo = null;
+
+
     public RoomManager(Card[][] cards){
         puzzle = new Puzzle(cards);
         puzzle.addHaveBePutCardsList(new Point(15,15));
@@ -49,9 +53,83 @@ public class RoomManager {
     public RoomManager(){
         players = new ArrayList<>();
         activePlayerNum = 0;
-       //TODO 其实还可以初始化牌库
+
     }
 
+    public Boolean playerAction(String accountNum,Integer putX,Integer putY,Integer rotation,Integer occupyBlockNum,String blockType){
+        if(nowTurnNum == 0 ) nowTurnNum ++;
+
+
+        if(players.get(nowPlayerNum).getAccountNum().equals(accountNum)){
+            lastPlayerOpInfo.clear();
+            lastPlayerOpInfo.put("lastPlayerHandCard",players.get(nowPlayerNum).getHand().getId());
+            lastPlayerOpInfo.put("lastPlayerPutX",putX);
+            lastPlayerOpInfo.put("lastPlayerPutY",putY);
+            lastPlayerOpInfo.put("lastPlayerCardRotation",rotation);
+
+            Card card = players.get(nowPlayerNum).getHand();
+            card.rotate(rotation);
+            putCard(putX,putY,card);
+            if(occupyBlockNum != 999){
+                appropriated(occupyBlockNum,players.get(nowPlayerNum).getAccountNum(),blockType);
+            }
+
+            //TODO 这里要计分
+            if(nowPlayerNum == players.size() -1){
+                nowTurnNum++;
+                nowPlayerNum = 0;
+                return deal();
+            }else {
+                nowPlayerNum++;
+                return deal();
+            }
+
+        }
+        return  false;
+    }
+
+    public JSONObject getLastPlayerOpInfo(){
+        lastPlayerOpInfo = new JSONObject();
+        if(nowTurnNum == 0){
+            lastPlayerOpInfo.put("lastPlayerHandCard","null");
+            lastPlayerOpInfo.put("lastPlayerPutX","null");
+            lastPlayerOpInfo.put("lastPlayerPutY","null");
+            lastPlayerOpInfo.put("lastPlayerCardRotation","null");
+            return lastPlayerOpInfo;
+        }
+        else return lastPlayerOpInfo;
+    }
+
+    public void setLastPlayerOpInfo(JSONObject lastPlayerOpInfo) {
+        this.lastPlayerOpInfo = lastPlayerOpInfo;
+    }
+
+    public Integer getNowLibNum() {
+        return nowLibNum;
+    }
+
+    public void setNowLibNum(Integer nowLibNum) {
+        this.nowLibNum = nowLibNum;
+    }
+
+    public String getPlayerAccountNum(){
+        if( nowPlayerNum < players.size()) return players.get(nowPlayerNum).getAccountNum();
+        else return "null";
+    }
+
+
+    public Boolean deal(){
+        if(nowLibNum < cardLibrary.length){
+            players.get(nowPlayerNum).setHand(cardLibrary[nowLibNum]);
+            nowLibNum++;
+            return false;
+        }
+        else return true;
+    }
+
+    public Integer getNowPlayerHeadCardId(){
+        return players.get(nowPlayerNum).getHand().getId();
+    }
 
 
     public String getMasterAccountNum(){
@@ -60,6 +138,77 @@ public class RoomManager {
         return "null";
     }
 
+    public JSONArray getNowPlayerCanPutPosition(){
+        JSONArray res = new JSONArray();
+        HashMap<Integer,ArrayList<Point>> allCanPutPositionList = getAllCanPutPositionList(players.get(nowPlayerNum).getHand());
+        for (int i = 0 ; i < 4 ; i++){
+            for (int j = 0 ; j < allCanPutPositionList.get(i).size() ; j++){
+                JSONObject temp = new JSONObject();
+                Point tempP = allCanPutPositionList.get(i).get(j);
+                temp.put("roundPlayerCanPutPositionX",tempP.getX());
+                temp.put("roundPlayerCanPutPositionY",tempP.getY());
+                temp.put("roundPlayerCanPutPositionRotation",i);
+                res.add(temp);
+            }
+        }
+        return res;
+    }
+
+    public JSONArray getNowPlayerCanOccupyBlock(){
+        JSONArray res = new JSONArray();
+        HashMap<Integer, Block> roadBlock = getUnappropriatedRoadBlock();
+        HashMap<Integer, Block> cityBlock = getUnappropriatedCityBlock();
+
+        for(int i = 0; i< roadBlock.size(); i++){
+            JSONObject temp = new JSONObject();
+            temp.put("roundPlayerCanOccupyBlockId",i);
+            temp.put("roundPlayerCanOccupyBlockType",roadBlock.get(i).getEdgeString());
+            JSONArray roundPlayerCanOccupyPosition =new JSONArray();
+
+            HashMap<Point, ArrayList<Edge>> map = roadBlock.get(i).getEdgeMap();
+            for (Map.Entry<Point, ArrayList<Edge>> entry : map.entrySet()) {
+                Point p =entry.getKey();
+                ArrayList<Edge> arrayList=entry.getValue();
+                for(int j = 0 ; j< 4 ; j++){
+                    JSONObject cardInfo = new JSONObject();
+                    if(arrayList.get(j) != null){
+                        cardInfo.put("roundPlayerCanOccupyPositionX",p.getX());
+                        cardInfo.put("roundPlayerCanOccupyPositionY",p.getY());
+                        cardInfo.put("roundPlayerCanOccupyPositionEdge",arrayList.get(j).getPosition());
+                    }
+                    roundPlayerCanOccupyPosition.add(cardInfo);
+                }
+                temp.put("roundPlayerCanOccupyPosition",roundPlayerCanOccupyPosition);
+            }
+            res.add(temp);
+        }
+
+        for(int i = 0; i< cityBlock.size(); i++){
+            JSONObject temp = new JSONObject();
+            temp.put("roundPlayerCanOccupyBlockId",i);
+            temp.put("roundPlayerCanOccupyBlockType",cityBlock.get(i).getEdgeString());
+            JSONArray roundPlayerCanOccupyPosition =new JSONArray();
+
+            HashMap<Point, ArrayList<Edge>> map = cityBlock.get(i).getEdgeMap();
+            for (Map.Entry<Point, ArrayList<Edge>> entry : map.entrySet()) {
+                Point p =entry.getKey();
+                ArrayList<Edge> arrayList=entry.getValue();
+                for(int j = 0 ; j< 4 ; j++){
+                    JSONObject cardInfo = new JSONObject();
+                    if(arrayList.get(j) != null){
+                        cardInfo.put("roundPlayerCanOccupyPositionX",p.getX());
+                        cardInfo.put("roundPlayerCanOccupyPositionY",p.getY());
+                        cardInfo.put("roundPlayerCanOccupyPositionEdge",arrayList.get(j).getPosition());
+                    }
+                    roundPlayerCanOccupyPosition.add(cardInfo);
+                }
+                temp.put("roundPlayerCanOccupyPosition",roundPlayerCanOccupyPosition);
+            }
+            res.add(temp);
+        }
+
+        return res;
+    }
 
     public JSONArray getPlayersInfo(){
         JSONArray array = new JSONArray();
@@ -80,6 +229,8 @@ public class RoomManager {
         activePlayerNum ++;
     }
 
+
+
     public String readyAndStartGame(String accountNum){
         int flag = 0;
         for (int i=0;i<players.size();i++){
@@ -89,7 +240,17 @@ public class RoomManager {
             if(players.get(i).getReady()==true) flag++;
         }
         if (flag==players.size() && flag > 1) {
-            //TODO 开始游戏初始化
+            Card[][] cards = new Card[31][31];
+            Card or = new Card();
+            or.setBot(new Edge(99,"city","{\"connectTop\":\"FALSE\",\"connectBot\":\"FALSE\",\"connectLef\":\"FALSE\",\"connectRig\":\"FALSE\"}"));
+            or.setLef(new Edge(99,"road","{\"connectTop\":\"FALSE\",\"connectBot\":\"FALSE\",\"connectLef\":\"FALSE\",\"connectRig\":\"TRUE\"}"));
+            or.setRig(new Edge(99,"road","{\"connectTop\":\"FALSE\",\"connectBot\":\"FALSE\",\"connectLef\":\"TRUE\",\"connectRig\":\"FALSE\"}"));
+            or.setTop(new Edge(99,"city","{\"connectTop\":\"FALSE\",\"connectBot\":\"FALSE\",\"connectLef\":\"FALSE\",\"connectRig\":\"FALSE\"}"));
+            cards[15][15]=or;
+            puzzle = new Puzzle(cards);
+            puzzle.addHaveBePutCardsList(new Point(15,15));
+            nowPlayerNum = 0;
+            nowTurnNum = 0;
             logger.info("gameStart" + players );
             return "playing";
         }
@@ -104,14 +265,14 @@ public class RoomManager {
 
     //TODO 计分算法 爱咋写咋写
     //函数说明 ： 地图保存在puzzle对象中，如需其他地图操作函数可在bean.Puzzle 中编写
-    /**
-     * 无参数
-     * 函数执行后在Players 对象数组更新得分情况
-     */
-    public void calculateScore(){
-
-
-    }
+//    /**
+////     * 无参数
+////     * 函数执行后在Players 对象数组更新得分情况
+////     */
+////    public void calculateScore(){
+////
+////
+////    }
 
 
     //遍历更改Block中所有边的所属
@@ -708,5 +869,21 @@ public class RoomManager {
 
     public void setGameResult(GameResult gameResult) {
         this.gameResult = gameResult;
+    }
+
+    public Integer getNowTurnNum() {
+        return nowTurnNum;
+    }
+
+    public void setNowTurnNum(Integer nowTurnNum) {
+        this.nowTurnNum = nowTurnNum;
+    }
+
+    public Integer getNowPlayerNum() {
+        return nowPlayerNum;
+    }
+
+    public void setNowPlayerNum(Integer nowPlayerNum) {
+        this.nowPlayerNum = nowPlayerNum;
     }
 }

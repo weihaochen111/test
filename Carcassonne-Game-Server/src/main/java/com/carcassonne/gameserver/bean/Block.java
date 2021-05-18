@@ -40,6 +40,11 @@ public class Block {
         this.edgeMap= edgeMap;
         this.edgeString = edgeString;
     }
+
+    public HashMap<Point, ArrayList<Edge>> getEdgeMap() {
+        return edgeMap;
+    }
+
     public void setEdgeMap(HashMap<Point, ArrayList<Edge>> edgeMap) {
         this.edgeMap = edgeMap;
     }
@@ -76,7 +81,23 @@ public class Block {
         return stringbuilder.toString();
     }
 
-    public void addEdgeMap(Point point, Edge edge,int index){
+    public String getEdgeString() {
+        return edgeString;
+    }
+
+    public void setEdgeString(String edgeString) {
+        this.edgeString = edgeString;
+    }
+
+    public HashSet<Point> getPointSet() {
+        return pointSet;
+    }
+
+    public void setPointSet(HashSet<Point> pointSet) {
+        this.pointSet = pointSet;
+    }
+
+    public void addEdgeMap(Point point, Edge edge, int index){
             ArrayList<Edge> edgeArray =
                     edgeMap.containsKey(point)? edgeMap.get(point):new ArrayList<Edge>(){
                         {

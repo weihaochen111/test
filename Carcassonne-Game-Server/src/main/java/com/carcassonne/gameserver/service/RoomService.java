@@ -2,6 +2,7 @@ package com.carcassonne.gameserver.service;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.carcassonne.gameserver.bean.Card;
 import com.carcassonne.gameserver.bean.Player;
 import com.carcassonne.gameserver.bean.Room;
 import com.carcassonne.gameserver.bean.User;
@@ -25,7 +26,7 @@ public class RoomService {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    public Integer createRoom(Room room){
+    public Integer createRoom(Room room , ArrayList<Card> cardArrayList){
         ValueOperations<String,JSONObject>  operations= redisTemplate.opsForValue();
         Random random = new Random();
         Integer randomRoomNum = random.nextInt(899999)+100000;
@@ -33,6 +34,7 @@ public class RoomService {
             randomRoomNum = random.nextInt(899999) + 100000;
         }
         room.setNum(randomRoomNum);
+        room.createCardLibrary(cardArrayList);
         MainGameManager.getInstance().createRoom(room);
         operations.set(RedisConfig.ACTIVE_ROOM + randomRoomNum , room.toJSONObject() , ROOM_ALIVE_TIME, TimeUnit.HOURS);
         return randomRoomNum;
@@ -61,6 +63,16 @@ public class RoomService {
 
     public JSONObject getRoomInfo(Integer roomNum){
         return MainGameManager.getInstance().getRoomInfo(roomNum);
+    }
+
+    public JSONObject getFrameInfo(Integer roomNum){
+        JSONObject res = new JSONObject();
+
+
+
+        return res;
+
+
     }
 
 

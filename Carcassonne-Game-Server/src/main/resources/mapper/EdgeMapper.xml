@@ -8,7 +8,7 @@
     -->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="type" jdbcType="VARCHAR" property="type" />
-    <result column="connection" jdbcType="VARCHAR" property="connection" />
+    <result column="connection" jdbcType="VARCHAR" property="connect" />
     <result column="position" jdbcType="VARCHAR" property="position" />
   </resultMap>
   <sql id="Base_Column_List">

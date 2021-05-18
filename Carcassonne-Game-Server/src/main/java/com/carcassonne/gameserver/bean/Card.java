@@ -8,12 +8,16 @@ import org.springframework.context.annotation.Bean;
  *
  */
 public class Card {
+
+    public static String PICTURE_PATH = "http://47.119.130.124/carcassonneImg/card/";
+
     private Integer id;  //卡片的id，对应数据库的id
     private String pictureUrl;//这张卡片图片资源的URL
     private String topEdgeId;
     private String botEdgeId;
     private String lefEdgeId;
     private String rigEdgeId;
+    private int count;
 
 
 
@@ -32,6 +36,8 @@ public class Card {
         this.rigEdgeId = rigEdgeId;
     }
 
+    public Card(){}
+
     @Override
     public String toString() {
         return "Card{" +
@@ -43,6 +49,19 @@ public class Card {
                 ", rotate='" + rotate + '\'' +
                 ", pictureURL='" + pictureUrl + '\'' +
                 '}';
+    }
+
+    public void formatPictureURL(){
+        pictureUrl = PICTURE_PATH + pictureUrl + ".jpg";
+    }
+
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 
     public String getPictureUrl() {

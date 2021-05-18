@@ -3,6 +3,9 @@ package com.carcassonne.gameserver.bean;
 import com.alibaba.fastjson.JSONObject;
 import com.carcassonne.gameserver.manager.RoomManager;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 /**
  * 房间
  */
@@ -34,6 +37,22 @@ public class Room {
         if(name != null) room.put("name",name);
         if(roomState != null) room.put("roomState",roomState);
         return room;
+    }
+
+    public void createCardLibrary(ArrayList<Card> cardArrayList){
+        ArrayList<Card> temp = new ArrayList<>();
+
+        for (int i = 0 ; i < cardArrayList.size() ; i++){
+            for ( int j = 0 ; j < cardArrayList.get(i).getCount() ; j++){
+                temp.add(cardArrayList.get(i));
+            }
+        }
+        Collections.shuffle(temp);
+        Card[] cardLib = new Card[temp.size()];
+        for (int i = 0 ; i < temp.size() ; i++){
+            cardLib[i] = temp.get(i);
+        }
+        roomManager.setCardLibrary(cardLib);
     }
 
     @Override

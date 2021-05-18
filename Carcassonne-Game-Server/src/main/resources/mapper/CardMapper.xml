@@ -12,6 +12,7 @@
     <result column="lef_edge_id" jdbcType="VARCHAR" property="lefEdgeId" />
     <result column="rig_edge_id" jdbcType="VARCHAR" property="rigEdgeId" />
     <result column="picture_url" jdbcType="VARCHAR" property="pictureUrl" />
+    <result column="count" javaType="INTEGER" property="count"/>
   </resultMap>
   <sql id="Base_Column_List">
     <!--

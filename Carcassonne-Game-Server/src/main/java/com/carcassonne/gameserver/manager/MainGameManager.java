@@ -91,6 +91,36 @@ public class MainGameManager {
     }
 
 
+
+//TODO 获取frame  流程==> 发牌，获取放置区域，获取占领板块，放牌，放置占领，计算得分，保存当前frame
+    public JSONObject getFrameInfo(Integer roomNum){
+        JSONObject res = new JSONObject();
+        Integer roundNum = roomHashMap.get(roomNum).getRoomManager().getNowTurnNum();
+        String roundPlayerAccountNum = roomHashMap.get(roomNum).getRoomManager().getPlayerAccountNum();
+
+        JSONObject roundPlayerOpInfo = new JSONObject();
+        Integer roundPlayerHandCard = roomHashMap.get(roomNum).getRoomManager().getNowPlayerHeadCardId();
+        roundPlayerOpInfo.put("roundPlayerHandCard",roundPlayerHandCard);
+        roundPlayerOpInfo.put("roundPlayerCanPutPosition",roomHashMap.get(roomNum).getRoomManager().getNowPlayerCanPutPosition());
+        roundPlayerOpInfo.put("roundPlayerCanOccupyBlock",roomHashMap.get(roomNum).getRoomManager().getNowPlayerCanOccupyBlock());
+        roundPlayerOpInfo.put("roundPlayerState","playing");//TODO　待完善状态
+
+        JSONObject lastPlayerOpResult = roomHashMap.get(roomNum).getRoomManager().getLastPlayerOpInfo();
+
+        JSONArray playSocre = new JSONArray();
+
+        res.put("roundNum",roundNum);
+        res.put("roundPlayerAccountNum",roundPlayerAccountNum);
+        res.put("roundPlayerOpInfo",roundPlayerOpInfo);
+        res.put("lastPlayerOpResult",lastPlayerOpResult);
+        res.put("playSocre",playSocre);
+
+
+        return res;
+
+
+    }
+
     @Override
     public String toString() {
         return "MainGameManager{" +

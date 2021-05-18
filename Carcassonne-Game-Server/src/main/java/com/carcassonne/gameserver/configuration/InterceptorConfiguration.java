@@ -18,13 +18,12 @@ public class InterceptorConfiguration implements WebMvcConfigurer {
         InterceptorRegistration registration = registry.addInterceptor(new PostCheckHandlerInterceptor());
         registration.addPathPatterns("/**");                      //所有路径都被拦截
         registration.excludePathPatterns(                         //添加不拦截路径
+
               "/offline/userRegister",
                 "/offline/userLogin",
-            "/gameServerState/getAll"
-//                "/**/*.js",              //js静态资源
-//                "/**/*.css",             //css静态资源
-//                "/**/*.woff",
-//                "/**/*.ttf"
+            "/gameServerState/getAll",
+            "/tt/*"
+        
         );
     }
 }
