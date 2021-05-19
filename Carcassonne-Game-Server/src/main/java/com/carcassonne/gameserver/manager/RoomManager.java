@@ -74,7 +74,7 @@ public class RoomManager {
                 appropriated(occupyBlockNum,players.get(nowPlayerNum).getAccountNum(),blockType);
             }
 
-            //TODO 这里要计分
+            //TODO 这里要计分一下
             if(nowPlayerNum == players.size() -1){
                 nowTurnNum++;
                 nowPlayerNum = 0;

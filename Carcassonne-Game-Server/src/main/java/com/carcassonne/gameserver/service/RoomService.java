@@ -66,13 +66,7 @@ public class RoomService {
     }
 
     public JSONObject getFrameInfo(Integer roomNum){
-        JSONObject res = new JSONObject();
-
-
-
-        return res;
-
-
+        return MainGameManager.getInstance().getFrameInfo(roomNum);
     }
 
 
