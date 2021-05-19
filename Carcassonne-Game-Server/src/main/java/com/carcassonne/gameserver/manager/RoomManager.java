@@ -35,6 +35,7 @@ public class RoomManager {
 
     private ArrayList<Block> cityBlock = new ArrayList<>();
     private ArrayList<Block> roadBlock = new ArrayList<>();
+    private HashMap<String,Integer> playerScore = new HashMap<>();
 
     MapUtil mapUtil = new MapUtil();
 
@@ -738,36 +739,94 @@ public class RoomManager {
             if (card.getTop().getType().equals("city")){
 
                 cityBlock.get(card.getTop().getCityorroad()).start(point);
+                Integer score = cityBlock.get(card.getTop().getCityorroad()).getScoreAll();
+                if(score!=0){
+                    ArrayList<String> playsID = cityBlock.get(card.getTop().getCityorroad()).getPlayerIdArray();
+                    for(String ID :playsID){
+                        playerScore.put(ID,playerScore.get(ID)+score);
+                    }
+                }
+
+
             }else if(card.getTop().getType().equals("road")){
 
                 roadBlock.get(card.getTop().getCityorroad()).start(point);
+                Integer score = roadBlock.get(card.getTop().getCityorroad()).getScoreAll();
+                if(score!=0){
+                    ArrayList<String> playsID = roadBlock.get(card.getTop().getCityorroad()).getPlayerIdArray();
+                    for(String ID :playsID){
+                        playerScore.put(ID,playerScore.get(ID)+score);
+                    }
+                }
             }
         }
         if(card.getRig().getCityorroad()!=-1){
             if (card.getRig().getType().equals("city")){
 
                 cityBlock.get(card.getRig().getCityorroad()).start(point);
+                Integer score = cityBlock.get(card.getTop().getCityorroad()).getScoreAll();
+                if(score!=0){
+                    ArrayList<String> playsID = cityBlock.get(card.getTop().getCityorroad()).getPlayerIdArray();
+                    for(String ID :playsID){
+                        playerScore.put(ID,playerScore.get(ID)+score);
+                    }
+                }
             }else if(card.getRig().getType().equals("road")){
 
                 roadBlock.get(card.getRig().getCityorroad()).start(point);
+                Integer score = roadBlock.get(card.getTop().getCityorroad()).getScoreAll();
+                if(score!=0){
+                    ArrayList<String> playsID = roadBlock.get(card.getTop().getCityorroad()).getPlayerIdArray();
+                    for(String ID :playsID){
+                        playerScore.put(ID,playerScore.get(ID)+score);
+                    }
+                }
             }
         }
         if(card.getBot().getCityorroad()!=-1){
             if (card.getBot().getType().equals("city")){
 
                 cityBlock.get(card.getBot().getCityorroad()).start(point);
+                Integer score = cityBlock.get(card.getTop().getCityorroad()).getScoreAll();
+                if(score!=0){
+                    ArrayList<String> playsID = cityBlock.get(card.getTop().getCityorroad()).getPlayerIdArray();
+                    for(String ID :playsID){
+                        playerScore.put(ID,playerScore.get(ID)+score);
+                    }
+                }
             }else if(card.getBot().getType().equals("road")){
 
                 roadBlock.get(card.getBot().getCityorroad()).start(point);
+                Integer score = roadBlock.get(card.getTop().getCityorroad()).getScoreAll();
+                if(score!=0){
+                    ArrayList<String> playsID = roadBlock.get(card.getTop().getCityorroad()).getPlayerIdArray();
+                    for(String ID :playsID){
+                        playerScore.put(ID,playerScore.get(ID)+score);
+                    }
+                }
             }
         }
         if(card.getLef().getCityorroad()!=-1){
             if (card.getLef().getType().equals("city")){
 
                 cityBlock.get(card.getLef().getCityorroad()).start(point);
+                Integer score = cityBlock.get(card.getTop().getCityorroad()).getScoreAll();
+                if(score!=0){
+                    ArrayList<String> playsID = cityBlock.get(card.getTop().getCityorroad()).getPlayerIdArray();
+                    for(String ID :playsID){
+                        playerScore.put(ID,playerScore.get(ID)+score);
+                    }
+                }
             }else if(card.getLef().getType().equals("road")){
 
                 roadBlock.get(card.getLef().getCityorroad()).start(point);
+                Integer score = roadBlock.get(card.getTop().getCityorroad()).getScoreAll();
+                if(score!=0){
+                    ArrayList<String> playsID = roadBlock.get(card.getTop().getCityorroad()).getPlayerIdArray();
+                    for(String ID :playsID){
+                        playerScore.put(ID,playerScore.get(ID)+score);
+                    }
+                }
             }
         }
 
