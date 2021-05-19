@@ -207,6 +207,7 @@ public class Block {
     public void start(Point point){
         isFull = true;
         Walk(point);
+        caculate();
     }
 
     /**
@@ -304,5 +305,13 @@ public class Block {
         for(int i=0;i<playerIdArray.size();i++){
             System.out.println(playerIdArray.get(i));
         }
+    }
+
+    public int getScoreAll() {
+        return scoreAll;
+    }
+
+    public ArrayList<String> getPlayerIdArray() {
+        return playerIdArray;
     }
 }
