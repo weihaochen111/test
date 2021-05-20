@@ -1,2 +1,0 @@
-2021-05-02 17:27:09.995 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.carcassonne.mapper]' package. Please check your configuration.
-2021-05-02 18:09:17.996 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.carcassonne.mapper]' package. Please check your configuration.

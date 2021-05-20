@@ -11,6 +11,7 @@ public class Player extends User{
     private Boolean isStart;
     private String gameState;
     private Integer inRoomNum;
+    private Integer chessNum;
 
     public Player(Boolean isReady, Card hand, Integer score, Boolean isStart, String gameState,Integer inRoomNum,User user) {
         super(user.getAccountNum(),user.getPassword(),user.getSex(),user.getLevel(),user.getNickname(),user.getHeadPictureURL());

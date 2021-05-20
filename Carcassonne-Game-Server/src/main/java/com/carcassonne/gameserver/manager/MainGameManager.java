@@ -107,18 +107,21 @@ public class MainGameManager {
 
         JSONObject lastPlayerOpResult = roomHashMap.get(roomNum).getRoomManager().getLastPlayerOpInfo();
 
-        JSONArray playSocre = new JSONArray();
+        JSONArray playSocre = roomHashMap.get(roomNum).getRoomManager().getPlayerScoreToJSONArray();
 
         res.put("roundNum",roundNum);
         res.put("roundPlayerAccountNum",roundPlayerAccountNum);
         res.put("roundPlayerOpInfo",roundPlayerOpInfo);
         res.put("lastPlayerOpResult",lastPlayerOpResult);
         res.put("playSocre",playSocre);
-
-
+        res.put("pieceRemainNum",roomHashMap.get(roomNum).getRoomManager().getLibRemainNum());
         return res;
 
+    }
 
+    public Boolean fanCard(Integer roomNum,String accountNum,Integer putX,Integer putY,Integer rotation,Integer occupyBlockNum,String blockType){
+        return roomHashMap.get(roomNum).getRoomManager()
+                .playerAction(accountNum,putX,putY,rotation,occupyBlockNum,blockType);
     }
 
     @Override

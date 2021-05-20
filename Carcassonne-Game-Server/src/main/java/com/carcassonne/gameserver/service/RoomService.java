@@ -69,5 +69,9 @@ public class RoomService {
         return MainGameManager.getInstance().getFrameInfo(roomNum);
     }
 
+    public Boolean fanCard(Integer roomNum,String accountNum,Integer putX,Integer putY,Integer rotation,Integer occupyBlockNum,String blockType){
+        return MainGameManager.getInstance().fanCard(roomNum,accountNum,putX,putY,rotation,occupyBlockNum,blockType);
+    }
+
 
 }

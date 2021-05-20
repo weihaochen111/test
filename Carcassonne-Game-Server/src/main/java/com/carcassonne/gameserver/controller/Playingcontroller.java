@@ -49,4 +49,59 @@ public class Playingcontroller {
             return result;
         }
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/fanCard",method = RequestMethod.POST)
+    public JSONObject fanCard(HttpServletRequest request,@RequestBody String JSONBody) {
+        JSONObject result = new JSONObject();
+        JSONObject requestBody = new JSONObject();
+        String token = null;
+        Integer putX = null;
+        Integer putY = null;
+        Integer rotation = null;
+        Integer occupyBlock = null;
+        String blockType = null;
+        String accountNum = null;
+        Integer roomNum =null;
+        try {
+            token = request.getHeader("token");
+            accountNum = JwtTokenUtil.getUsername(token);
+            requestBody = JSONObject.parseObject(JSONBody);
+            putX = requestBody.getInteger("putX");
+            putY = requestBody.getInteger("putY");
+            rotation = requestBody.getInteger("rotation");
+            occupyBlock = requestBody.getInteger("occupyBlock");
+            roomNum = userService.getWaitStartPlayerByAccountNum(accountNum).getInteger("inRoomNum");
+            if (requestBody.containsKey("blockType"))
+                blockType = requestBody.getString("blockType");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            result.put("code", 400);
+            result.put("message", "Bad Request");
+            logger.error("/playing/fanCard api end with 400 , Bad Request " + e.toString() + " JSONBody :" + JSONBody);
+            return result;
+        }
+
+        try {
+            if (roomService.fanCard(roomNum,accountNum,putX,putY,rotation,occupyBlock,blockType) == true ) {
+                result.put("code",200);
+                result.put("message","OK, request successfully");
+                return result;
+            }else {
+                result.put("code",500);
+                result.put("message", StateCodeConfig.when_500_message(JSONBody));
+                logger.error("/playing/fanCard api end with 500 , unknown error ! token :" + token);
+                return result;
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+            result.put("code",500);
+            result.put("message", StateCodeConfig.when_500_message(JSONBody));
+            logger.error("/playing/fanCard api end with 500 , unknown error ! token :" + token);
+            return result;
+        }
+    }
+
 }

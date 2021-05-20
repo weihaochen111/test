@@ -59,8 +59,6 @@ public class RoomManager {
 
     public Boolean playerAction(String accountNum,Integer putX,Integer putY,Integer rotation,Integer occupyBlockNum,String blockType){
         if(nowTurnNum == 0 ) nowTurnNum ++;
-
-
         if(players.get(nowPlayerNum).getAccountNum().equals(accountNum)){
             lastPlayerOpInfo.clear();
             lastPlayerOpInfo.put("lastPlayerHandCard",players.get(nowPlayerNum).getHand().getId());
@@ -75,7 +73,6 @@ public class RoomManager {
                 appropriated(occupyBlockNum,players.get(nowPlayerNum).getAccountNum(),blockType);
             }
 
-            //TODO 这里要计分一下
             if(nowPlayerNum == players.size() -1){
                 nowTurnNum++;
                 nowPlayerNum = 0;
@@ -142,7 +139,9 @@ public class RoomManager {
     public JSONArray getNowPlayerCanPutPosition(){
         JSONArray res = new JSONArray();
         HashMap<Integer,ArrayList<Point>> allCanPutPositionList = getAllCanPutPositionList(players.get(nowPlayerNum).getHand());
-        for (int i = 0 ; i < 4 ; i++){
+                                                                                                logger.info("获取到的能放坐标数量：" + allCanPutPositionList.size());
+                                                                                                logger.info("Key :"+allCanPutPositionList.keySet().toString());
+        for (int i = 0 ; i < 4 ; i++){    logger.info("点："+allCanPutPositionList.get(i).size());
             for (int j = 0 ; j < allCanPutPositionList.get(i).size() ; j++){
                 JSONObject temp = new JSONObject();
                 Point tempP = allCanPutPositionList.get(i).get(j);
@@ -152,6 +151,7 @@ public class RoomManager {
                 res.add(temp);
             }
         }
+        logger.info("坐标转换" + res.toJSONString()); //TODO 这里坐标转换出问题了
         return res;
     }
 
@@ -243,15 +243,16 @@ public class RoomManager {
         if (flag==players.size() && flag > 1) {
             Card[][] cards = new Card[31][31];
             Card or = new Card();
-            or.setBot(new Edge(99,"city","{\"connectTop\":\"FALSE\",\"connectBot\":\"FALSE\",\"connectLef\":\"FALSE\",\"connectRig\":\"FALSE\"}"));
-            or.setLef(new Edge(99,"road","{\"connectTop\":\"FALSE\",\"connectBot\":\"FALSE\",\"connectLef\":\"FALSE\",\"connectRig\":\"TRUE\"}"));
-            or.setRig(new Edge(99,"road","{\"connectTop\":\"FALSE\",\"connectBot\":\"FALSE\",\"connectLef\":\"TRUE\",\"connectRig\":\"FALSE\"}"));
-            or.setTop(new Edge(99,"city","{\"connectTop\":\"FALSE\",\"connectBot\":\"FALSE\",\"connectLef\":\"FALSE\",\"connectRig\":\"FALSE\"}"));
-            cards[15][15]=or;
+            or.setBot(new Edge(99,"grass","{\"top\":\"false\",\"bot\":\"false\",\"lef\":\"false\",\"rig\":\"false\"}"));
+            or.setLef(new Edge(99,"road","{\"top\":\"false\",\"bot\":\"false\",\"lef\":\"false\",\"rig\":\"true\"}"));
+            or.setRig(new Edge(99,"road","{\"top\":\"false\",\"bot\":\"false\",\"lef\":\"true\",\"rig\":\"false\"}"));
+            or.setTop(new Edge(99,"city","{\"top\":\"false\",\"bot\":\"false\",\"lef\":\"false\",\"rig\":\"false\"}"));
+
             puzzle = new Puzzle(cards);
-            puzzle.addHaveBePutCardsList(new Point(15,15));
+            putCard(15,15,or);
             nowPlayerNum = 0;
             nowTurnNum = 0;
+            deal();
             logger.info("gameStart" + players );
             return "playing";
         }
@@ -308,7 +309,7 @@ public class RoomManager {
      * 参数：x y 对应地图的位置,card 为待放置的手牌
      * 函数执行后给出某一位置是否能放牌
      */
-    public Boolean canPutCard(Integer x,Integer y,Card card){
+    public Boolean canPutCard(Integer x,Integer y,Card card){   //TODO 这里有问题
         int n = 0;//有几个临边有放卡片
         boolean YN = true;//能否放
         Card[][] thiscard = puzzle.getmPuzzle();
@@ -385,6 +386,7 @@ public class RoomManager {
     //返回旋转4个角度的可放牌坐标
     public HashMap<Integer,ArrayList<Point>> getAllCanPutPositionList(Card card){
         Card tmp = card;
+//        logger.info("开始获取能放的坐标，输入的卡牌："+ card.toString());
         HashMap<Integer,ArrayList<Point>> allCanPutPositionList = new HashMap<>();
         allCanPutPositionList.put(0,getCanPutPositionList(tmp));//0°
         tmp.rotate(1);
@@ -393,6 +395,7 @@ public class RoomManager {
         allCanPutPositionList.put(2,getCanPutPositionList(tmp));//180°
         tmp.rotate(1);
         allCanPutPositionList.put(3,getCanPutPositionList(tmp));//270°
+
         return allCanPutPositionList;
     }
 
@@ -944,5 +947,31 @@ public class RoomManager {
 
     public void setNowPlayerNum(Integer nowPlayerNum) {
         this.nowPlayerNum = nowPlayerNum;
+    }
+
+    public HashMap<String, Integer> getPlayerScore() {
+        return playerScore;
+    }
+
+    public void setPlayerScore(HashMap<String, Integer> playerScore) {
+        this.playerScore = playerScore;
+    }
+
+    public JSONArray getPlayerScoreToJSONArray(){
+        JSONArray res = new JSONArray();
+        for (Map.Entry<String, Integer> entry : playerScore.entrySet()) {
+            JSONObject temp = new JSONObject();
+            String accountNum = entry.getKey();
+            Integer score = entry.getValue();
+            temp.put("playAccountNum",accountNum);
+            temp.put("Score",score);
+            temp.put("pieceRemainNum",8);
+            res.add(temp);
+        }
+        return res;
+    }
+
+    public Integer getLibRemainNum(){
+        return cardLibrary.length - nowLibNum;
     }
 }

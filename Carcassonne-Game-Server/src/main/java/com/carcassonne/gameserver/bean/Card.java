@@ -230,10 +230,10 @@ public class Card {
             lef.setConnect(cardLefJson.toString());
 
 
-            System.out.println("top:"+top.getConnect());
-            System.out.println("rig:"+rig.getConnect());
-            System.out.println("bot:"+bot.getConnect());
-            System.out.println("lef:"+lef.getConnect());
+//            System.out.println("top:"+top.getConnect());
+//            System.out.println("rig:"+rig.getConnect());
+//            System.out.println("bot:"+bot.getConnect());
+//            System.out.println("lef:"+lef.getConnect());
         }
     }
 }
