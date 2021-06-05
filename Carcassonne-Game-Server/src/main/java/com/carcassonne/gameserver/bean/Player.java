@@ -1,10 +1,13 @@
 package com.carcassonne.gameserver.bean;
 
 
+import java.security.PublicKey;
+
 /**
  * 玩家
  */
 public class Player extends User{
+    private String userId;
     private Boolean isReady;
     private Card hand;
     private Integer score;
@@ -22,7 +25,14 @@ public class Player extends User{
         this.gameState = gameState;
         this.inRoomNum = inRoomNum;
     }
+    public Player(String nid){
+        userId=nid;
+    }
 
+
+    public String getUserId() {
+        return userId;
+    }
 
     public Integer getInRoomNum() {
         return inRoomNum;

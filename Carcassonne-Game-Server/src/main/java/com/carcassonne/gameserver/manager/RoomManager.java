@@ -46,10 +46,13 @@ public class RoomManager {
     private JSONObject lastPlayerOpInfo = null;
 
 
-    public RoomManager(Card[][] cards){
+    public RoomManager(Card[][] cards , ArrayList<Player> nplayers){
         puzzle = new Puzzle(cards);
         puzzle.addHaveBePutCardsList(new Point(15,15));
-        playerScore.put("murasame",0);//TODO 这也是个测试，删了他
+        players = nplayers;
+        for( Player player:players){
+            playerScore.put(player.getUserId(),0);
+        }
     }
 
     public RoomManager(){
