@@ -20,6 +20,9 @@ public class RoomManager {
     static public int MIN_Y = 0;
 
     private ArrayList<Player> players;
+
+    private ArrayList<String> playerIds = new ArrayList<>();
+
     private Integer activePlayerNum;
     private Puzzle puzzle;
     private Card[] cardLibrary;
@@ -52,13 +55,13 @@ public class RoomManager {
         players = nplayers;
         for( Player player:players){
             playerScore.put(player.getUserId(),0);
+            playerIds.add(player.getUserId());
         }
     }
 
     public RoomManager(){
         players = new ArrayList<>();
         activePlayerNum = 0;
-        playerScore.put("murasame",0);//TODO 我无处不在
     }
 
     public Boolean playerAction(String accountNum,Integer putX,Integer putY,Integer rotation,Integer occupyBlockNum,String blockType){
@@ -428,7 +431,7 @@ public class RoomManager {
                 isEmpty = false;
             }else{
                 if(card.getRig().getType().equals("city")){
-                    Block tmp = new Block("city");
+                    Block tmp = new Block("city",playerIds);
                     tmp.addEdgeMap(point,card.getRig(),1);
                     cityBlock.add(tmp);
                     card.setRigRoadOrCity(cityBlock.size()-1);
@@ -441,7 +444,7 @@ public class RoomManager {
 //                    card.setRigRoadOrCity(city.size()-1);
 
                 }else if(card.getRig().getType().equals("road")){
-                    Block tmp = new Block("road");
+                    Block tmp = new Block("road",playerIds);
                     tmp.addEdgeMap(point,card.getRig(),1);
                     roadBlock.add(tmp);
                     card.setRigRoadOrCity(roadBlock.size()-1);
@@ -471,7 +474,7 @@ public class RoomManager {
                 isEmpty = false;
             }else{
                 if(card.getLef().getType().equals("city")){
-                    Block tmp = new Block("city");
+                    Block tmp = new Block("city",playerIds);
                     tmp.addEdgeMap(point,card.getLef(),3);
                     cityBlock.add(tmp);
                     card.setLefRoadOrCity(cityBlock.size()-1);
@@ -483,7 +486,7 @@ public class RoomManager {
 //                    cityEdge.add(ncitye2);
 //                    card.setLefRoadOrCity(city.size()-1);
                 }else if(card.getLef().getType().equals("road")){
-                    Block tmp = new Block("road");
+                    Block tmp = new Block("road",playerIds);
                     tmp.addEdgeMap(point,card.getLef(),3);
                     roadBlock.add(tmp);
                     card.setLefRoadOrCity(roadBlock.size()-1);
@@ -515,7 +518,7 @@ public class RoomManager {
                 isEmpty = false;
             }else{
                 if(card.getBot().getType().equals("city")){
-                    Block tmp = new Block("city");
+                    Block tmp = new Block("city",playerIds);
                     tmp.addEdgeMap(point,card.getBot(),2);
                     cityBlock.add(tmp);
                     card.setBotRoadOrCity(cityBlock.size()-1);
@@ -528,7 +531,7 @@ public class RoomManager {
 //                    cityEdge.add(ncitye3);
 //                    card.setBotRoadOrCity(city.size()-1);
                 }else if(card.getBot().getType().equals("road")){
-                    Block tmp = new Block("road");
+                    Block tmp = new Block("road",playerIds);
                     tmp.addEdgeMap(point,card.getBot(),2);
                     roadBlock.add(tmp);
                     card.setBotRoadOrCity(roadBlock.size()-1);
@@ -563,7 +566,7 @@ public class RoomManager {
             }else{
 
                 if(card.getTop().getType().equals("city")){
-                    Block tmp = new Block("city");
+                    Block tmp = new Block("city",playerIds);
                     tmp.addEdgeMap(point,card.getTop(),0);
                     cityBlock.add(tmp);
                     card.setTopRoadOrCity(cityBlock.size()-1);
@@ -576,7 +579,7 @@ public class RoomManager {
 //                    cityEdge.add(ncitye4);
 //                    card.setTopRoadOrCity(city.size()-1);
                 }else if(card.getTop().getType().equals("road")){
-                    Block tmp = new Block("road");
+                    Block tmp = new Block("road",playerIds);
                     tmp.addEdgeMap(point,card.getTop(),0);
                     roadBlock.add(tmp);
                     card.setTopRoadOrCity(roadBlock.size()-1);

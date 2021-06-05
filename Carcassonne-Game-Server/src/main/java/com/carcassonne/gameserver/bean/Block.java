@@ -15,9 +15,11 @@ public class Block {
     public boolean isFull = true;
     int scorePerCard = 0;
     int scoreAll = 0;
-    public Block(String edgeString){
+    public Block(String edgeString,ArrayList<String> nPlayerIdArray){
         this.edgeString = edgeString;
-
+        for (String playerId : nPlayerIdArray){
+            scoreRecord.put(playerId,10);
+        }
     }
     public Block(String edgeType, HashMap<Point, Card> cardMap) {
         this.edgeString = edgeType;
@@ -41,7 +43,7 @@ public class Block {
     Block(HashMap<Point,ArrayList<Edge>> edgeMap,String edgeString){
         this.edgeMap= edgeMap;
         this.edgeString = edgeString;
-        playerIdArray.add("murasame");//TODO 得分测试2
+
     }
 
     public HashMap<Point, ArrayList<Edge>> getEdgeMap() {
@@ -78,8 +80,11 @@ public class Block {
         stringbuilder.append("总得分\n"+"是否完整"+isFull+"\n"+scorePerCard+"*"+pointSet.size()+"="+scoreAll+"\n");
         //得分玩家
         stringbuilder.append("得分玩家有：\n");
+        int i = 1;
         for(String playerId : playerIdArray){
-            stringbuilder.append(playerId+"\n");
+
+            stringbuilder.append("玩家"+i+" : "+playerId+"\n");
+            i++;
         }
         return stringbuilder.toString();
     }

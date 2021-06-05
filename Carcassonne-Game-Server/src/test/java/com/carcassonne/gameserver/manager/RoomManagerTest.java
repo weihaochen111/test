@@ -1,10 +1,7 @@
 package com.carcassonne.gameserver.manager;
 
 import com.alibaba.fastjson.JSONObject;
-import com.carcassonne.gameserver.bean.Block;
-import com.carcassonne.gameserver.bean.Card;
-import com.carcassonne.gameserver.bean.Edge;
-import com.carcassonne.gameserver.bean.Point;
+import com.carcassonne.gameserver.bean.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -23,7 +20,10 @@ class RoomManagerTest {
         or.setRig(new Edge(3,"Road","left"));
         or.setTop(new Edge(4,"Glass",null));
         cards[15][15]=or;
-        RoomManager roomManager=new RoomManager(cards);
+        Player player1 = new Player("murasame");
+        ArrayList<Player> players = new ArrayList<>();
+        players.add(player1);
+        RoomManager roomManager=new RoomManager(cards,players);//卡片和玩家列表
         Card nc = new Card();
         nc.setTop(new Edge(4,"Glass",null));
         nc.setRig(new Edge(3,"Road","left"));
@@ -44,7 +44,10 @@ class RoomManagerTest {
         or.setRig(new Edge(3,"Road","left"));
         or.setTop(new Edge(4,"Glass",null));
         cards[15][15]=or;
-        RoomManager roomManager=new RoomManager(cards);
+        Player player1 = new Player("murasame");
+        ArrayList<Player> players = new ArrayList<>();
+        players.add(player1);
+        RoomManager roomManager=new RoomManager(cards,players);//卡片和玩家列表
         roomManager.updateCanPutPositionList(new Point(15,15));
         Card nc = new Card();
         nc.setBot(new Edge(1,"City",null));
@@ -85,7 +88,10 @@ class RoomManagerTest {
         or.setLef(new Edge(2,"road","{\"top\":\"false\",\"rig\":\"true\",\"bot\":\"false\",\"lef\":\"true\"}"));
         or.setRig(new Edge(3,"road","{\"top\":\"false\",\"rig\":\"true\",\"bot\":\"false\",\"lef\":\"true\"}"));
         or.setBot(new Edge(4,"glass","{\"top\":\"false\",\"rig\":\"false\",\"bot\":\"false\",\"lef\":\"false\"}"));
-        RoomManager roomManager=new RoomManager(cards);
+        Player player1 = new Player("murasame");
+        ArrayList<Player> players = new ArrayList<>();
+        players.add(player1);
+        RoomManager roomManager=new RoomManager(cards,players);//卡片和玩家列表
 
         roomManager.putCard(15,15,or);
         HashMap<Integer, Block> unappropriatedCityBlock = roomManager.getUnappropriatedCityBlock();
@@ -119,7 +125,10 @@ class RoomManagerTest {
         or.setLef(new Edge(2,"road","{\"top\":\"false\",\"rig\":\"false\",\"bot\":\"false\",\"lef\":\"false\"}"));
         or.setRig(new Edge(3,"glass","{\"top\":\"false\",\"rig\":\"false\",\"bot\":\"false\",\"lef\":\"false\"}"));
         or.setTop(new Edge(4,"glass","{\"top\":\"false\",\"rig\":\"false\",\"bot\":\"false\",\"lef\":\"false\"}"));
-        RoomManager roomManager=new RoomManager(cards);
+        Player player1 = new Player("murasame");
+        ArrayList<Player> players = new ArrayList<>();
+        players.add(player1);
+        RoomManager roomManager=new RoomManager(cards,players);//卡片和玩家列表
         roomManager.putCard(15,15,or);
 
         Card nc1 = new Card();
@@ -142,7 +151,10 @@ class RoomManagerTest {
         or.setLef(new Edge(2,"road","{\"top\":\"false\",\"rig\":\"false\",\"bot\":\"false\",\"lef\":\"false\"}"));
         or.setRig(new Edge(3,"glass","{\"top\":\"false\",\"rig\":\"false\",\"bot\":\"false\",\"lef\":\"false\"}"));
         or.setTop(new Edge(4,"glass","{\"top\":\"false\",\"rig\":\"false\",\"bot\":\"false\",\"lef\":\"false\"}"));
-        RoomManager roomManager=new RoomManager(cards);
+        Player player1 = new Player("murasame");
+        ArrayList<Player> players = new ArrayList<>();
+        players.add(player1);
+        RoomManager roomManager=new RoomManager(cards,players);//卡片和玩家列表
         roomManager.putCard(15,15,or);
 
         Card nc1 = new Card();
