@@ -17,10 +17,12 @@ public class Block {
     int scoreAll = 0;
     public Block(String edgeString){
         this.edgeString = edgeString;
+
     }
     public Block(String edgeType, HashMap<Point, Card> cardMap) {
         this.edgeString = edgeType;
         this.cardMap = cardMap;
+
         switch (edgeType) {
             case "city":
                 edgeString = "city";
@@ -39,6 +41,7 @@ public class Block {
     Block(HashMap<Point,ArrayList<Edge>> edgeMap,String edgeString){
         this.edgeMap= edgeMap;
         this.edgeString = edgeString;
+        playerIdArray.add("murasame");//TODO 得分测试2
     }
 
     public HashMap<Point, ArrayList<Edge>> getEdgeMap() {
@@ -313,5 +316,8 @@ public class Block {
 
     public ArrayList<String> getPlayerIdArray() {
         return playerIdArray;
+    }
+    public void addPlayerId(String id){
+        playerIdArray.add(id);
     }
 }

@@ -1,12 +1,14 @@
 package com.carcassonne.gameserver.manager;
 
 import com.alibaba.fastjson.JSONObject;
+import com.carcassonne.gameserver.bean.Block;
 import com.carcassonne.gameserver.bean.Card;
 import com.carcassonne.gameserver.bean.Edge;
 import com.carcassonne.gameserver.bean.Point;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -75,26 +77,35 @@ class RoomManagerTest {
     }
     @Test
     void qiuqiunidongqilai(){
+
         Card[][] cards = new Card[31][31];
 
         Card or = new Card();
-        or.setBot(new Edge(1,"city","{\"top\":\"false\",\"rig\":\"false\",\"bot\":\"false\",\"lef\":\"false\"}"));
+        or.setTop(new Edge(1,"city","{\"top\":\"false\",\"rig\":\"false\",\"bot\":\"false\",\"lef\":\"false\"}"));
         or.setLef(new Edge(2,"road","{\"top\":\"false\",\"rig\":\"true\",\"bot\":\"false\",\"lef\":\"true\"}"));
         or.setRig(new Edge(3,"road","{\"top\":\"false\",\"rig\":\"true\",\"bot\":\"false\",\"lef\":\"true\"}"));
-        or.setTop(new Edge(4,"glass","{\"top\":\"false\",\"rig\":\"false\",\"bot\":\"false\",\"lef\":\"false\"}"));
+        or.setBot(new Edge(4,"glass","{\"top\":\"false\",\"rig\":\"false\",\"bot\":\"false\",\"lef\":\"false\"}"));
         RoomManager roomManager=new RoomManager(cards);
+
         roomManager.putCard(15,15,or);
-        Card nc = new Card();
-        nc.setTop(new Edge(1,"city","{\"top\":\"false\",\"rig\":\"false\",\"bot\":\"false\",\"lef\":\"false\"}"));
-        nc.setLef(new Edge(2,"road","{\"top\":\"false\",\"rig\":\"true\",\"bot\":\"false\",\"lef\":\"true\"}"));
-        nc.setRig(new Edge(3,"road","{\"top\":\"false\",\"rig\":\"true\",\"bot\":\"false\",\"lef\":\"true\"}"));
-        nc.setBot(new Edge(4,"glass","{\"top\":\"false\",\"rig\":\"false\",\"bot\":\"false\",\"lef\":\"false\"}"));
+        HashMap<Integer, Block> unappropriatedCityBlock = roomManager.getUnappropriatedCityBlock();
+
+//        System.out.println("**********");
+//        System.out.println(unappropriatedCityBlock);//看了一下key是0
+//        System.out.println("**********");
+
+        System.out.println();
+
+        roomManager.appropriated(0,"murasame","city");
+
+
         Card nc1 = new Card();
         nc1.setTop(new Edge(1,"city","{\"top\":\"false\",\"rig\":\"false\",\"bot\":\"false\",\"lef\":\"false\"}"));
         nc1.setLef(new Edge(2,"road","{\"top\":\"false\",\"rig\":\"true\",\"bot\":\"false\",\"lef\":\"true\"}"));
         nc1.setRig(new Edge(3,"road","{\"top\":\"false\",\"rig\":\"true\",\"bot\":\"false\",\"lef\":\"true\"}"));
         nc1.setBot(new Edge(4,"glass","{\"top\":\"false\",\"rig\":\"false\",\"bot\":\"false\",\"lef\":\"false\"}"));
-        roomManager.putCard(14,15,nc1);
+        nc1.rotate(2);
+        roomManager.putCard(15,14,nc1);
 
 
         System.out.println();

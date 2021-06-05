@@ -49,12 +49,13 @@ public class RoomManager {
     public RoomManager(Card[][] cards){
         puzzle = new Puzzle(cards);
         puzzle.addHaveBePutCardsList(new Point(15,15));
+        playerScore.put("murasame",0);//TODO 这也是个测试，删了他
     }
 
     public RoomManager(){
         players = new ArrayList<>();
         activePlayerNum = 0;
-
+        playerScore.put("murasame",0);//TODO 我无处不在
     }
 
     public Boolean playerAction(String accountNum,Integer putX,Integer putY,Integer rotation,Integer occupyBlockNum,String blockType){
@@ -539,7 +540,9 @@ public class RoomManager {
                 }
             }
         }
+
         if(y-1>=MIN_Y){
+
             if(nmap[x][y-1]!=null){
 
                 if(card.getTop().getType().equals("city")){
@@ -555,11 +558,13 @@ public class RoomManager {
                 }
                 isEmpty = false;
             }else{
+
                 if(card.getTop().getType().equals("city")){
                     Block tmp = new Block("city");
                     tmp.addEdgeMap(point,card.getTop(),0);
                     cityBlock.add(tmp);
                     card.setTopRoadOrCity(cityBlock.size()-1);
+                    System.out.println("******>"+(cityBlock.size()-1));
 //                    ArrayList<Card> ncity4 = new ArrayList<Card>();
 //                    ArrayList<Edge> ncitye4 = new ArrayList<Edge>();
 //                    ncity4.add(card);
@@ -767,9 +772,9 @@ public class RoomManager {
             if (card.getRig().getType().equals("city")){
 
                 cityBlock.get(card.getRig().getCityorroad()).start(point);
-                Integer score = cityBlock.get(card.getTop().getCityorroad()).getScoreAll();
+                Integer score = cityBlock.get(card.getRig().getCityorroad()).getScoreAll();
                 if(score!=0){
-                    ArrayList<String> playsID = cityBlock.get(card.getTop().getCityorroad()).getPlayerIdArray();
+                    ArrayList<String> playsID = cityBlock.get(card.getRig().getCityorroad()).getPlayerIdArray();
                     for(String ID :playsID){
                         playerScore.put(ID,playerScore.get(ID)+score);
                     }
@@ -777,9 +782,9 @@ public class RoomManager {
             }else if(card.getRig().getType().equals("road")){
 
                 roadBlock.get(card.getRig().getCityorroad()).start(point);
-                Integer score = roadBlock.get(card.getTop().getCityorroad()).getScoreAll();
+                Integer score = roadBlock.get(card.getRig().getCityorroad()).getScoreAll();
                 if(score!=0){
-                    ArrayList<String> playsID = roadBlock.get(card.getTop().getCityorroad()).getPlayerIdArray();
+                    ArrayList<String> playsID = roadBlock.get(card.getRig().getCityorroad()).getPlayerIdArray();
                     for(String ID :playsID){
                         playerScore.put(ID,playerScore.get(ID)+score);
                     }
@@ -790,9 +795,9 @@ public class RoomManager {
             if (card.getBot().getType().equals("city")){
 
                 cityBlock.get(card.getBot().getCityorroad()).start(point);
-                Integer score = cityBlock.get(card.getTop().getCityorroad()).getScoreAll();
+                Integer score = cityBlock.get(card.getBot().getCityorroad()).getScoreAll();
                 if(score!=0){
-                    ArrayList<String> playsID = cityBlock.get(card.getTop().getCityorroad()).getPlayerIdArray();
+                    ArrayList<String> playsID = cityBlock.get(card.getBot().getCityorroad()).getPlayerIdArray();
                     for(String ID :playsID){
                         playerScore.put(ID,playerScore.get(ID)+score);
                     }
@@ -800,7 +805,7 @@ public class RoomManager {
             }else if(card.getBot().getType().equals("road")){
 
                 roadBlock.get(card.getBot().getCityorroad()).start(point);
-                Integer score = roadBlock.get(card.getTop().getCityorroad()).getScoreAll();
+                Integer score = roadBlock.get(card.getBot().getCityorroad()).getScoreAll();
                 if(score!=0){
                     ArrayList<String> playsID = roadBlock.get(card.getTop().getCityorroad()).getPlayerIdArray();
                     for(String ID :playsID){
@@ -813,9 +818,9 @@ public class RoomManager {
             if (card.getLef().getType().equals("city")){
 
                 cityBlock.get(card.getLef().getCityorroad()).start(point);
-                Integer score = cityBlock.get(card.getTop().getCityorroad()).getScoreAll();
+                Integer score = cityBlock.get(card.getLef().getCityorroad()).getScoreAll();
                 if(score!=0){
-                    ArrayList<String> playsID = cityBlock.get(card.getTop().getCityorroad()).getPlayerIdArray();
+                    ArrayList<String> playsID = cityBlock.get(card.getLef().getCityorroad()).getPlayerIdArray();
                     for(String ID :playsID){
                         playerScore.put(ID,playerScore.get(ID)+score);
                     }
@@ -823,9 +828,9 @@ public class RoomManager {
             }else if(card.getLef().getType().equals("road")){
 
                 roadBlock.get(card.getLef().getCityorroad()).start(point);
-                Integer score = roadBlock.get(card.getTop().getCityorroad()).getScoreAll();
+                Integer score = roadBlock.get(card.getLef().getCityorroad()).getScoreAll();
                 if(score!=0){
-                    ArrayList<String> playsID = roadBlock.get(card.getTop().getCityorroad()).getPlayerIdArray();
+                    ArrayList<String> playsID = roadBlock.get(card.getLef().getCityorroad()).getPlayerIdArray();
                     for(String ID :playsID){
                         playerScore.put(ID,playerScore.get(ID)+score);
                     }
