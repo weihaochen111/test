@@ -313,7 +313,7 @@ public class RoomManager {
         if((x-1)>=MIN_X){
             if(thiscard[x-1][y] != null){
                 n++;
-                if(thiscard[x-1][y].getRig().getType() != card.getLef().getType()){
+                if( ! thiscard[x-1][y].getRig().getType().equals(card.getLef().getType())){
                     YN = false;
                 }
             }
@@ -321,7 +321,7 @@ public class RoomManager {
         if((x+1)<=MAX_X){
             if(thiscard[x+1][y] != null){
                 n++;
-                if(thiscard[x+1][y].getLef().getType() != card.getRig().getType()){
+                if( ! thiscard[x+1][y].getLef().getType().equals( card.getRig().getType())){
                     YN = false;
                 }
             }
@@ -329,7 +329,7 @@ public class RoomManager {
         if((y-1)>=MIN_Y){
             if(thiscard[x][y-1] != null){
                 n++;
-                if(thiscard[x][y-1].getBot().getType() != card.getTop().getType()){
+                if( ! thiscard[x][y-1].getBot().getType().equals(card.getTop().getType())){
                     YN = false;
                 }
             }
@@ -337,7 +337,7 @@ public class RoomManager {
         if((y+1)>=MAX_Y){
             if(thiscard[x][y+1] != null){
                 n++;
-                if(thiscard[x][y+1].getTop().getType() != card.getBot().getType()){
+                if( ! thiscard[x][y+1].getTop().getType().equals(card.getBot().getType())){
                     YN = false;
                 }
             }
@@ -587,7 +587,7 @@ public class RoomManager {
         JSONObject cardTopJson = JSONObject.parseObject(card.getTop().getConnect());
         if (card.getTop().getType().equals("city")){
             if(cardTopJson.get("rig").equals("true")){
-                //TODO 我人麻了
+
                 if(card.getTop().getCityorroad()!=card.getRig().getCityorroad()){
                     cityBlock.get(card.getTop().getCityorroad()).mergeBlock(cityBlock.get(card.getRig().getCityorroad()));
                     updateBlockAllEdgeOwn(nmap,cityBlock.get(card.getRig().getCityorroad()),card.getTop().getCityorroad(),card.getRig().getCityorroad());
