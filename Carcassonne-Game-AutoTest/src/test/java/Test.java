@@ -1,7 +1,9 @@
 import HTTPUtil.HTTPUtil;
 import com.alibaba.fastjson.JSONObject;
+import entity.PutPoint;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Test {
 
@@ -33,14 +35,23 @@ public class Test {
 //        System.out.println(getFrameInfo1);
         Thread.sleep(200);
 
-        String context1 = "这是第一条消息";
-        JSONObject sendChatInfo = JSONObject.parseObject(HTTPUtil.post(HTTPUtil.BASE_ADDRESS + HTTPUtil.common_sendChatInfo,"{\"type\":\"room\",\"context\":\"" + context1 + "\"}",TOKEN,token1));
 
-        JSONObject getChatInfo =  JSONObject.parseObject(HTTPUtil.post(HTTPUtil.BASE_ADDRESS + HTTPUtil.common_getChatInfo,NULL,TOKEN,token2)) ;
+        ArrayList<PutPoint> putPointList = HTTPUtil.formatFrameToGetPutPoint(getFrameInfo1);
 
-        String context2 = "这是第2条消息";
-        sendChatInfo = JSONObject.parseObject(HTTPUtil.post(HTTPUtil.BASE_ADDRESS + HTTPUtil.common_sendChatInfo,"{\"type\":\"room\",\"context\":\"" + context2 + "\"}",TOKEN,token1));
-        getChatInfo =  JSONObject.parseObject(HTTPUtil.post(HTTPUtil.BASE_ADDRESS + HTTPUtil.common_getChatInfo,NULL,TOKEN,token2)) ;
+        String request= "{\"putX\":\""+putPointList.get(0).getX()+"\",\"putY\":\""+putPointList.get(0).getY()+"\",\"rotation\":\""+putPointList.get(0).getRotation()+"\",\"occupyBlock\":\"999\"}" ;
+        JSONObject fanCard1 = JSONObject.parseObject(HTTPUtil.post(HTTPUtil.BASE_ADDRESS + HTTPUtil.playing_fanCard,request,TOKEN,token1)) ;
+
+
+
+
+//        String context1 = "这是第一条消息";
+//        JSONObject sendChatInfo = JSONObject.parseObject(HTTPUtil.post(HTTPUtil.BASE_ADDRESS + HTTPUtil.common_sendChatInfo,"{\"type\":\"room\",\"context\":\"" + context1 + "\"}",TOKEN,token1));
+//
+//        JSONObject getChatInfo =  JSONObject.parseObject(HTTPUtil.post(HTTPUtil.BASE_ADDRESS + HTTPUtil.common_getChatInfo,NULL,TOKEN,token2)) ;
+//
+//        String context2 = "这是第2条消息";
+//        sendChatInfo = JSONObject.parseObject(HTTPUtil.post(HTTPUtil.BASE_ADDRESS + HTTPUtil.common_sendChatInfo,"{\"type\":\"room\",\"context\":\"" + context2 + "\"}",TOKEN,token1));
+//        getChatInfo =  JSONObject.parseObject(HTTPUtil.post(HTTPUtil.BASE_ADDRESS + HTTPUtil.common_getChatInfo,NULL,TOKEN,token2)) ;
 
 
     }
