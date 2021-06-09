@@ -8,6 +8,7 @@ import com.carcassonne.gameserver.bean.Room;
 import com.carcassonne.gameserver.bean.User;
 import com.carcassonne.gameserver.configuration.RedisConfig;
 import com.carcassonne.gameserver.manager.MainGameManager;
+import org.apache.ibatis.javassist.bytecode.stackmap.TypeData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -72,6 +73,16 @@ public class RoomService {
     public Boolean fanCard(Integer roomNum,String accountNum,Integer putX,Integer putY,Integer rotation,Integer occupyBlockNum,String blockType){
         return MainGameManager.getInstance().fanCard(roomNum,accountNum,putX,putY,rotation,occupyBlockNum,blockType);
     }
+
+    public void addMsg(Integer roomNum,String accountNum ,String content){
+        MainGameManager.getInstance().addMsg(roomNum,accountNum,content);
+    }
+
+    public JSONArray getMsgListToJSONArray(Integer roomNum){
+        return MainGameManager.getInstance().getMsgListToJSONArray(roomNum);
+    }
+
+
 
 
 }

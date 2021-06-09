@@ -8,6 +8,7 @@ import com.carcassonne.gameserver.bean.Player;
 import com.carcassonne.gameserver.bean.Room;
 import org.slf4j.LoggerFactory;
 
+import javax.print.DocFlavor;
 import javax.print.attribute.standard.JobName;
 import java.util.*;
 
@@ -122,6 +123,14 @@ public class MainGameManager {
     public Boolean fanCard(Integer roomNum,String accountNum,Integer putX,Integer putY,Integer rotation,Integer occupyBlockNum,String blockType){
         return roomHashMap.get(roomNum).getRoomManager()
                 .playerAction(accountNum,putX,putY,rotation,occupyBlockNum,blockType);
+    }
+
+    public void addMsg(Integer roomNum , String accountNum , String content){
+        roomHashMap.get(roomNum).addMsg(accountNum,content);
+    }
+
+    public JSONArray getMsgListToJSONArray(Integer room){
+       return roomHashMap.get(room).getMsgListToJSONArray();
     }
 
     @Override

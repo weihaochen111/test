@@ -1,5 +1,6 @@
 package com.carcassonne.gameserver.bean;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.carcassonne.gameserver.manager.RoomManager;
 
@@ -37,6 +38,14 @@ public class Room {
         if(name != null) room.put("name",name);
         if(roomState != null) room.put("roomState",roomState);
         return room;
+    }
+
+    public void addMsg(String accountNum ,String content){
+        chat.addMsg(accountNum,content);
+    }
+
+    public JSONArray getMsgListToJSONArray(){
+        return chat.getMsgListToJSONObject();
     }
 
     public void createCardLibrary(ArrayList<Card> cardArrayList){

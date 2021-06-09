@@ -148,7 +148,7 @@ public class RoomManager {
         HashMap<Integer,ArrayList<Point>> allCanPutPositionList = getAllCanPutPositionList(players.get(nowPlayerNum).getHand());
                                                                                                 logger.info("获取到的能放坐标数量：" + allCanPutPositionList.size());
                                                                                                 logger.info("Key :"+allCanPutPositionList.keySet().toString());
-        for (int i = 0 ; i < 4 ; i++){    logger.info("点："+allCanPutPositionList.get(i).size());
+        for (int i = 0 ; i < 4 ; i++){                                                          logger.info("点："+allCanPutPositionList.get(i).size());
             for (int j = 0 ; j < allCanPutPositionList.get(i).size() ; j++){
                 JSONObject temp = new JSONObject();
                 Point tempP = allCanPutPositionList.get(i).get(j);
@@ -257,6 +257,7 @@ public class RoomManager {
 
             puzzle = new Puzzle(cards);
             putCard(15,15,or);
+            updateCanPutPositionList(new Point(15,15));
             nowPlayerNum = 0;
             nowTurnNum = 0;
             deal();
@@ -271,17 +272,6 @@ public class RoomManager {
         //TODO 删除玩家，玩家离开房间
         activePlayerNum--;
     }
-
-    //TODO 计分算法 爱咋写咋写
-    //函数说明 ： 地图保存在puzzle对象中，如需其他地图操作函数可在bean.Puzzle 中编写
-//    /**
-////     * 无参数
-////     * 函数执行后在Players 对象数组更新得分情况
-////     */
-////    public void calculateScore(){
-////
-////
-////    }
 
 
     //遍历更改Block中所有边的所属
@@ -309,7 +299,6 @@ public class RoomManager {
         }
 
     }
-
 
     //能否放置的判断
     /**

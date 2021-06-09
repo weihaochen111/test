@@ -1,9 +1,0 @@
-2021-05-14 00:48:41.058 [main] INFO  c.c.gameserver.GameserverApplicationTests - Starting GameserverApplicationTests using Java 11.0.6 on DESKTOP-JMIJ95C with PID 16336 (started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
-2021-05-14 00:48:41.063 [main] INFO  c.c.gameserver.GameserverApplicationTests - No active profile set, falling back to default profiles: default
-2021-05-14 00:48:41.587 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-05-14 00:48:41.589 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-05-14 00:48:41.609 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2021-05-14 00:48:41.821 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [com.carcassonne.gameserver.configuration.RedisConfig$$EnhancerBySpringCGLIB$$4cbd05a0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-05-14 00:48:43.068 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2021-05-14 00:48:43.433 [main] INFO  c.c.gameserver.GameserverApplicationTests - Started GameserverApplicationTests in 2.667 seconds (JVM running for 3.556)
-2021-05-14 00:48:43.771 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
