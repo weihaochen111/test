@@ -254,6 +254,7 @@
 2021-06-09 18:53:15.552 [http-nio-90-exec-7] INFO  com.carcassonne.gameserver.manager.RoomManager - 点：1
 2021-06-09 18:53:15.552 [http-nio-90-exec-7] INFO  com.carcassonne.gameserver.manager.RoomManager - 点：1
 2021-06-09 18:53:15.553 [http-nio-90-exec-7] INFO  com.carcassonne.gameserver.manager.RoomManager - 坐标转换[{"roundPlayerCanPutPositionX":14,"roundPlayerCanPutPositionRotation":0,"roundPlayerCanPutPositionY":15},{"roundPlayerCanPutPositionX":15,"roundPlayerCanPutPositionRotation":1,"roundPlayerCanPutPositionY":16},{"roundPlayerCanPutPositionX":16,"roundPlayerCanPutPositionRotation":1,"roundPlayerCanPutPositionY":15},{"roundPlayerCanPutPositionX":16,"roundPlayerCanPutPositionRotation":2,"roundPlayerCanPutPositionY":15},{"roundPlayerCanPutPositionX":14,"roundPlayerCanPutPositionRotation":3,"roundPlayerCanPutPositionY":15}]
+<<<<<<< HEAD
 2021-06-09 20:32:44.123 [main] INFO  com.carcassonne.gameserver.GameserverApplication - Starting GameserverApplication using Java 11.0.6 on DESKTOP-JMIJ95C with PID 3104 (F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server\target\classes started by chen in F:\0My_Data\软件工程实践\test\Carcassonne-Game-Server)
 2021-06-09 20:32:44.126 [main] INFO  com.carcassonne.gameserver.GameserverApplication - No active profile set, falling back to default profiles: default
 2021-06-09 20:32:44.565 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
@@ -652,3 +653,5 @@
 2021-06-09 21:20:58.814 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
 2021-06-09 21:20:58.928 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - test - Shutdown initiated...
 2021-06-09 21:20:58.932 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - test - Shutdown completed.
+=======
+>>>>>>> 979d6937fb082179163ad4de86c9ee076b4895be
