@@ -369,7 +369,7 @@ public class RoomManager {
 
     //获取指定卡片的可放置坐标
     //返回坐标ArraryList
-    public ArrayList<Point> getCanPutPositionList(Card card){
+    public ArrayList<Point> getCanPutPositionList(Card card){  //TODO　在这断电测试
         ArrayList<Point> theCardCanPutPositionList = new ArrayList<Point>();
         for(Point point : puzzle.getCanPutPositionList()){
             if(canPutCard(point.getX(),point.getY(),card)){
