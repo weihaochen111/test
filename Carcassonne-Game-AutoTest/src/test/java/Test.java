@@ -1,7 +1,9 @@
 import HTTPUtil.HTTPUtil;
 import com.alibaba.fastjson.JSONObject;
+import entity.PutPoint;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Test {
 
@@ -34,11 +36,14 @@ public class Test {
         Thread.sleep(200);
 
 
+        ArrayList<PutPoint> putPointList = HTTPUtil.formatFrameToGetPutPoint(getFrameInfo1);
+
+        String request= "{\"putX\":\""+putPointList.get(0).getX()+"\",\"putY\":\""+putPointList.get(0).getY()+"\",\"rotation\":\""+putPointList.get(0).getRotation()+"\",\"occupyBlock\":\"999\"}" ;
+        JSONObject fanCard1 = JSONObject.parseObject(HTTPUtil.post(HTTPUtil.BASE_ADDRESS + HTTPUtil.playing_fanCard,request,TOKEN,token1)) ;
 
 
 
 
-        
 //        String context1 = "这是第一条消息";
 //        JSONObject sendChatInfo = JSONObject.parseObject(HTTPUtil.post(HTTPUtil.BASE_ADDRESS + HTTPUtil.common_sendChatInfo,"{\"type\":\"room\",\"context\":\"" + context1 + "\"}",TOKEN,token1));
 //
