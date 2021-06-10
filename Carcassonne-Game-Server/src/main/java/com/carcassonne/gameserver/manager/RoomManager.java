@@ -75,7 +75,7 @@ public class RoomManager {
 
             Card card = players.get(nowPlayerNum).getHand();
             card.rotate(rotation);
-            putCard(putX,putY,card);
+            putCard(putX,putY,card);  //TODO 不能正确放牌
             if(occupyBlockNum != 999){
                 appropriated(occupyBlockNum,players.get(nowPlayerNum).getAccountNum(),blockType);
             }
@@ -146,9 +146,7 @@ public class RoomManager {
     public JSONArray getNowPlayerCanPutPosition(){
         JSONArray res = new JSONArray();
         HashMap<Integer,ArrayList<Point>> allCanPutPositionList = getAllCanPutPositionList(players.get(nowPlayerNum).getHand());
-                                                                                                logger.info("获取到的能放坐标数量：" + allCanPutPositionList.size());
-                                                                                                logger.info("Key :"+allCanPutPositionList.keySet().toString());
-        for (int i = 0 ; i < 4 ; i++){                                                          logger.info("点："+allCanPutPositionList.get(i).size());
+        for (int i = 0 ; i < 4 ; i++){
             for (int j = 0 ; j < allCanPutPositionList.get(i).size() ; j++){
                 JSONObject temp = new JSONObject();
                 Point tempP = allCanPutPositionList.get(i).get(j);
@@ -158,7 +156,6 @@ public class RoomManager {
                 res.add(temp);
             }
         }
-        logger.info("坐标转换" + res.toJSONString()); //TODO 这里坐标转换出问题了
         return res;
     }
 
